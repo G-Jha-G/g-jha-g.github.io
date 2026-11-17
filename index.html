@@ -58,6 +58,7 @@ a{color:var(--glacier);text-decoration-thickness:1px;text-underline-offset:3px}
 a:hover{color:var(--ink)}
 :focus-visible{outline:2px solid var(--glacier);outline-offset:3px;border-radius:2px}
 p{margin:0 0 1em}
+button{font:inherit}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 
 /* top bar */
@@ -66,8 +67,9 @@ p{margin:0 0 1em}
 .bar-name{font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .bar nav{margin-left:auto;display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
 .bar nav::-webkit-scrollbar{display:none}
-.bar nav a{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--slate);text-decoration:none;white-space:nowrap;padding:6px 0}
+.bar nav a{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--slate);text-decoration:none;white-space:nowrap;padding:17px 0 15px;transition:color .2s,box-shadow .2s}
 .bar nav a:hover{color:var(--ink)}
+.bar nav a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink)}
 
 /* hero */
 .hero{padding:72px 0 80px}
@@ -85,7 +87,7 @@ h1{font-family:var(--sans);font-weight:800;font-size:clamp(40px,6.2vw,68px);line
 
 /* compare slider */
 .compare{margin:0}
-.stage{position:relative;aspect-ratio:754/812;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff;--pos:50%}
+.stage{position:relative;aspect-ratio:746/808;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff;--pos:50%}
 .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
 .stage .coarse{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
 .stage .line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:var(--ink);pointer-events:none}
@@ -97,6 +99,13 @@ h1{font-family:var(--sans);font-weight:800;font-size:clamp(40px,6.2vw,68px);line
 .tag.l{left:12px}.tag.r{right:12px;background:var(--rust)}
 figcaption{font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--slate);margin-top:12px;max-width:62ch}
 
+/* segmented buttons, used for days and scenarios */
+.seg{display:inline-flex;flex-wrap:wrap;gap:3px;padding:3px;border:1px solid var(--rule);border-radius:8px;background:#fff}
+.seg button{font-family:var(--sans);font-size:14px;font-weight:600;line-height:1;padding:9px 12px;border:0;border-radius:6px;background:transparent;color:var(--slate);cursor:pointer;transition:background .2s,color .2s}
+.seg button:hover{color:var(--ink)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.compare .seg{margin-top:14px}
+
 /* sections */
 .section{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;padding:68px 0;border-top:1px solid var(--rule)}
 h2{font-family:var(--sans);font-weight:700;font-size:22px;line-height:1.2;letter-spacing:-.02em;margin:0;position:sticky;top:84px;align-self:start}
@@ -105,28 +114,67 @@ h4{font-family:var(--sans);font-weight:700;font-size:15px;line-height:1.3;margin
 h4:first-child{margin-top:0}
 .body > p,.body > ul{max-width:66ch}
 .status{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--slate);margin:0 0 12px}
-.status.live{color:var(--rust)}
 
 .news{list-style:none;margin:0;padding:0;max-width:66ch}
 .news li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--rule)}
 .news li:last-child{border-bottom:0}
 .when{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--slate);padding-top:3px;font-variant-numeric:tabular-nums}
 
+/* research */
+.research{row-gap:44px}
+.research h2{position:static}
+hr.sep{grid-column:1/-1;width:100%;border:0;border-top:1px solid var(--rule);margin:12px 0}
+.intro p{max-width:66ch}
+.intro p:last-child{margin-bottom:0}
+.more{font-family:var(--sans);font-size:15px;font-weight:600;margin:0}
+.more a{margin-right:18px}
+
 .work{padding:0 0 52px;margin:0 0 52px;border-bottom:1px solid var(--rule)}
 .work:last-child{padding-bottom:0;margin-bottom:0;border-bottom:0}
 .work p{max-width:66ch}
-.work figure{margin:24px 0 0}
-.work figure a{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
-.work figure img{width:100%}
-.work figure.narrow{max-width:560px}
-.plate{margin:8px 0 0;max-width:520px}
-.plate a{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
-.more{font-family:var(--sans);font-size:15px;font-weight:600;margin:0}
-.more a{margin-right:18px}
+.work figure{margin:24px 0 0;max-width:560px}
+.work figure a,.step-fig a,.ex-map{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
+.work figure img,.step-fig img{width:100%}
 .ongoing{list-style:none;margin:0;padding:0;max-width:66ch}
 .ongoing li{padding:14px 0;border-top:1px solid var(--rule)}
 .ongoing li:first-child{border-top:0;padding-top:0}
 .ongoing strong{font-family:var(--sans);font-weight:700;font-size:16.5px;display:block;margin-bottom:2px}
+
+/* scroll stories: stacked by default, sticky figure on wide screens */
+.story{grid-column:1/-1}
+.steps{list-style:none;margin:0;padding:0}
+.step{margin:0 0 48px}
+.step:last-child{margin-bottom:0}
+.step-fig{margin:0 0 18px}
+.step-title{font-family:var(--sans);font-weight:700;font-size:19px;line-height:1.3;letter-spacing:-.01em;color:var(--ink);margin:0 0 8px}
+.step-text p{font-size:16.5px;max-width:60ch}
+.step-text p:last-child{margin-bottom:0}
+.story-stage{display:none}
+
+.story.story-on{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;align-items:start}
+.story-on .story-stage{display:flex;flex-direction:column;position:sticky;top:76px;height:calc(100vh - 100px);max-height:800px;min-height:420px}
+.story-on .stage-frame{position:relative;flex:1;display:block;border:1px solid var(--rule);border-radius:6px;background:#fff;overflow:hidden;cursor:zoom-in}
+.story-on .stage-frame img{position:absolute;top:18px;left:18px;width:calc(100% - 36px);height:calc(100% - 36px);object-fit:contain;opacity:0;transition:opacity .5s ease}
+.story-on .stage-frame img.on{opacity:1}
+.stage-cap{display:flex;gap:14px;font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--slate);margin:12px 0 0;min-height:4.5em}
+.stage-count{flex:none;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.story-on .step-fig{display:none}
+.story-on .steps{padding:4vh 0 10vh}
+.story-on .step{min-height:68vh;margin:0;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .35s ease}
+.story-on .step.on{opacity:1}
+
+/* warming explorer */
+.explorer{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;align-items:center;padding:36px;border-radius:8px;background:var(--mist)}
+.ex-map{margin:0;padding:22px 22px 18px}
+.ex-map img{margin:0 auto;width:100%;max-width:420px}
+.ex-map .ex-bar{max-width:420px;margin-top:10px}
+.ex-map figcaption{margin:14px auto 0;max-width:420px}
+.ex-panel p{font-size:16.5px}
+.ex-label{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--slate);margin:22px 0 8px;display:block}
+.ex-panel input[type=range]{width:100%;margin:4px 0;accent-color:var(--rust);cursor:pointer}
+.ticks{display:flex;justify-content:space-between;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--slate)}
+.readout{margin:28px 0 0;font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--slate)}
+.readout .big{display:block;font-weight:800;font-size:46px;letter-spacing:-.03em;line-height:1;color:var(--rust);margin-bottom:8px;font-variant-numeric:tabular-nums}
 
 .refs{list-style:none;margin:0;padding:0;max-width:70ch}
 .refs li{padding:0 0 16px;font-size:16.5px;line-height:1.55}
@@ -151,12 +199,21 @@ summary{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--glaci
 
 footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sans);font-size:14px;color:var(--slate)}
 
+/* figures settle in once as they enter the screen */
+.js .reveal{transition:opacity .7s ease,transform .7s ease}
+.js .reveal:not(.in){opacity:0;transform:translateY(14px)}
+
+@media (min-width:901px){
+  .section > .body{grid-column:2}
+}
 @media (max-width:900px){
   .hero{padding:40px 0 56px}
   .hero-grid{grid-template-columns:1fr;gap:44px}
   .compare{max-width:460px}
   .section{grid-template-columns:1fr;gap:22px;padding:48px 0}
+  .research{row-gap:32px}
   h2{position:static;font-size:24px}
+  .explorer{grid-template-columns:1fr;gap:28px;padding:20px}
 }
 @media (max-width:560px){
   body{font-size:16.5px}
@@ -167,9 +224,16 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
   .who img{width:84px;height:105px}
   .rows li,.mail li{grid-template-columns:1fr;gap:2px}
   .news li{grid-template-columns:76px minmax(0,1fr);gap:12px}
+  .seg button{padding:9px 10px;font-size:13.5px}
+  .explorer{margin:0 -8px;padding:16px}
+  .ex-map{padding:12px}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media print{.bar,.stage input,.knob{display:none}.section{padding:28px 0}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+  .js .reveal:not(.in){opacity:1;transform:none}
+}
+@media print{.bar,.stage input,.knob,.seg{display:none}.section{padding:28px 0}}
 </style>
 </head>
 <body>
@@ -190,7 +254,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 
 <main id="top">
 
-<section class="hero">
+<section class="hero" id="intro">
   <div class="wrap hero-grid">
     <div>
       <div class="who">
@@ -212,15 +276,21 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 
     <figure class="compare">
       <div class="stage" id="stage">
-        <img src="assets/hero-fine.webp" alt="Daily mean temperature over India at 0.1 degree resolution from the diffusion model, showing sharp gradients along the Himalaya and the Western Ghats" width="754" height="812">
-        <img class="coarse" src="assets/hero-coarse.webp" alt="The same day at 1.0 degree resolution, where India appears as large uniform blocks" width="754" height="812">
+        <img id="day-fine" src="assets/day-heat-fine.webp" alt="Daily mean temperature over India at 0.1 degree from the diffusion model, 31 May 2012, with sharp gradients along the Himalaya and the Western Ghats" width="746" height="808">
+        <img id="day-coarse" class="coarse" src="assets/day-heat-coarse.webp" alt="The same day at 1.0 degree, where India appears as large uniform blocks" width="746" height="808">
         <span class="tag l" aria-hidden="true">1.0° input</span>
         <span class="tag r" aria-hidden="true">0.1° output</span>
         <input id="cmp" type="range" min="0" max="100" value="50" step="0.5" aria-label="Move the divider between the 1.0 degree input and the 0.1 degree output">
         <span class="line" aria-hidden="true"></span>
         <span class="knob" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5l-4 5 4 5M13 5l4 5-4 5"/></svg></span>
       </div>
-      <figcaption>Daily mean temperature on 31 May 2012, an extreme heat day. Drag the divider to compare the 1.0° input with the 0.1° output of the diffusion model.</figcaption>
+      <div class="seg" id="days" role="group" aria-label="Choose a day">
+        <button type="button" data-day="heat" aria-pressed="true">Heat</button>
+        <button type="button" data-day="cold" aria-pressed="false">Cold</button>
+        <button type="button" data-day="monsoon" aria-pressed="false">Monsoon</button>
+        <button type="button" data-day="winter" aria-pressed="false">Winter</button>
+      </div>
+      <figcaption><span id="day-cap">Daily mean temperature on 31 May 2012, an extreme heat day.</span> Drag the divider to compare the 1.0° input with the 0.1° output of the diffusion model.</figcaption>
     </figure>
   </div>
 </section>
@@ -249,34 +319,160 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
   </div>
 </section>
 
-<section class="section" id="research">
+<section class="section research" id="research">
   <h2>Research</h2>
+
+  <div class="body intro">
+    <h3>Probabilistic temperature downscaling with diffusion</h3>
+    <p class="status">Manuscript under review. Dataset released.</p>
+    <p>A deterministic network trained on squared error predicts the conditional mean, so it smooths away the variance and tails of local temperature. I couple a conditional diffusion model (DDPM) with quantile delta mapping to downscale daily near-surface temperature from 1° to 0.1° over India, for ten CMIP6 models and three emission scenarios out to 2100.</p>
+    <p class="more"><a href="https://doi.org/10.5281/zenodo.18951710">Dataset on Zenodo</a></p>
+  </div>
+
+  <div class="story">
+    <ol class="steps">
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/t-ensemble.webp"><img loading="lazy" src="assets/t-ensemble.webp" alt="Three maps of India for 14 December 2013: ensemble mean temperature, ensemble spread and absolute error of one member" width="1600" height="752"></a>
+          <figcaption>14 December 2013: ten-member ensemble mean, per-pixel ensemble spread, and the absolute error of one member against the MSWX reference.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">Every day is an ensemble</h4>
+          <p>Instead of a single answer, the diffusion model samples many plausible 0.1° fields for each day. Their spread maps where the downscaled value is uncertain, and like the error it is largest over complex terrain.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/t-spectra.webp"><img loading="lazy" src="assets/t-spectra.webp" alt="Power spectra and power ratio against wavelength for the India domain and the Himalayan foothills, comparing the diffusion model, a matched residual U-Net and the reference" width="1500" height="1330"></a>
+          <figcaption>Radially averaged power spectra (top) and power ratio to the reference (bottom) for the India domain and the Himalayan foothills. The dashed line marks half the reference power.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">Keeping the fine scales</h4>
+          <p>A deterministic residual U-Net trained under the same conditions has a lower single-sample error, but it loses spatial detail: over India it falls below half of the observed power at intermediate scales. The diffusion model keeps the observed spectrum down to the 0.1° grid.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/t-bias.webp"><img loading="lazy" src="assets/t-bias.webp" alt="Three bias maps of India for the INM-CM5-0 climate model: raw output, after quantile delta mapping, and after diffusion downscaling" width="1379" height="547"></a>
+          <figcaption>Bias of one CMIP6 model (INM-CM5-0) at each stage: raw output, after quantile delta mapping, and after diffusion downscaling. The last panel uses a much narrower colour scale.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">From climate model to local map</h4>
+          <p>Raw climate model output carries biases of several degrees. Each model is first corrected with quantile delta mapping and then downscaled, which brings the remaining bias down to a fraction of a degree.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/t-calib.webp"><img loading="lazy" src="assets/t-calib.webp" alt="Rank histograms for ensembles of 2, 5, 10 and 20 members, spread-skill ratio and CRPS against ensemble size" width="1500" height="1016"></a>
+          <figcaption>Ensemble calibration against ensemble size: rank histograms for 2 to 20 members, the spread-skill ratio, and CRPS with ensemble-mean error.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">Honest about uncertainty</h4>
+          <p>The ensemble is informative but underdispersed: the U-shaped rank histograms show observations falling outside the ensemble range more often than they should. I report this openly, because it decides how the dataset should be used.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <div class="explorer reveal" id="warming">
+    <figure class="ex-map">
+      <img id="warm-img" src="assets/warm-245-near.webp" alt="Map of projected warming over India, SSP2-4.5, 2021 to 2040" width="580" height="566">
+      <img class="ex-bar" src="assets/warm-colorbar.webp" alt="Colour scale for warming from 0 to 5 °C" width="1120" height="125">
+      <figcaption>Multi-model mean of ten CMIP6 models after diffusion downscaling, relative to 1995 to 2014. The inset shows the distribution across India's grid cells.</figcaption>
+    </figure>
+    <div class="ex-panel">
+      <h4 class="step-title">Explore the projections</h4>
+      <p>The released dataset runs to 2100 for three emission scenarios. Pick a scenario and drag through time to see how much warmer India gets, and where.</p>
+      <span class="ex-label" id="ssp-label">Emission scenario</span>
+      <div class="seg" id="ssp" role="group" aria-labelledby="ssp-label">
+        <button type="button" data-ssp="245" aria-pressed="true">SSP2-4.5</button>
+        <button type="button" data-ssp="370" aria-pressed="false">SSP3-7.0</button>
+        <button type="button" data-ssp="585" aria-pressed="false">SSP5-8.5</button>
+      </div>
+      <label class="ex-label" for="period">Period</label>
+      <input id="period" type="range" min="0" max="2" step="1" value="0" aria-valuetext="2021 to 2040">
+      <div class="ticks" aria-hidden="true"><span>2021–2040</span><span>2041–2060</span><span>2081–2100</span></div>
+      <p class="readout" aria-live="polite"><span class="big" id="w-mean">+0.6 °C</span><span id="w-text">mean warming over India under SSP2-4.5, 2021 to 2040; 95th percentile of grid cells +0.9 °C</span></p>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <div class="body intro">
+    <h3>Diffusion and flow matching for precipitation extremes</h3>
+    <p class="status">Manuscript under review. Dataset released.</p>
+    <p>Precipitation is intermittent and heavy-tailed, and most of its impact sits in the upper tail. I benchmark diffusion and flow matching against three deterministic methods for 10× daily precipitation downscaling over India, with a 14-year test period.</p>
+    <p class="more"><a href="https://doi.org/10.5281/zenodo.21903246">Dataset on Zenodo</a></p>
+  </div>
+
+  <div class="story">
+    <ol class="steps">
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/p-schematic.webp"><img loading="lazy" src="assets/p-schematic.webp" alt="Schematic of the perfect-model framework: the high-resolution reference is average-pooled to a low-resolution input, then downscaled by two generative and three deterministic methods and evaluated" width="1600" height="721"></a>
+          <figcaption>The perfect-model framework: the low-resolution input is pooled from the high-resolution reference, so the exact target is known.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">A fair test with a known answer</h4>
+          <p>I coarsen observed precipitation from 0.1° to 1.0° and ask each method to recover the original. Diffusion and flow matching share one U-Net; constructed analogues, weather typing and SRCNN are the deterministic baselines.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/p-maps.webp"><img loading="lazy" src="assets/p-maps.webp" alt="Six maps of time-mean precipitation over India: observation and five downscaling methods" width="1783" height="1140"></a>
+          <figcaption>Time-mean daily precipitation for 2011 to 2024: the observed field and the five methods.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">The average looks right for everyone</h4>
+          <p>Averaged over 14 years, every method reproduces the broad pattern of the Western Ghats, the northeast and the Himalayan foothills. The differences hide in the daily fields.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/p-spectra.webp"><img loading="lazy" src="assets/p-spectra.webp" alt="Power spectral density and power ratio against wavelength for the observations and five downscaling methods" width="1100" height="1171"></a>
+          <figcaption>Time-mean power spectra for 2011 to 2024 (top) and the ratio of each method's power to the observed (bottom).</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">Where the detail goes</h4>
+          <p>The spectrum shows how much spatial detail survives at each scale. The deterministic and analogue methods lose power well before the grid scale. Flow matching stays closest to the observed spectrum, and diffusion is somewhat smoother.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/p-return.webp"><img loading="lazy" src="assets/p-return.webp" alt="Return level of daily annual maximum precipitation against return period for the observations and five methods, with the ratio to observed below" width="1100" height="1268"></a>
+          <figcaption>Return levels of daily annual maxima over India, with 95% bootstrap intervals. The grey band is beyond the 14-year record.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">Only the generative models get the extremes</h4>
+          <p>Diffusion and flow matching follow the observed return levels of the heaviest daily rain. The other methods compress the upper tail, which is exactly the part that matters for flood risk.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/p-monsoon.webp"><img loading="lazy" src="assets/p-monsoon.webp" alt="Composite precipitation anomaly maps for active and break phases of the monsoon, for the observations and five methods" width="1100" height="1444"></a>
+          <figcaption>Composite precipitation anomalies for active and break phases of the summer monsoon, observed and for the five methods.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">The monsoon's rhythm</h4>
+          <p>Beyond totals, I test whether each method keeps the alternation between active and break phases of the summer monsoon, using composites of the observed phase days.</p>
+        </div>
+      </li>
+      <li class="step">
+        <figure class="step-fig reveal">
+          <a href="assets/p-cost.webp"><img loading="lazy" src="assets/p-cost.webp" alt="Distributional error and extreme quantile ratio against number of network evaluations and wall-clock time, for flow matching solvers and DDPM" width="1400" height="1047"></a>
+          <figcaption>Sampling cost against distributional fidelity for flow matching solvers and the diffusion baseline.</figcaption>
+        </figure>
+        <div class="step-text">
+          <h4 class="step-title">Fidelity at lower cost</h4>
+          <p>Flow matching reaches comparable fidelity with far fewer network evaluations than diffusion, so large ensembles become cheaper to produce.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <hr class="sep">
+
   <div class="body">
-
-    <article class="work">
-      <h3>Probabilistic temperature downscaling with diffusion</h3>
-      <p class="status">Manuscript under review. Dataset released.</p>
-      <p>A deterministic network trained on squared error predicts the conditional mean, so it smooths away the variance and tails of local temperature. I couple a conditional diffusion model (DDPM) with quantile delta mapping to downscale daily near-surface temperature from 1° to 0.1° over India, for ten CMIP6 models and three emission scenarios out to 2100. Each day comes as an ensemble, so every value carries an estimate of its own uncertainty.</p>
-      <p>Compared with a matched deterministic network, diffusion sampling keeps the fine-scale spectral power and the daily distribution, and the model behaves the same way on a coarse dataset it never saw in training.</p>
-      <p class="more"><a href="https://doi.org/10.5281/zenodo.18951710">Dataset on Zenodo</a></p>
-      <figure>
-        <a href="assets/fig-ensemble.webp"><img loading="lazy" src="assets/fig-ensemble.webp" alt="Three maps of India for 14 December 2013: ensemble mean temperature, ensemble spread and absolute error of one member" width="1600" height="752"></a>
-        <figcaption>Probabilistic downscaling for 14 December 2013: ten-member ensemble mean, per-pixel ensemble spread and the absolute error of one member against the MSWX reference.</figcaption>
-      </figure>
-    </article>
-
-    <article class="work">
-      <h3>Diffusion and flow matching for precipitation extremes</h3>
-      <p class="status">Manuscript under review. Dataset released.</p>
-      <p>Precipitation is intermittent and heavy-tailed, and most of its impact sits in the upper tail. I benchmark five methods for 10× daily precipitation downscaling over India (constructed analogues, weather typing, SRCNN, diffusion and flow matching) in a perfect-model setup with a 14-year test period.</p>
-      <p>Only the two generative models reproduce the observed upper tail and return levels. The deterministic and analogue methods underestimate extremes even when their pointwise error is low. Flow matching matches diffusion in distributional fidelity at a lower sampling cost.</p>
-      <p class="more"><a href="https://doi.org/10.5281/zenodo.21903246">Dataset on Zenodo</a></p>
-      <figure>
-        <a href="assets/fig-precip.webp"><img loading="lazy" src="assets/fig-precip.webp" alt="Six maps of time-mean precipitation over India: observation and five downscaling methods" width="1783" height="1140"></a>
-        <figcaption>Time-mean daily precipitation over India for 2011 to 2024: the observed field and the five downscaling methods.</figcaption>
-      </figure>
-    </article>
-
     <article class="work">
       <h3>Ongoing work</h3>
       <ul class="ongoing">
@@ -291,12 +487,11 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       <p class="status">Published in Frontiers in Climate, 2025.</p>
       <p>My first PhD study compared SRCNN, VDSR and EDSR for downscaling ERA5 2 m temperature by a factor of 10 over the Indian subcontinent, with residual networks for the steep terrain of the Himalaya and the Tibetan Plateau.</p>
       <p class="more"><a href="https://doi.org/10.3389/fclim.2025.1572428">Paper</a></p>
-      <figure class="narrow">
+      <figure class="reveal">
         <a href="assets/fig-cnn.webp"><img loading="lazy" src="assets/fig-cnn.webp" alt="Four temperature maps of South Asia: low-resolution ERA5 input and outputs from SRCNN, EDSR and VDSR" width="1299" height="1156"></a>
         <figcaption>ERA5 2 m temperature: the low-resolution input and the outputs of SRCNN, EDSR and VDSR.</figcaption>
       </figure>
     </article>
-
   </div>
 </section>
 
@@ -325,10 +520,6 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       <li><span class="t">DDPM-downscaled CMIP6 daily temperature for India at 0.1°</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2026). <span class="v">Zenodo.</span> <a href="https://doi.org/10.5281/zenodo.18951710">doi:10.5281/zenodo.18951710</a></li>
       <li><span class="t">Deep learning based generative downscaling of daily total precipitation to 0.1 degree for India: flow matching and DDPM</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2026). <span class="v">Zenodo.</span> <a href="https://doi.org/10.5281/zenodo.21903246">doi:10.5281/zenodo.21903246</a></li>
     </ul>
-    <figure class="plate">
-      <a href="assets/fig-projection.webp"><img loading="lazy" src="assets/fig-projection.webp" alt="Grid of nine maps of India showing projected temperature anomalies for three future periods under three emission scenarios" width="936" height="880"></a>
-      <figcaption>From the temperature dataset: multi-model mean anomalies for the near term, mid century and end of century under SSP2-4.5, SSP3-7.0 and SSP5-8.5.</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -413,24 +604,166 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 
 <script>
 (function(){
-  var stage=document.getElementById('stage'),input=document.getElementById('cmp');
-  if(!stage||!input)return;
-  function set(v){stage.style.setProperty('--pos',v+'%')}
-  var touched=false;
-  input.addEventListener('input',function(){touched=true;set(input.value)});
+  var d=document;
+  d.documentElement.classList.add('js');
+  var hasIO='IntersectionObserver' in window;
   var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(still){set(50);return}
-  // One load moment: the fine field is revealed from under the coarse grid.
-  var from=96,to=50,dur=1500,t0=null;
-  set(from);
-  function step(t){
-    if(touched)return;
-    if(t0===null)t0=t;
-    var k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3),v=from+(to-from)*e;
-    set(v);input.value=v;
-    if(k<1)requestAnimationFrame(step);
+  function each(sel,fn,root){Array.prototype.forEach.call((root||d).querySelectorAll(sel),fn)}
+
+  /* Compare slider, with one sweep on load that reveals the fine field. */
+  var stage=d.getElementById('stage'),input=d.getElementById('cmp');
+  function setPos(v){stage.style.setProperty('--pos',v+'%')}
+  var touched=false;
+  input.addEventListener('input',function(){touched=true;setPos(input.value)});
+  if(!still){
+    var from=96,to=50,dur=1500,t0=null;
+    setPos(from);
+    var step=function(t){
+      if(touched)return;
+      if(t0===null)t0=t;
+      var k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3),v=from+(to-from)*e;
+      setPos(v);input.value=v;
+      if(k<1)requestAnimationFrame(step);
+    };
+    setTimeout(function(){requestAnimationFrame(step)},500);
   }
-  setTimeout(function(){requestAnimationFrame(step)},500);
+
+  /* Day switcher for the compare slider. */
+  var DAYS={
+    heat:'31 May 2012, an extreme heat day',
+    cold:'6 January 2011, an extreme cold day',
+    monsoon:'4 June 2012, an early monsoon day with complex spatial structure',
+    winter:'14 December 2013, a representative winter day'
+  };
+  var fine=d.getElementById('day-fine'),coarse=d.getElementById('day-coarse'),cap=d.getElementById('day-cap');
+  each('#days button',function(b,_,all){
+    b.addEventListener('click',function(){
+      var k=b.getAttribute('data-day');
+      each('#days button',function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      var f=new Image(),c=new Image(),n=0;
+      function done(){
+        if(++n<2)return;
+        fine.src=f.src;coarse.src=c.src;
+        fine.alt='Daily mean temperature over India at 0.1 degree from the diffusion model, '+DAYS[k];
+        coarse.alt='The same day at 1.0 degree, where India appears as large uniform blocks';
+        cap.textContent='Daily mean temperature on '+DAYS[k]+'.';
+      }
+      f.onload=f.onerror=c.onload=c.onerror=done;
+      f.src='assets/day-'+k+'-fine.webp';c.src='assets/day-'+k+'-coarse.webp';
+    });
+  });
+  window.addEventListener('load',function(){
+    setTimeout(function(){Object.keys(DAYS).forEach(function(k){new Image().src='assets/day-'+k+'-fine.webp';new Image().src='assets/day-'+k+'-coarse.webp'})},1200);
+  });
+
+  /* Menu follows the section being read. */
+  var nav=d.querySelector('.bar nav'),links={};
+  each('.bar nav a',function(a){links[a.getAttribute('href').slice(1)]=a});
+  function setCurrent(key){
+    Object.keys(links).forEach(function(k){
+      if(k===key)links[k].setAttribute('aria-current','true');else links[k].removeAttribute('aria-current');
+    });
+    if(links[key]&&nav.scrollWidth>nav.clientWidth){
+      nav.scrollTo({left:Math.max(0,links[key].offsetLeft-24),behavior:still?'auto':'smooth'});
+    }
+  }
+  if(hasIO){
+    var spy=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var id=e.target.id;
+        setCurrent(id==='news'?'about':id==='intro'?'':id);
+      });
+    },{rootMargin:'-45% 0px -54% 0px'});
+    ['intro','about','news','research','publications','conferences','experience','contact'].forEach(function(id){
+      var el=d.getElementById(id);if(el)spy.observe(el);
+    });
+  }
+
+  /* Figures settle in once as they enter the screen. */
+  if(hasIO&&!still){
+    var ro=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}});
+    },{rootMargin:'0px 0px -8% 0px'});
+    each('.reveal',function(el){ro.observe(el)});
+  }else{
+    each('.reveal',function(el){el.classList.add('in')});
+  }
+
+  /* Scroll stories: on wide screens the figure stays in place and changes with the text. */
+  var wide=window.matchMedia('(min-width: 1000px)');
+  each('.story',function(story){
+    var steps=Array.prototype.slice.call(story.querySelectorAll('.step'));
+    var stageEl=d.createElement('div');stageEl.className='story-stage';
+    var frame=d.createElement('a');frame.className='stage-frame';
+    var capEl=d.createElement('p');capEl.className='stage-cap';
+    var count=d.createElement('span');count.className='stage-count';
+    var ctext=d.createElement('span');
+    capEl.appendChild(count);capEl.appendChild(ctext);
+    var imgs=steps.map(function(s){
+      var src=s.querySelector('img'),im=d.createElement('img');
+      im.alt=src.alt;im.decoding='async';im.setAttribute('data-src',src.getAttribute('src'));
+      frame.appendChild(im);return im;
+    });
+    stageEl.appendChild(frame);stageEl.appendChild(capEl);
+    story.insertBefore(stageEl,story.firstChild);
+    var cur=-1;
+    function load(i){var im=imgs[i];if(im&&!im.getAttribute('src'))im.src=im.getAttribute('data-src')}
+    function show(i){
+      if(i===cur)return;cur=i;
+      load(i);load(i+1);
+      imgs.forEach(function(im,k){
+        im.classList.toggle('on',k===i);
+        if(k===i)im.removeAttribute('aria-hidden');else im.setAttribute('aria-hidden','true');
+      });
+      steps.forEach(function(s,k){s.classList.toggle('on',k===i)});
+      frame.href=steps[i].querySelector('a').getAttribute('href');
+      ctext.textContent=steps[i].querySelector('figcaption').textContent;
+      count.textContent=(i+1)+' / '+steps.length;
+    }
+    var io=hasIO?new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting)show(steps.indexOf(e.target))});
+    },{rootMargin:'-45% 0px -54% 0px'}):null;
+    function apply(){
+      if(wide.matches&&io){
+        story.classList.add('story-on');
+        if(cur<0)show(0);
+        steps.forEach(function(s){io.observe(s)});
+      }else{
+        story.classList.remove('story-on');
+        if(io)io.disconnect();
+      }
+    }
+    apply();
+    if(wide.addEventListener)wide.addEventListener('change',apply);else if(wide.addListener)wide.addListener(apply);
+  });
+
+  /* Warming explorer: values are the area-weighted means and 95th percentiles shown in each panel. */
+  var W={'245':[[0.6,0.9],[1.1,1.5],[1.6,2.3]],'370':[[0.7,1.1],[1.2,1.9],[2.7,3.8]],'585':[[0.7,1.2],[1.5,1.8],[3.3,4.5]]};
+  var P=['near','mid','far'],PL=['2021 to 2040','2041 to 2060','2081 to 2100'],SL={'245':'SSP2-4.5','370':'SSP3-7.0','585':'SSP5-8.5'};
+  var ssp='245',per=0,wimg=d.getElementById('warm-img'),range=d.getElementById('period');
+  var wmean=d.getElementById('w-mean'),wtext=d.getElementById('w-text');
+  function fmt(v){return '+'+v.toFixed(1)+'\u00a0°C'}
+  function update(){
+    var v=W[ssp][per];
+    wimg.src='assets/warm-'+ssp+'-'+P[per]+'.webp';
+    wimg.alt='Map of projected warming over India, '+SL[ssp]+', '+PL[per];
+    wmean.textContent=fmt(v[0]);
+    wtext.textContent='mean warming over India under '+SL[ssp]+', '+PL[per]+'; 95th percentile of grid cells '+fmt(v[1]);
+    range.setAttribute('aria-valuetext',PL[per]);
+  }
+  each('#ssp button',function(b){
+    b.addEventListener('click',function(){
+      ssp=b.getAttribute('data-ssp');
+      each('#ssp button',function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+      update();
+    });
+  });
+  range.addEventListener('input',function(){per=+range.value;update()});
+  update();
+  var ex=d.getElementById('warming'),preloaded=false;
+  function preload(){if(preloaded)return;preloaded=true;Object.keys(W).forEach(function(s){P.forEach(function(p){new Image().src='assets/warm-'+s+'-'+p+'.webp'})})}
+  if(hasIO){var po=new IntersectionObserver(function(es){if(es[0].isIntersecting){preload();po.disconnect()}},{rootMargin:'600px 0px'});po.observe(ex)}else preload();
 })();
 </script>
 </body>
