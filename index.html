@@ -59,11 +59,12 @@ a:hover{color:var(--ink)}
 :focus-visible{outline:2px solid var(--glacier);outline-offset:3px;border-radius:2px}
 p{margin:0 0 1em}
 button{font:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
 
 /* top bar */
 .bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--rule)}
 .bar .wrap{display:flex;align-items:center;gap:24px;height:56px}
+.short{display:none}
 .bar-name{font-family:var(--sans);font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--ink);text-decoration:none;white-space:nowrap}
 .bar nav{margin-left:auto;display:flex;gap:22px;overflow-x:auto;scrollbar-width:none}
 .bar nav::-webkit-scrollbar{display:none}
@@ -72,11 +73,11 @@ button{font:inherit}
 .bar nav a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink)}
 
 /* hero */
-.hero{padding:72px 0 80px}
+.hero{padding:52px 0 60px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:center}
 .who{display:flex;gap:22px;align-items:flex-end;margin-bottom:28px}
 .who img{width:104px;height:130px;object-fit:cover;border-radius:6px;flex:none;background:var(--mist)}
-h1{font-family:var(--sans);font-weight:800;font-size:clamp(40px,6.2vw,68px);line-height:.98;letter-spacing:-.035em;margin:0}
+h1{text-wrap:balance;font-family:var(--sans);font-weight:800;font-size:clamp(40px,6.2vw,68px);line-height:.98;letter-spacing:-.035em;margin:0}
 .role{font-family:var(--sans);font-size:16px;line-height:1.45;color:var(--slate);margin:0 0 22px}
 .role strong{color:var(--ink);font-weight:600}
 .lede{font-size:clamp(20px,2.1vw,23px);line-height:1.5;max-width:34em;margin:0 0 22px}
@@ -86,7 +87,7 @@ h1{font-family:var(--sans);font-weight:800;font-size:clamp(40px,6.2vw,68px);line
 .links a:hover{text-decoration-color:var(--ink)}
 
 /* compare slider */
-.compare{margin:0}
+.compare{margin:0;width:100%;max-width:470px;justify-self:end}
 .stage{position:relative;aspect-ratio:746/808;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff;--pos:50%}
 .stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
 .stage .coarse{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
@@ -94,7 +95,7 @@ h1{font-family:var(--sans);font-weight:800;font-size:clamp(40px,6.2vw,68px);line
 .stage .knob{position:absolute;top:50%;left:var(--pos);width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;background:var(--ink);pointer-events:none;display:grid;place-items:center}
 .stage .knob svg{width:20px;height:20px}
 .stage input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
-.stage input:focus-visible ~ .knob{outline:3px solid var(--glacier);outline-offset:3px}
+.stage input:focus-visible ~ .knob{outline:none;box-shadow:0 0 0 3px #fff,0 0 0 6px var(--glacier)}
 .tag{position:absolute;top:12px;font-family:var(--sans);font-size:13px;font-weight:600;line-height:1;padding:7px 9px;border-radius:4px;background:var(--ink);color:#fff;pointer-events:none}
 .tag.l{left:12px}.tag.r{right:12px;background:var(--rust)}
 figcaption{font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--slate);margin-top:12px;max-width:62ch}
@@ -104,21 +105,116 @@ figcaption{font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--sl
 .seg button{font-family:var(--sans);font-size:14px;font-weight:600;line-height:1;padding:9px 12px;border:0;border-radius:6px;background:transparent;color:var(--slate);cursor:pointer;transition:background .2s,color .2s}
 .seg button:hover{color:var(--ink)}
 .seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
-.compare .seg{margin-top:14px}
+.compare .seg{margin-top:10px}
+.key{margin-top:10px}
+.key-bar{display:block;height:8px;border-radius:2px}
+.key-ticks{position:relative;display:block;height:18px;font-family:var(--sans);font-size:12px;color:var(--slate)}
+.key-ticks span{position:absolute;top:3px;transform:translateX(-50%)}
+.wkey{max-width:420px;margin:12px auto 0}
+.wkey-bar{display:flex;height:10px;border-radius:2px;overflow:hidden}
+.wkey-bar span{flex:1}
+.wkey-ticks{position:relative;height:18px;font-family:var(--sans);font-size:12px;color:var(--slate)}
+.wkey-ticks span{position:absolute;top:3px;transform:translateX(-50%)}
+.wkey-ticks span:first-child{transform:none}
+.wkey-ticks span:last-child{transform:translateX(-100%)}
+.pnote{font-family:var(--sans);font-size:13.5px;color:var(--slate);margin:-4px 0 16px!important}
+
 
 /* sections */
 .section{display:grid;grid-template-columns:190px minmax(0,1fr);gap:56px;padding:68px 0;border-top:1px solid var(--rule)}
-h2{font-family:var(--sans);font-weight:700;font-size:22px;line-height:1.2;letter-spacing:-.02em;margin:0;position:sticky;top:84px;align-self:start}
+h2{font-family:var(--sans);font-weight:700;font-size:26px;line-height:1.2;letter-spacing:-.02em;margin:0;position:sticky;top:84px;align-self:start}
 h3{font-family:var(--sans);font-weight:700;font-size:21px;line-height:1.25;letter-spacing:-.015em;margin:0 0 6px}
-h4{font-family:var(--sans);font-weight:700;font-size:15px;line-height:1.3;margin:36px 0 12px;color:var(--slate)}
-h4:first-child{margin-top:0}
+.subh{font-family:var(--sans);font-weight:700;font-size:15px;line-height:1.3;margin:36px 0 12px;color:var(--slate);letter-spacing:0}
+.subh:first-child{margin-top:0}
 .body > p,.body > ul{max-width:66ch}
+.body > ul.cards,.body > ul.highlights{max-width:none}
 .status{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--slate);margin:0 0 12px}
 
 .news{list-style:none;margin:0;padding:0;max-width:66ch}
 .news li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;padding:10px 0;border-bottom:1px solid var(--rule)}
 .news li:last-child{border-bottom:0}
 .when{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--slate);padding-top:3px;font-variant-numeric:tabular-nums}
+
+
+/* research at a glance */
+.glance{padding:60px 0 68px;border-top:1px solid var(--rule)}
+.glance h2{position:static;margin:0 0 26px}
+.tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.tiles li{display:flex}
+.tile{display:flex;flex-direction:column;width:100%;text-decoration:none;color:var(--ink);border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:#fff;transition:border-color .2s}
+.tile:hover{color:var(--ink);border-color:var(--ink)}
+.tile:hover .tile-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.tile img,.tile-art{display:block;width:100%;aspect-ratio:4/3;border-bottom:1px solid var(--rule)}
+.tile img{object-fit:cover;background:#fff}
+.tile-art{display:grid;place-items:center;background:var(--mist);color:var(--ink);font-family:var(--sans);font-weight:800;font-size:24px;line-height:1.1;letter-spacing:-.025em;text-align:center;padding:18px}
+.tile-art small{display:block;font-weight:500;font-size:14px;letter-spacing:0;color:var(--slate);margin-top:10px}
+.tile-body{display:flex;flex-direction:column;gap:6px;padding:16px 18px 20px}
+.tile-body p{margin:0}
+.tile-status{font-family:var(--sans);font-size:13px;font-weight:600;line-height:1.3;color:var(--slate)}
+.tile-status.live{color:var(--rust)}
+.tile-title{font-family:var(--sans);font-weight:700;font-size:17px;line-height:1.3;letter-spacing:-.01em;margin:0;color:var(--ink)}
+.tile-line{font-size:15.5px;line-height:1.5;color:var(--slate)}
+
+/* about with recent beside it */
+.about-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:32px;align-items:start}
+.about-text p{max-width:66ch}
+.recent{border-left:1px solid var(--rule);padding-left:30px}
+.recent-h{font-family:var(--sans);font-weight:700;font-size:15px;color:var(--slate);margin:0 0 6px}
+.recent .news li{grid-template-columns:70px minmax(0,1fr);gap:12px;font-size:15.5px;line-height:1.5}
+.recent .when{font-size:13px}
+
+
+/* ongoing work cards */
+.cards{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:start}
+.card{display:flex;flex-direction:column;border-top:2px solid var(--ink);padding:14px 0 0}
+.card p{font-size:16px;line-height:1.6;margin:0 0 .8em;max-width:60ch;color:var(--ink)}
+.card p:last-child{margin-bottom:0}
+.card p.card-status{order:-1;font-family:var(--sans);font-size:13px;font-weight:600;line-height:1.3;color:var(--slate);margin:0 0 8px}
+.card p.card-status.live{color:var(--rust)}
+.card-title{font-family:var(--sans);font-weight:700;font-size:17.5px;line-height:1.3;letter-spacing:-.01em;color:var(--ink);margin:0 0 10px}
+.card p.card-next{color:var(--slate)}
+
+/* experience in three columns */
+.tools{margin-top:8px}
+.tools p{max-width:72ch}
+
+/* conference timeline */
+.timeline{margin:0 0 44px}
+.tl-key{display:flex;gap:18px;justify-content:flex-end;font-family:var(--sans);font-size:13px;color:var(--slate);margin:0 0 6px}
+.tl-key span{display:inline-flex;align-items:center;gap:6px}
+.tl-key i{display:inline-block;width:10px;height:10px;border-radius:50%;border:2px solid var(--ink);background:#fff}
+.tl-key i.solid{background:var(--ink)}
+.tl-key i.dash{background:radial-gradient(circle,var(--ink) 0 1.6px,#fff 2.2px)}
+.tl-scroll{position:relative;overflow-x:auto;scrollbar-width:thin}
+.tl-scroll:focus-visible{outline:2px solid var(--glacier);outline-offset:4px}
+.tl-years{position:absolute;inset:0;min-width:780px;pointer-events:none}
+.tl-years span{position:absolute;top:0;bottom:0;left:var(--x);border-left:1px dashed var(--rule)}
+.tl-years b{position:absolute;left:8px;bottom:0;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--slate);letter-spacing:.02em}
+.tl{--base:58%;position:relative;list-style:none;margin:0;padding:0;height:236px;min-width:780px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:var(--base);height:1px;background:var(--slate)}
+.tl li{position:absolute;top:0;bottom:0;left:var(--x);width:0}
+.tl li::before{content:"";position:absolute;left:-.5px;width:1px;height:14px;background:var(--slate)}
+.tl li.up::before{bottom:calc(100% - var(--base))}
+.tl li.down::before{top:var(--base)}
+.tl-dot{position:absolute;top:var(--base);left:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#fff;border:2px solid var(--ink);z-index:1}
+.tl li.abroad .tl-dot{background:var(--ink)}
+.tl li.online .tl-dot{background:radial-gradient(circle,var(--ink) 0 2px,#fff 2.6px)}
+.tl-lab{position:absolute;left:-8px;width:120px;padding-right:4px;background:#fff;z-index:1;font-family:var(--sans);font-size:13px;line-height:1.35;color:var(--slate)}
+.tl-lab strong{display:block;font-weight:600;color:var(--ink)}
+.tl li.up .tl-lab{bottom:calc(100% - var(--base) + 18px)}
+.tl li.down .tl-lab{top:calc(var(--base) + 18px)}
+.tl li.end .tl-lab{left:auto;right:-8px;text-align:right;padding:0 0 0 4px}
+.tl li.far::before{height:84px}
+.tl li.far .tl-lab{bottom:calc(100% - var(--base) + 88px)}
+.ptag{display:inline-block;font-family:var(--sans);font-size:12px;font-weight:600;line-height:1;color:var(--slate);border:1px solid var(--rule);border-radius:3px;padding:3px 6px;margin-left:4px;vertical-align:1px;white-space:nowrap}
+.highlights{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.hl{display:grid;grid-template-columns:112px minmax(0,1fr);gap:14px;align-items:start}
+.hl img{width:112px;height:112px;object-fit:cover;border:1px solid var(--rule);border-radius:4px;background:#fff}
+.hl p{margin:0}
+.hl-t{font-family:var(--sans);font-weight:600;font-size:15px;line-height:1.3;color:var(--ink);margin-bottom:4px!important}
+.hl-v{font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--slate)}
+.hl-l{font-family:var(--sans);font-size:13.5px;font-weight:600;margin-top:6px!important}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 
 /* research */
 .research{row-gap:44px}
@@ -135,10 +231,6 @@ hr.sep{grid-column:1/-1;width:100%;border:0;border-top:1px solid var(--rule);mar
 .work figure{margin:24px 0 0;max-width:560px}
 .work figure a,.step-fig a,.ex-map{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:#fff}
 .work figure img,.step-fig img{width:100%}
-.ongoing{list-style:none;margin:0;padding:0;max-width:66ch}
-.ongoing li{padding:14px 0;border-top:1px solid var(--rule)}
-.ongoing li:first-child{border-top:0;padding-top:0}
-.ongoing strong{font-family:var(--sans);font-weight:700;font-size:16.5px;display:block;margin-bottom:2px}
 
 /* scroll stories: stacked by default, sticky figure on wide screens */
 .story{grid-column:1/-1}
@@ -152,19 +244,20 @@ hr.sep{grid-column:1/-1;width:100%;border:0;border-top:1px solid var(--rule);mar
 .story-stage{display:none}
 
 .story.story-on{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;align-items:start}
-.story-on .story-stage{display:flex;flex-direction:column;position:sticky;top:76px;height:calc(100vh - 100px);max-height:800px;min-height:420px}
-.story-on .stage-frame{position:relative;flex:1;display:block;border:1px solid var(--rule);border-radius:6px;background:#fff;overflow:hidden;cursor:zoom-in}
+.story-on .story-stage{display:flex;flex-direction:column;position:sticky;top:76px}
+.story-on .stage-frame{position:relative;flex:none;aspect-ratio:4/3;max-height:calc(100vh - 190px);display:block;transition:aspect-ratio .3s ease;border:1px solid var(--rule);border-radius:6px;background:#fff;overflow:hidden;cursor:zoom-in}
 .story-on .stage-frame img{position:absolute;top:18px;left:18px;width:calc(100% - 36px);height:calc(100% - 36px);object-fit:contain;opacity:0;transition:opacity .5s ease}
 .story-on .stage-frame img.on{opacity:1}
 .stage-cap{display:flex;gap:14px;font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--slate);margin:12px 0 0;min-height:4.5em}
 .stage-count{flex:none;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
-.story-on .step-fig{display:none}
-.story-on .steps{padding:4vh 0 10vh}
-.story-on .step{min-height:68vh;margin:0;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .35s ease}
+.story-on .step-fig{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0}
+.story-on .steps{padding:2vh 0 0}
+.story-on .step{min-height:52vh;margin:0;display:flex;flex-direction:column;justify-content:center;opacity:.72;transition:opacity .35s ease}
+.story-on .step:last-child{min-height:44vh}
 .story-on .step.on{opacity:1}
 
 /* warming explorer */
-.explorer{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;align-items:center;padding:36px;border-radius:8px;background:var(--mist)}
+.explorer{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) 406px;gap:56px;align-items:center;padding:36px;border-radius:8px;background:var(--mist)}
 .ex-map{margin:0;padding:22px 22px 18px}
 .ex-map img{margin:0 auto;width:100%;max-width:420px}
 .ex-map .ex-bar{max-width:420px;margin-top:10px}
@@ -174,7 +267,7 @@ hr.sep{grid-column:1/-1;width:100%;border:0;border-top:1px solid var(--rule);mar
 .ex-panel input[type=range]{width:100%;margin:4px 0;accent-color:var(--rust);cursor:pointer}
 .ticks{display:flex;justify-content:space-between;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--slate)}
 .readout{margin:28px 0 0;font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--slate)}
-.readout .big{display:block;font-weight:800;font-size:46px;letter-spacing:-.03em;line-height:1;color:var(--rust);margin-bottom:8px;font-variant-numeric:tabular-nums}
+.readout .big{display:block;font-weight:800;font-size:46px;letter-spacing:-.03em;line-height:1;color:var(--rust);margin-bottom:8px}
 
 .refs{list-style:none;margin:0;padding:0;max-width:70ch}
 .refs li{padding:0 0 16px;font-size:16.5px;line-height:1.55}
@@ -189,7 +282,8 @@ summary{font-family:var(--sans);font-size:15px;font-weight:600;color:var(--glaci
 .rows .when{padding-top:4px}
 .rows strong{font-family:var(--sans);font-weight:700;font-size:16.5px;display:block;line-height:1.35}
 .rows span.sub{display:block;color:var(--slate);font-size:16px}
-.rows p{margin:6px 0 0;font-size:16px}
+.rows p{margin:6px 0 0;font-size:16px;color:var(--slate)}
+.rows .when{font-weight:500}
 
 .mail{list-style:none;margin:0 0 24px;padding:0;font-family:var(--sans)}
 .mail li{display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;padding:10px 0;border-bottom:1px solid var(--rule)}
@@ -204,21 +298,78 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 .js .reveal:not(.in){opacity:0;transform:translateY(14px)}
 
 @media (min-width:901px){
+  .cols2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 52px;align-items:start}
+  .cols2 > div > :first-child{margin-top:0}
+  .refs.two{columns:2;column-gap:52px;max-width:none}
+  .refs.two li{break-inside:avoid}
+}
+@media (min-width:901px) and (max-width:1100px), (min-width:1200px){
+  .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px;align-items:start}
+  .cols3 .rows li{grid-template-columns:1fr;gap:2px}
+  .cols3 > div > :first-child{margin-top:0}
+  .cols3 .subh{color:var(--ink);border-top:2px solid var(--ink);padding-top:10px}
+}
+@media (min-width:1101px){
+  .work.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:52px;align-items:start}
+  .work.split > *{grid-column:1}
+  .work.split > figure{grid-column:2;grid-row:1 / span 6;margin:0}
+}
+@media (max-width:1100px){
+  .section{grid-template-columns:minmax(0,1fr);gap:24px}
+  h2{position:static}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .recent{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:24px;max-width:66ch}
+}
+@media (min-width:1101px){
   .section > .body{grid-column:2}
 }
+@media (max-width:1060px){
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile img,.tile-art{aspect-ratio:16/9}
+}
 @media (max-width:900px){
+  .compare{justify-self:start}
+  .cards{grid-template-columns:1fr;gap:24px}
+  .timeline{display:none}
+  .timeline + .subh{margin-top:0}
+  .bar nav{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:24px}
+  .highlights{grid-template-columns:1fr;gap:18px}
+  .glance{padding:44px 0 48px}
   .hero{padding:40px 0 56px}
   .hero-grid{grid-template-columns:1fr;gap:44px}
-  .compare{max-width:460px}
-  .section{grid-template-columns:1fr;gap:22px;padding:48px 0}
+  .compare{max-width:min(460px,calc(56vh * .923))}
+  .section{padding:48px 0}
   .research{row-gap:32px}
-  h2{position:static;font-size:24px}
+  h2{font-size:24px}
   .explorer{grid-template-columns:1fr;gap:28px;padding:20px}
 }
+@media (max-width:900px){
+  .cols2 > div + div > .subh:first-child,.cols3 > div + div > .subh:first-child{margin-top:36px}
+}
+@media (max-width:600px){
+  .long{display:none}
+  .short{display:inline}
+  .hero-grid{gap:20px}
+  .hero-grid > div:first-child{display:contents}
+  .who{order:1;margin-bottom:0}
+  .role{order:2;margin:0}
+  .lede{order:3;margin:0;font-size:19px}
+  .open{order:4;margin:0}
+  .compare{order:5}
+  .hero .links{order:6}
+}
 @media (max-width:560px){
+  .tiles{grid-template-columns:1fr;gap:14px}
+  .tile{flex-direction:row}
+  .tile img,.tile-art{width:96px;height:96px;flex:none;aspect-ratio:1;align-self:flex-start;margin:14px 0 14px 14px;border:1px solid var(--rule);border-radius:4px}
+  .tile-art{font-size:15px;padding:10px}
+  .tile-art small{display:none}
+  .tile-body{padding:12px 14px 14px}
+  .tile-line{font-size:14.5px}
   body{font-size:16.5px}
   .wrap{padding:0 20px}
-  .bar-name{display:none}
+  .bar-name{font-size:14px}
   .bar nav{margin-left:0}
   .who{gap:16px}
   .who img{width:84px;height:105px}
@@ -240,7 +391,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 
 <header class="bar">
   <div class="wrap">
-    <a class="bar-name" href="#top">Shailesh Kumar Jha</a>
+    <a class="bar-name" href="#top"><span class="long">Shailesh Kumar Jha</span><span class="short">S. K. Jha</span></a>
     <nav aria-label="Sections">
       <a href="#about">About</a>
       <a href="#research">Research</a>
@@ -248,6 +399,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       <a href="#conferences">Conferences</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
+      <a href="assets/Shailesh_Jha_CV.pdf">CV</a>
     </nav>
   </div>
 </header>
@@ -258,10 +410,10 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
   <div class="wrap hero-grid">
     <div>
       <div class="who">
-        <img src="assets/shailesh.jpg" alt="Portrait of Shailesh Kumar Jha" width="528" height="660">
+        <img src="assets/shailesh-sm.jpg" alt="Portrait of Shailesh Kumar Jha" width="208" height="260">
         <h1>Shailesh Kumar Jha</h1>
       </div>
-      <p class="role"><strong>PhD candidate</strong>, School of Civil and Environmental Engineering, IIT Mandi<br><strong>DAAD GROW visiting researcher</strong>, Technical University of Munich</p>
+      <p class="role"><strong>PhD candidate</strong>, <span class="long">School of Civil and Environmental Engineering, </span>IIT Mandi<br><strong>DAAD GROW visiting researcher</strong>, <span class="long">Technical University of Munich</span><span class="short">TU Munich</span></p>
       <p class="lede">I build generative deep learning models that turn coarse climate projections into daily fields at about 10 km, and I test how far those fields can be trusted.</p>
       <p class="open">Looking for postdoctoral positions starting in mid-2027.</p>
       <ul class="links">
@@ -276,7 +428,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 
     <figure class="compare">
       <div class="stage" id="stage">
-        <img id="day-fine" src="assets/day-heat-fine.webp" alt="Daily mean temperature over India at 0.1 degree from the diffusion model, 31 May 2012, with sharp gradients along the Himalaya and the Western Ghats" width="746" height="808">
+        <img id="day-fine" fetchpriority="high" src="assets/day-heat-fine.webp" alt="Daily mean temperature over India at 0.1 degree from the diffusion model, 31 May 2012, with sharp gradients along the Himalaya and the Western Ghats" width="746" height="808">
         <img id="day-coarse" class="coarse" src="assets/day-heat-coarse.webp" alt="The same day at 1.0 degree, where India appears as large uniform blocks" width="746" height="808">
         <span class="tag l" aria-hidden="true">1.0° input</span>
         <span class="tag r" aria-hidden="true">0.1° output</span>
@@ -284,45 +436,83 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
         <span class="line" aria-hidden="true"></span>
         <span class="knob" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5l-4 5 4 5M13 5l4 5-4 5"/></svg></span>
       </div>
+      <div class="key" aria-hidden="true"><span class="key-bar" style="background:linear-gradient(90deg,#001361 0%,#022b71 6%,#024381 12%,#0b5d91 19%,#2f7ca6 25%,#5d9cbb 31%,#92bdd0 38%,#c5dce6 44%,#ebe5e0 50%,#ebccb9 56%,#dcac8e 62%,#cd8d66 69%,#c37242 75%,#b1511d 81%,#922e04 88%,#731306 94%,#5a0008 100%)"></span><span class="key-ticks"><span style="left:14.1%">−10</span><span style="left:31.4%">0</span><span style="left:48.7%">10</span><span style="left:66.0%">20</span><span style="left:83.3%">30</span></span></div>
       <div class="seg" id="days" role="group" aria-label="Choose a day">
         <button type="button" data-day="heat" aria-pressed="true">Heat</button>
         <button type="button" data-day="cold" aria-pressed="false">Cold</button>
         <button type="button" data-day="monsoon" aria-pressed="false">Monsoon</button>
         <button type="button" data-day="winter" aria-pressed="false">Winter</button>
       </div>
-      <figcaption><span id="day-cap">Daily mean temperature on 31 May 2012, an extreme heat day.</span> Drag the divider to compare the 1.0° input with the 0.1° output of the diffusion model.</figcaption>
+      <figcaption><span id="day-cap">Daily mean temperature on 31 May 2012, an extreme heat day.</span> Drag the divider to compare the 1.0° input with the 0.1° output of the diffusion model. Both halves and all four days share one temperature scale in °C.</figcaption>
     </figure>
   </div>
 </section>
 
 <div class="wrap">
 
-<section class="section" id="about">
-  <h2>About</h2>
-  <div class="body">
-    <p>I am a PhD candidate at the Indian Institute of Technology Mandi, where I work with Dr. Vivek Gupta in the HIMPACT Lab. My research uses generative deep learning, mainly diffusion and flow matching, to downscale climate and remote sensing data over India. I care about what these models get right beyond pointwise error: uncertainty, extremes, fine-scale structure and transfer to regions outside the training domain.</p>
-    <p>From October 2026 to January 2027 I am a DAAD GROW visiting researcher with Prof. Niklas Boers at the Technical University of Munich, working on a diffusion emulator of kilometre-scale regional climate simulations over the Alps.</p>
-    <p>I am looking for postdoctoral positions starting in mid-2027. I am most interested in generative models for regional climate emulation and downscaling, uncertainty quantification and extremes, transfer across mountain regions, and machine learning for weather forecasting and forecast post-processing.</p>
-    <p>Before my PhD I studied statistics (BSc, Central University of Rajasthan) and geoinformatics (MSc, TERI School of Advanced Studies).</p>
-  </div>
+<section class="glance" aria-labelledby="glance-h">
+  <h2 id="glance-h">Research at a glance</h2>
+  <ul class="tiles">
+    <li><a class="tile" href="#temperature" aria-labelledby="g1-t g1-s" aria-describedby="g1-d">
+      <img src="assets/g-temp.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+      <div class="tile-body">
+        <p class="tile-status" id="g1-s">Under review. Dataset released.</p>
+        <h3 class="tile-title" id="g1-t">Probabilistic temperature downscaling</h3>
+        <p class="tile-line" id="g1-d">Diffusion ensembles downscale ten CMIP6 models to daily 0.1° over India, to 2100 under three scenarios.</p>
+      </div>
+    </a></li>
+    <li><a class="tile" href="#precipitation" aria-labelledby="g2-t g2-s" aria-describedby="g2-d">
+      <img src="assets/g-precip.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+      <div class="tile-body">
+        <p class="tile-status" id="g2-s">Under review. Dataset released.</p>
+        <h3 class="tile-title" id="g2-t">Generative precipitation downscaling</h3>
+        <p class="tile-line" id="g2-d">In a perfect-model benchmark of five methods, only diffusion and flow matching match the observed return levels of extreme daily rain.</p>
+      </div>
+    </a></li>
+    <li><a class="tile" href="#cnn" aria-labelledby="g4-t g4-s" aria-describedby="g4-d">
+      <img src="assets/g-cnn.webp" alt="" width="640" height="480" loading="lazy" decoding="async">
+      <div class="tile-body">
+        <p class="tile-status" id="g4-s">Published, Frontiers in Climate 2025</p>
+        <h3 class="tile-title" id="g4-t">CNN super-resolution for temperature</h3>
+        <p class="tile-line" id="g4-d">A comparison of SRCNN, VDSR and EDSR for 10× ERA5 temperature downscaling over the Indian subcontinent.</p>
+      </div>
+    </a></li>
+    <li><a class="tile" href="#ongoing" aria-labelledby="g3-t g3-s" aria-describedby="g3-d">
+      <span class="tile-art" aria-hidden="true"><span>3 km emulation<small>Alps, TU Munich</small></span></span>
+      <div class="tile-body">
+        <p class="tile-status live" id="g3-s">Ongoing, DAAD GROW at TU Munich</p>
+        <h3 class="tile-title" id="g3-t">Emulating kilometre-scale climate simulations</h3>
+        <p class="tile-line" id="g3-d">A latent diffusion emulator of 3 km WRF simulations over the Alps, now being tested outside its training region.</p>
+      </div>
+    </a></li>
+  </ul>
 </section>
 
-<section class="section" id="news">
-  <h2>Recent</h2>
-  <div class="body">
-    <ul class="news">
+<section class="section" id="about">
+  <h2>About</h2>
+  <div class="body about-grid">
+    <div class="about-text">
+      <p>I am a PhD candidate at the Indian Institute of Technology Mandi, where I work with Dr. Vivek Gupta in the HIMPACT Lab. My research uses generative deep learning, mainly diffusion and flow matching, to downscale climate and remote sensing data over India. I care about what these models get right beyond pointwise error: uncertainty, extremes, fine-scale structure and transfer to regions outside the training domain.</p>
+      <p>From October 2026 to January 2027 I am a DAAD GROW visiting researcher with Prof. Niklas Boers at the Technical University of Munich, working on a diffusion emulator of kilometre-scale regional climate simulations over the Alps.</p>
+      <p>I am looking for postdoctoral positions starting in mid-2027. I am most interested in generative models for regional climate emulation and downscaling, uncertainty quantification and extremes, transfer across mountain regions, and machine learning for weather forecasting and forecast post-processing.</p>
+      <p>Before my PhD I studied statistics (BSc, Central University of Rajasthan) and geoinformatics (MSc, TERI School of Advanced Studies).</p>
+    </div>
+    <aside class="recent" id="news" aria-labelledby="recent-h">
+      <h3 class="recent-h" id="recent-h">Recent</h3>
+      <ul class="news">
       <li><span class="when">Oct 2026</span><span>Started a four-month DAAD GROW research stay with Prof. Niklas Boers at TU Munich.</span></li>
       <li><span class="when">2026</span><span>Released two open datasets on Zenodo: downscaled daily <a href="https://doi.org/10.5281/zenodo.18951710">temperature</a> and <a href="https://doi.org/10.5281/zenodo.21903246">precipitation</a> for India at 0.1°.</span></li>
       <li><span class="when">2026</span><span>Our work on uncertainty quantification in generative climate downscaling was presented at the EGU General Assembly 2026.</span></li>
       <li><span class="when">2025</span><span>First-author paper on deep learning super-resolution for temperature downscaling published in <a href="https://doi.org/10.3389/fclim.2025.1572428">Frontiers in Climate</a>.</span></li>
     </ul>
+    </aside>
   </div>
 </section>
 
 <section class="section research" id="research">
   <h2>Research</h2>
 
-  <div class="body intro">
+  <div class="body intro" id="temperature">
     <h3>Probabilistic temperature downscaling with diffusion</h3>
     <p class="status">Manuscript under review. Dataset released.</p>
     <p>A deterministic network trained on squared error predicts the conditional mean, so it smooths away the variance and tails of local temperature. I couple a conditional diffusion model (DDPM) with quantile delta mapping to downscale daily near-surface temperature from 1° to 0.1° over India, for ten CMIP6 models and three emission scenarios out to 2100.</p>
@@ -333,7 +523,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
     <ol class="steps">
       <li class="step">
         <figure class="step-fig reveal">
-          <a href="assets/t-ensemble.webp"><img loading="lazy" src="assets/t-ensemble.webp" alt="Three maps of India for 14 December 2013: ensemble mean temperature, ensemble spread and absolute error of one member" width="1600" height="752"></a>
+          <a href="assets/t-ensemble.webp"><img loading="lazy" src="assets/t-ensemble.webp" alt="Three maps of India for 14 December 2013: ensemble mean temperature, ensemble spread and absolute error of one member" width="1600" height="714"></a>
           <figcaption>14 December 2013: ten-member ensemble mean, per-pixel ensemble spread, and the absolute error of one member against the MSWX reference.</figcaption>
         </figure>
         <div class="step-text">
@@ -376,9 +566,9 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 
   <div class="explorer reveal" id="warming">
     <figure class="ex-map">
-      <img id="warm-img" src="assets/warm-245-near.webp" alt="Map of projected warming over India, SSP2-4.5, 2021 to 2040" width="580" height="566">
-      <img class="ex-bar" src="assets/warm-colorbar.webp" alt="Colour scale for warming from 0 to 5 °C" width="1120" height="125">
-      <figcaption>Multi-model mean of ten CMIP6 models after diffusion downscaling, relative to 1995 to 2014. The inset shows the distribution across India's grid cells.</figcaption>
+      <img id="warm-img" loading="lazy" decoding="async" src="assets/warm-245-near.webp" alt="Map of projected warming over India, SSP2-4.5, 2021 to 2040" width="580" height="566">
+      <div class="wkey" aria-hidden="true"><div class="wkey-bar"><span style="background:#f9f2e4"></span><span style="background:#fce6c5"></span><span style="background:#fed59c"></span><span style="background:#fdc377"></span><span style="background:#f7ab4e"></span><span style="background:#e78f24"></span><span style="background:#d5770e"></span><span style="background:#bc6107"></span><span style="background:#a65105"></span><span style="background:#8b4307"></span></div><div class="wkey-ticks"><span style="left:0%">0</span><span style="left:20%">1</span><span style="left:40%">2</span><span style="left:60%">3</span><span style="left:80%">4</span><span style="left:100%">5</span></div></div>
+      <figcaption>Multi-model mean of ten CMIP6 models after diffusion downscaling, relative to 1995 to 2014. Warming in °C. The inset shows its distribution across India's grid cells.</figcaption>
     </figure>
     <div class="ex-panel">
       <h4 class="step-title">Explore the projections</h4>
@@ -398,7 +588,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 
   <hr class="sep">
 
-  <div class="body intro">
+  <div class="body intro" id="precipitation">
     <h3>Diffusion and flow matching for precipitation extremes</h3>
     <p class="status">Manuscript under review. Dataset released.</p>
     <p>Precipitation is intermittent and heavy-tailed, and most of its impact sits in the upper tail. I benchmark diffusion and flow matching against three deterministic methods for 10× daily precipitation downscaling over India, with a 14-year test period.</p>
@@ -449,8 +639,8 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       </li>
       <li class="step">
         <figure class="step-fig reveal">
-          <a href="assets/p-monsoon.webp"><img loading="lazy" src="assets/p-monsoon.webp" alt="Composite precipitation anomaly maps for active and break phases of the monsoon, for the observations and five methods" width="1100" height="1444"></a>
-          <figcaption>Composite precipitation anomalies for active and break phases of the summer monsoon, observed and for the five methods.</figcaption>
+          <a href="assets/p-monsoon-full.webp"><img loading="lazy" src="assets/p-monsoon.webp" alt="Composite precipitation anomaly maps for active and break phases of the monsoon: observed, diffusion and flow matching" width="1200" height="812"></a>
+          <figcaption>Composite precipitation anomalies for active and break phases of the summer monsoon: observed, diffusion and flow matching. All five methods are in the full-size figure.</figcaption>
         </figure>
         <div class="step-text">
           <h4 class="step-title">The monsoon's rhythm</h4>
@@ -459,7 +649,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       </li>
       <li class="step">
         <figure class="step-fig reveal">
-          <a href="assets/p-cost.webp"><img loading="lazy" src="assets/p-cost.webp" alt="Distributional error and extreme quantile ratio against number of network evaluations and wall-clock time, for flow matching solvers and DDPM" width="1400" height="1047"></a>
+          <a href="assets/p-cost.webp"><img loading="lazy" src="assets/p-cost.webp" alt="Distributional error and extreme quantile ratio against number of network evaluations and wall-clock time, for flow matching solvers and DDPM" width="1400" height="995"></a>
           <figcaption>Sampling cost against distributional fidelity for flow matching solvers and the diffusion baseline.</figcaption>
         </figure>
         <div class="step-text">
@@ -473,16 +663,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
   <hr class="sep">
 
   <div class="body">
-    <article class="work">
-      <h3>Ongoing work</h3>
-      <ul class="ongoing">
-        <li><strong>Emulating kilometre-scale climate simulations over the Alps</strong>At TU Munich I am building a residual latent diffusion emulator of 3 km CHAPTER WRF dynamical downscaling: 2 m temperature and 10 m wind conditioned on ERA5, terrain and land cover. I am also testing how well it transfers outside the training domain, as a step towards transfer from the Alps to the Himalaya.</li>
-        <li><strong>Where spatial resolution matters for cooling demand</strong>A framework that shows where resolution changes nonlinear impact variables, applied to cooling degree days over India.</li>
-        <li><strong>Density-based diagnostics for generative downscalers</strong>Diagnostics for a flow matching precipitation downscaler, validated on synthetic data with known ground truth.</li>
-      </ul>
-    </article>
-
-    <article class="work">
+    <article class="work split" id="cnn">
       <h3>CNN super-resolution for temperature</h3>
       <p class="status">Published in Frontiers in Climate, 2025.</p>
       <p>My first PhD study compared SRCNN, VDSR and EDSR for downscaling ERA5 2 m temperature by a factor of 10 over the Indian subcontinent, with residual networks for the steep terrain of the Himalaya and the Tibetan Plateau.</p>
@@ -493,54 +674,124 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       </figure>
     </article>
   </div>
+
+  <hr class="sep">
+
+  <div class="body" id="ongoing">
+    <h3>Ongoing work</h3>
+    <ul class="cards">
+      <li class="card">
+        <h4 class="card-title">Emulating kilometre-scale climate simulations over the Alps</h4>
+        <p class="card-status live">In progress at TU Munich</p>
+        <p>A latent diffusion model that emulates 3 km WRF regional climate simulations (CHAPTER) over the Alps, predicting 2 m temperature and 10 m wind from ERA5, terrain and land cover.</p>
+        <p class="card-next">Next: testing transfer outside the training region, as a step towards the Himalaya.</p>
+      </li>
+      <li class="card">
+        <h4 class="card-title">Where spatial resolution matters for cooling demand</h4>
+        <p class="card-status">Manuscript in preparation</p>
+        <p>Coarse grids misestimate impact indices that respond nonlinearly to temperature. I show where and by how much, using local curvature and subgrid variance, for cooling degree days over India.</p>
+      </li>
+      <li class="card">
+        <h4 class="card-title">Density-based diagnostics for generative downscalers</h4>
+        <p class="card-status">Manuscript in preparation</p>
+        <p>Diagnostics for a flow matching precipitation downscaler, validated on synthetic data with known ground truth.</p>
+      </li>
+    </ul>
+  </div>
 </section>
 
 <section class="section" id="publications">
   <h2>Publications</h2>
   <div class="body">
-    <h4>Journal articles</h4>
+    <div class="cols2"><div>
+    <h3 class="subh">Journal articles</h3>
     <ul class="refs">
       <li><span class="t">Deep learning super-resolution for temperature data downscaling: a comprehensive study using residual networks</span><span class="me">Jha, S. K.</span>, Gupta, V., Sharma, P. J., Mishra, A., &amp; Joshi, S. (2025). <span class="v"><em>Frontiers in Climate</em>, 7, 1572428.</span> <a href="https://doi.org/10.3389/fclim.2025.1572428">doi:10.3389/fclim.2025.1572428</a></li>
     </ul>
 
-    <h4>Under review</h4>
+    <h3 class="subh">Book chapters</h3>
+    <ul class="refs">
+      <li><span class="t">Study of internal waves near eastern coast of Andhra Pradesh</span><span class="me">Jha, S. K.</span>, Dash, M. K., &amp; Gupta, V. (2025). <span class="v">In <em>Water and Environment, Volume 2</em>, Proceedings of ICWROEE 2024, Lecture Notes in Civil Engineering 414, pp. 187-199. Springer, Singapore.</span> <a href="https://doi.org/10.1007/978-981-97-7502-6_17">doi:10.1007/978-981-97-7502-6_17</a></li>
+    </ul>
+
+    <h3 class="subh">Under review</h3>
     <ul class="refs">
       <li><span class="t">Diffusion-based probabilistic downscaling of daily CMIP6 temperature projections over India</span><span class="me">Jha, S. K.</span>, Sharma, P. J., Mishra, A., Joshi, S., &amp; Gupta, V.</li>
       <li><span class="t">Diffusion and flow matching for precipitation downscaling over India: a benchmark against statistical and deterministic methods</span><span class="me">Jha, S. K.</span>, Sharma, P. J., Mishra, A., Joshi, S., &amp; Gupta, V.</li>
     </ul>
 
-    <h4>In preparation</h4>
+    </div><div>
+    <h3 class="subh">In preparation</h3>
     <ul class="refs">
       <li><span class="t">Where spatial resolution matters for cooling demand</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V.</li>
       <li><span class="t">Density-based diagnostics for a flow-matching precipitation downscaler</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V.</li>
     </ul>
 
-    <h4>Datasets</h4>
+    <h3 class="subh">Datasets</h3>
     <ul class="refs">
       <li><span class="t">DDPM-downscaled CMIP6 daily temperature for India at 0.1°</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2026). <span class="v">Zenodo.</span> <a href="https://doi.org/10.5281/zenodo.18951710">doi:10.5281/zenodo.18951710</a></li>
       <li><span class="t">Deep learning based generative downscaling of daily total precipitation to 0.1 degree for India: flow matching and DDPM</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2026). <span class="v">Zenodo.</span> <a href="https://doi.org/10.5281/zenodo.21903246">doi:10.5281/zenodo.21903246</a></li>
     </ul>
+    </div></div>
   </div>
 </section>
 
 <section class="section" id="conferences">
   <h2>Conferences</h2>
   <div class="body">
-    <ul class="refs">
-      <li><span class="t">Uncertainty quantification in generative climate downscaling: a multi-ensemble DDPM analysis</span>Gupta, V., <span class="me">Jha, S. K.</span>, Sharma, P. J., Mishra, A., &amp; Joshi, S. (2026). <span class="v">EGU General Assembly 2026, EGU26-13665.</span></li>
-      <li><span class="t">Improving evapotranspiration resolution with Attention U-Net</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2025). <span class="v">XIIth Scientific Assembly of the International Association of Hydrological Sciences (IAHS 2025), IIT Roorkee, India.</span></li>
+    <figure class="timeline">
+      <p class="tl-key" aria-hidden="true"><span><i></i>In person, India</span><span><i class="solid"></i>In person, abroad</span><span><i class="dash"></i>Online</span></p>
+      <div class="tl-scroll" tabindex="0" role="region" aria-labelledby="tl-cap">
+      <div class="tl-years" aria-hidden="true"><span style="--x:0%"><b>2024</b></span><span style="--x:40%"><b>2025</b></span><span style="--x:80%"><b>2026</b></span></div>
+      <ol class="tl" role="list">
+        <li class="up" style="--x:5.2%"><span class="tl-dot"></span><span class="tl-lab"><strong>ICWROEE</strong>Feb 2024, Silchar</span></li>
+        <li class="down" style="--x:7.0%"><span class="tl-dot"></span><span class="tl-lab"><strong>Water Conclave</strong>Mar 2024, Roorkee</span></li>
+        <li class="up online end" style="--x:37.8%"><span class="tl-dot"></span><span class="tl-lab"><strong>AGU Fall Meeting</strong>Dec 2024, Washington, D.C.<span class="vh">, online</span></span></li>
+        <li class="down end" style="--x:47.3%"><span class="tl-dot"></span><span class="tl-lab"><strong>IGWC</strong>Mar 2025, Roorkee</span></li>
+        <li class="up far" style="--x:51.9%"><span class="tl-dot"></span><span class="tl-lab"><strong>ICWEES</strong>Apr 2025, Karaikal</span></li>
+        <li class="down online" style="--x:55%"><span class="tl-dot"></span><span class="tl-lab"><strong>EGU</strong>Apr 2025, Vienna<span class="vh">, online</span></span></li>
+        <li class="up abroad" style="--x:59.5%"><span class="tl-dot"></span><span class="tl-lab"><strong>EWRA</strong>Jun 2025, Palermo<span class="vh">, outside India</span></span></li>
+        <li class="down" style="--x:70.7%"><span class="tl-dot"></span><span class="tl-lab"><strong>IAHS</strong>Oct 2025, Roorkee</span></li>
+        <li class="up online end" style="--x:93.8%"><span class="tl-dot"></span><span class="tl-lab"><strong>EGU</strong>May 2026, Vienna<span class="vh">, online</span></span></li>
+      </ol>
+      </div>
+      <figcaption id="tl-cap">Meetings with my first-author or co-authored contributions, 2024 to 2026.</figcaption>
+    </figure>
+
+    <h3 class="subh">Presentation highlights</h3>
+    <ul class="highlights">
+      <li class="hl">
+        <img src="assets/h-iahs.webp" alt="Evapotranspiration map at 500 m from the cross-attention U-Net over Punjab and Haryana" width="240" height="240" loading="lazy" decoding="async">
+        <div><p class="hl-t">Attention U-Net for 500 m evapotranspiration</p><p class="hl-v">IAHS 2025, Roorkee. Poster.</p><p class="hl-l"><a href="assets/posters/Jha_IAHS2025_poster.pdf">Poster (PDF, 1.4 MB)</a></p></div>
+      </li>
+      <li class="hl">
+        <img src="assets/h-flood.webp" alt="Sentinel-1 SAR inundation map of Punjab for August 2023, with flooded areas in red" width="240" height="240" loading="lazy" decoding="async">
+        <div><p class="hl-t">Flood mapping in Punjab, July to August 2023</p><p class="hl-v">ICWEES 2025, Karaikal. Talk.</p></div>
+      </li>
+      <li class="hl">
+        <img src="assets/h-waves.webp" alt="Sentinel-2 image of internal wave packets off Kakinada, 26 March 2020" width="240" height="240" loading="lazy" decoding="async">
+        <div><p class="hl-t">Internal waves off Andhra Pradesh from Sentinel-2</p><p class="hl-v">ICWROEE 2024, Silchar. Talk.</p><p class="hl-l"><a href="https://doi.org/10.1007/978-981-97-7502-6_17">Book chapter (Springer)</a></p></div>
+      </li>
+    </ul>
+
+    <h3 class="subh">All presentations</h3>
+    <p class="pnote">I presented every entry that is not marked co-author.</p>
+    <ul class="refs two">
+      <li><span class="t">Uncertainty quantification in generative climate downscaling: a multi-ensemble DDPM analysis</span>Gupta, V., <span class="me">Jha, S. K.</span>, Sharma, P. J., Mishra, A., &amp; Joshi, S. (2026). <span class="v">EGU General Assembly 2026, Vienna, Austria, EGU26-13665.</span> <a href="https://doi.org/10.5194/egusphere-egu26-13665">doi:10.5194/egusphere-egu26-13665</a> <span class="ptag">Co-author</span> <span class="ptag">Online poster</span></li>
+      <li><span class="t">Improving evapotranspiration resolution with Attention U-Net downscaling</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2025). <span class="v">XIIth Scientific Assembly of the International Association of Hydrological Sciences (IAHS 2025), IIT Roorkee, India.</span> <a href="assets/posters/Jha_IAHS2025_poster.pdf">Poster (PDF, 1.4 MB)</a> <span class="ptag">Poster</span></li>
       <li><span class="t">From coarse to fine: relative humidity downscaling using AI model</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2025). <span class="v">13th World Congress on Water Resources and Environment (EWRA 2025), Palermo, Italy.</span></li>
-      <li><span class="t">Downscaling MODIS ET using deep learning</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2025). <span class="v">EGU General Assembly 2025, Vienna, EGU25-18599.</span> <a href="https://doi.org/10.5194/egusphere-egu25-18599">doi:10.5194/egusphere-egu25-18599</a></li>
-      <li><span class="t">Insights into the August 2023 Punjab floods: hydrological and operational perspectives</span>Pathania, A., Gupta, V., Raaj, S., <span class="me">Jha, S. K.</span>, MacAllister, D. J., Krishan, G., Brauns, B., &amp; Lapworth, D. (2025). <span class="v">International Groundwater Conference (IGWC 2025).</span></li>
-      <li><span class="t">Downscaling ERA5 daily 2-meter temperature with U-Net: enhancing local climate predictions</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2024). <span class="v">AGU Fall Meeting 2024.</span></li>
+      <li><span class="t">Downscaling MODIS ET using deep learning</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2025). <span class="v">EGU General Assembly 2025, Vienna, Austria, EGU25-18599.</span> <a href="https://doi.org/10.5194/egusphere-egu25-18599">doi:10.5194/egusphere-egu25-18599</a> <span class="ptag">Online poster</span></li>
+      <li><span class="t">Remote sensing-based flood assessment in Punjab: July to August 2023</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2025). <span class="v">International Conference on Water, Environment, Energy and Society (ICWEES 2025), NIT Puducherry, Karaikal, India.</span> <span class="ptag">Talk</span></li>
+      <li><span class="t">Insights into the August 2023 Punjab floods: hydrological and operational perspectives</span>Pathania, A., Gupta, V., Raaj, S., <span class="me">Jha, S. K.</span>, MacAllister, D. J., Krishan, G., Brauns, B., &amp; Lapworth, D. (2025). <span class="v">International Groundwater Conference (IGWC 2025), National Institute of Hydrology, Roorkee, India.</span> <span class="ptag">Co-author</span></li>
+      <li><span class="t">Downscaling ERA5 daily 2 metre temperature with U-Net: enhancing local climate predictions</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2024). <span class="v">AGU Fall Meeting 2024, Washington, D.C., USA, abstract GC01-143.</span> <a href="https://scixplorer.org/abs/2024AGUFMGC01..143J/abstract">Abstract</a> <span class="ptag">Online poster</span></li>
+      <li><span class="t">Study of internal waves near eastern coast of Andhra Pradesh</span><span class="me">Jha, S. K.</span>, Dash, M. K., &amp; Gupta, V. (2024). <span class="v">International Conference on Water Resources, Ocean and Environmental Engineering (ICWROEE 2024), NIT Silchar, India. Published as a book chapter.</span> <a href="https://doi.org/10.1007/978-981-97-7502-6_17">Chapter</a> <span class="ptag">Talk</span></li>
     </ul>
     <details>
-      <summary>Four earlier presentations from 2024</summary>
+      <summary>Three more from 2024</summary>
       <ul class="refs">
-        <li><span class="t">Estimating the water demand for the effective agricultural water management of paddy fields in Hisar district</span>Malik, H., Singh, R., Prakash, O. R., &amp; <span class="me">Jha, S. K.</span> (2024). <span class="v">32nd International Conference of Agricultural Economics.</span></li>
-        <li><span class="t">Study of internal waves near eastern coast of Andhra Pradesh</span><span class="me">Jha, S. K.</span>, Dash, M. K., &amp; Gupta, V. (2024). <span class="v">Book chapter in Water and Environment, Volume 2: Proceedings of ICWROE.</span></li>
-        <li><span class="t">Influence of elevation on evapotranspiration in the Northern Himalayas</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2024). <span class="v">Roorkee Water Conclave, IIT Roorkee and National Institute of Hydrology.</span></li>
-        <li><span class="t">Time series analysis of optical and microwave data for comprehensive crop monitoring</span><span class="me">Jha, S. K.</span>, Shukla, Y., Shukla, D. P., &amp; Gupta, V. (2024). <span class="v">Roorkee Water Conclave, IIT Roorkee and National Institute of Hydrology.</span></li>
+      <li><span class="t">Influence of elevation on evapotranspiration in the Northern Himalayas</span><span class="me">Jha, S. K.</span>, &amp; Gupta, V. (2024). <span class="v">Roorkee Water Conclave 2024, IIT Roorkee and National Institute of Hydrology, India.</span></li>
+      <li><span class="t">Time series analysis of optical and microwave data for comprehensive crop monitoring</span><span class="me">Jha, S. K.</span>, Shukla, Y., Shukla, D. P., &amp; Gupta, V. (2024). <span class="v">Roorkee Water Conclave 2024, IIT Roorkee and National Institute of Hydrology, India.</span></li>
+      <li><span class="t">Estimating the water demand for the effective agricultural water management of paddy fields in Hisar district</span>Malik, H., Singh, R., Prakash, O. R., &amp; <span class="me">Jha, S. K.</span> (2024). <span class="v">32nd International Conference of Agricultural Economics.</span> <span class="ptag">Co-author</span></li>
       </ul>
     </details>
   </div>
@@ -549,30 +800,31 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
 <section class="section" id="experience">
   <h2>Experience and education</h2>
   <div class="body">
-    <h4>Research</h4>
+    <div class="cols3"><div>
+    <h3 class="subh">Research</h3>
     <ul class="rows">
       <li><span class="when">Oct 2026 to Jan 2027</span><div><strong>Technical University of Munich</strong><span class="sub">DAAD GROW research fellow, hosted by Prof. Niklas Boers</span></div></li>
       <li><span class="when">Aug 2023 to present</span><div><strong>Indian Institute of Technology Mandi</strong><span class="sub">Doctoral researcher, HIMPACT Lab, advised by Dr. Vivek Gupta</span></div></li>
       <li><span class="when">Feb to Aug 2023</span><div><strong>The Energy and Resources Institute (TERI), New Delhi</strong><span class="sub">Intern</span><p>SAR-based deforestation change detection in Madre de Dios, Peru, and climate adaptation work for forests in Assam.</p></div></li>
       <li><span class="when">May to Jun 2022</span><div><strong>Indian Institute of Technology Kharagpur</strong><span class="sub">Intern, Centre for Oceans, Rivers, Atmosphere and Land Sciences</span><p>Internal waves near the coast of Andhra Pradesh from Sentinel-2 imagery.</p></div></li>
     </ul>
-
-    <h4>Education</h4>
+    </div><div>
+    <h3 class="subh">Education</h3>
     <ul class="rows">
       <li><span class="when">2023 to 2027 (expected)</span><div><strong>PhD in Civil Engineering</strong><span class="sub">Indian Institute of Technology Mandi</span></div></li>
       <li><span class="when">2021 to 2023</span><div><strong>MSc in Geoinformatics</strong><span class="sub">TERI School of Advanced Studies, New Delhi</span></div></li>
       <li><span class="when">2018 to 2021</span><div><strong>BSc in Statistics</strong><span class="sub">Central University of Rajasthan</span></div></li>
     </ul>
-
-    <h4>Fellowships and funding</h4>
+    <h3 class="subh">Tools</h3>
+    <p>PyTorch, diffusion models and flow matching, U-Net and residual networks. CMIP6, ERA5, WRF output, NetCDF and Zarr. Python, R, C/C++ and SQL on GPU servers and HPC. QGIS, ArcGIS and Google Earth Engine.</p>
+    </div><div>
+    <h3 class="subh">Fellowships and funding</h3>
     <ul class="rows">
       <li><span class="when">2026 to 2027</span><div><strong>DAAD GROW Research Fellowship</strong><span class="sub">German Academic Exchange Service (DAAD)</span></div></li>
       <li><span class="when">2025 to 2027</span><div><strong>ISRO RESPOND project</strong><span class="sub">Department of Space, Government of India. Downscaling of climate datasets for climate change impact assessment.</span></div></li>
       <li><span class="when">2023 to 2024</span><div><strong>FCDO project, United Kingdom</strong><span class="sub">Flooding from persistent heavy monsoon rain in Northwest India: impact and implications for resilience.</span></div></li>
     </ul>
-
-    <h4>Tools</h4>
-    <p>PyTorch, diffusion models and flow matching, U-Net and residual networks. CMIP6, ERA5, WRF output, NetCDF and Zarr. Python, R, C/C++ and SQL on GPU servers and HPC. QGIS, ArcGIS and Google Earth Engine.</p>
+    </div></div>
   </div>
 </section>
 
@@ -614,7 +866,9 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
   var stage=d.getElementById('stage'),input=d.getElementById('cmp');
   function setPos(v){stage.style.setProperty('--pos',v+'%')}
   var touched=false;
-  input.addEventListener('input',function(){touched=true;setPos(input.value)});
+  function vt(v){input.setAttribute('aria-valuetext',Math.round(v)+'% of the map shows the 1.0 degree input')}
+  vt(50);
+  input.addEventListener('input',function(){touched=true;setPos(input.value);vt(input.value)});
   if(!still){
     var from=96,to=50,dur=1500,t0=null;
     setPos(from);
@@ -652,9 +906,9 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       f.src='assets/day-'+k+'-fine.webp';c.src='assets/day-'+k+'-coarse.webp';
     });
   });
-  window.addEventListener('load',function(){
-    setTimeout(function(){Object.keys(DAYS).forEach(function(k){new Image().src='assets/day-'+k+'-fine.webp';new Image().src='assets/day-'+k+'-coarse.webp'})},1200);
-  });
+  var daysLoaded=false,daysEl=d.getElementById('days');
+  function preloadDays(){if(daysLoaded)return;daysLoaded=true;Object.keys(DAYS).forEach(function(k){new Image().src='assets/day-'+k+'-fine.webp';new Image().src='assets/day-'+k+'-coarse.webp'})}
+  daysEl.addEventListener('pointerenter',preloadDays);daysEl.addEventListener('focusin',preloadDays);daysEl.addEventListener('touchstart',preloadDays,{passive:true});
 
   /* Menu follows the section being read. */
   var nav=d.querySelector('.bar nav'),links={};
@@ -705,6 +959,7 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       im.alt=src.alt;im.decoding='async';im.setAttribute('data-src',src.getAttribute('src'));
       frame.appendChild(im);return im;
     });
+    capEl.setAttribute('aria-hidden','true');
     stageEl.appendChild(frame);stageEl.appendChild(capEl);
     story.insertBefore(stageEl,story.firstChild);
     var cur=-1;
@@ -713,13 +968,15 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
       if(i===cur)return;cur=i;
       load(i);load(i+1);
       imgs.forEach(function(im,k){
-        im.classList.toggle('on',k===i);
-        if(k===i)im.removeAttribute('aria-hidden');else im.setAttribute('aria-hidden','true');
+        im.classList.toggle('on',k===i);im.setAttribute('aria-hidden','true');
       });
       steps.forEach(function(s,k){s.classList.toggle('on',k===i)});
       frame.href=steps[i].querySelector('a').getAttribute('href');
+      var si=steps[i].querySelector('img'),iw=+si.getAttribute('width'),ih=+si.getAttribute('height');
+      if(iw&&ih)frame.style.aspectRatio=((iw+36)/(ih+36)).toFixed(3);
       ctext.textContent=steps[i].querySelector('figcaption').textContent;
       count.textContent=(i+1)+' / '+steps.length;
+      frame.setAttribute('aria-label','Open figure '+(i+1)+' of '+steps.length+' full size');
     }
     var io=hasIO?new IntersectionObserver(function(es){
       es.forEach(function(e){if(e.isIntersecting)show(steps.indexOf(e.target))});
@@ -727,10 +984,12 @@ footer{border-top:1px solid var(--rule);padding:28px 0 48px;font-family:var(--sa
     function apply(){
       if(wide.matches&&io){
         story.classList.add('story-on');
+        steps.forEach(function(s){var l=s.querySelector('.step-fig a');if(l)l.setAttribute('tabindex','-1')});
         if(cur<0)show(0);
         steps.forEach(function(s){io.observe(s)});
       }else{
         story.classList.remove('story-on');
+        steps.forEach(function(s){var l=s.querySelector('.step-fig a');if(l)l.removeAttribute('tabindex')});
         if(io)io.disconnect();
       }
     }
