@@ -14903,5 +14903,985 @@
    "Deep Learning"
   ],
   "first_seen": "2026-11-21T12:44:26+00:00"
+ },
+ "doi:10.5194/gmd-13-2197-2020": {
+  "key": "doi:10.5194/gmd-13-2197-2020",
+  "title": "Development of the MIROC-ES2L Earth system model and the evaluation of biogeochemical processes and feedbacks",
+  "summary": "This article describes the new Earth system model (ESM), the Model for Interdisciplinary Research on Climate, Earth System version 2 for Long-term simulations (MIROC-ES2L), using a state-of-the-art climate model as the physical core. This model embeds a terrestrial biogeochemical component with explicit carbon–nitrogen interaction to account for soil nutrient control on plant growth and the land carbon sink. The model's ocean biogeochemical component is largely updated to simulate the biogeochemical cycles of carbon, nitrogen, phosphorus, iron, and oxygen such that oceanic primary productivity can be controlled by multiple nutrient limitations. The ocean nitrogen cycle is coupled with the land component via river discharge processes, and external inputs of iron from pyrogenic and lithogenic sources are considered. Comparison of a historical simulation with observation studies showed that the model could reproduce the transient global climate change and carbon cycle as well as the observed large-scale spatial patterns of the land carbon cycle and upper-ocean biogeochemistry. The model demonstrated historical human perturbation of the nitrogen cycle through land use and agriculture and simulated the resultant impact on the terrestrial carbon cycle. Sensitivity analyses under preindustrial conditions revealed that the simulated ocean biogeochemistry could be altered regionally (and substantially) by nutrient input from the atmosphere and rivers. Based on an idealized experiment in which CO 2 was prescribed to increase at a rate of 1 % yr −1 , the transient climate response (TCR) is estimated to be 1.5 K, i.e., approximately 70 % of that from our previous ESM used in the Coupled Model Intercomparison Project Phase 5 (CMIP5). The cumulative airborne fraction (AF) is also reduced by 15 % because of the intensified land carbon sink, which results in an airborne fraction close to the multimodel mean of the CMIP5 ESMs. The transient climate response to cumulative carbon emissions (TCRE) is 1.3 K EgC −1 , i.e., slightly smaller than the average of the CMIP5 ESMs, which suggests that “optimistic” future climate projections will be made by the model. This model and the simulation results contribute to CMIP6. The MIROC-ES2L could further improve our understanding of climate–biogeochemical interaction mechanisms, projections of future environmental changes, and exploration of our future options regarding sustainable development by evolving the processes of climate, biogeochemistry, and human activities in a holistic and interactive manner.",
+  "link": "https://doi.org/10.5194/gmd-13-2197-2020",
+  "authors": "Tomohiro Hajima, Michio Watanabe, Akitomo Yamamoto, Hiroaki Tatebe, Maki A. Noguchi, Manabu Abe",
+  "source": "Geoscientific Model Development",
+  "published": "2020-5-13",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-15-4393-2022": {
+  "key": "doi:10.5194/gmd-15-4393-2022",
+  "title": "Ocean biogeochemistry in the Canadian Earth System Model version 5.0.3: CanESM5 and CanESM5-CanOE",
+  "summary": "The ocean biogeochemistry components of two new versions of the Canadian Earth System Model (CanESM) are presented and compared to observations and other models. CanESM5 employs the same ocean biology model as CanESM2, whereas CanESM5-CanOE (Canadian Ocean Ecosystem model) is a new, more complex model developed for CMIP6, with multiple food chains, flexible phytoplankton elemental ratios, and a prognostic iron cycle. This new model is described in detail and the outputs (distributions of major tracers such as oxygen, dissolved inorganic carbon, and alkalinity, the iron and nitrogen cycles, plankton biomass, and historical trends in CO 2 uptake and export production) compared to CanESM5 and CanESM2, as well as to observations and other CMIP6 models. Both CanESM5 models show gains in skill relative to CanESM2, which are attributed primarily to improvements in ocean circulation. CanESM5-CanOE shows improved skill relative to CanESM5 for most major tracers at most depths. CanESM5-CanOE includes a prognostic iron cycle, and maintains high-nutrient/low-chlorophyll conditions in the expected regions (in CanESM2 and CanESM5, iron limitation is specified as a temporally static “mask”). Surface nitrate concentrations are biased low in the subarctic Pacific and equatorial Pacific, and high in the Southern Ocean, in both CanESM5 and CanESM5-CanOE. Export production in CanESM5-CanOE is among the lowest for CMIP6 models; in CanESM5, it is among the highest, but shows the most rapid decline after about 1980. CanESM5-CanOE shows some ability to simulate aspects of plankton community structure that a single-species model can not (e.g. seasonal dominance of large cells) but is biased towards low concentrations of zooplankton and detritus relative to phytoplankton. Cumulative ocean uptake of anthropogenic carbon dioxide through 2014 is lower in both CanESM5-CanOE (122 PgC) and CanESM5 (132 PgC) than in observation-based estimates (145 PgC) or the model ensemble mean (144 PgC).",
+  "link": "https://doi.org/10.5194/gmd-15-4393-2022",
+  "authors": "James R. Christian, Kenneth L. Denman, Hakase Hayashida, Amber M. Holdsworth, Warren G. Lee, Olivier G. J. Riche",
+  "source": "Geoscientific Model Development",
+  "published": "2022-6-9",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-13-2393-2020": {
+  "key": "doi:10.5194/gmd-13-2393-2020",
+  "title": "Ocean biogeochemistry in the Norwegian Earth System Model version 2 (NorESM2)",
+  "summary": "The ocean carbon cycle is a key player in the climate system through its role in regulating the atmospheric carbon dioxide concentration and other processes that alter the Earth's radiative balance. In the second version of the Norwegian Earth System Model (NorESM2), the oceanic carbon cycle component has gone through numerous updates that include, amongst others, improved process representations, increased interactions with the atmosphere, and additional new tracers. Oceanic dimethyl sulfide (DMS) is now prognostically simulated and its fluxes are directly coupled with the atmospheric component, leading to a direct feedback to the climate. Atmospheric nitrogen deposition and additional riverine inputs of other biogeochemical tracers have recently been included in the model. The implementation of new tracers such as “preformed” and “natural” tracers enables a separation of physical from biogeochemical drivers as well as of internal from external forcings and hence a better diagnostic of the simulated biogeochemical variability. Carbon isotope tracers have been implemented and will be relevant for studying long-term past climate changes. Here, we describe these new model implementations and present an evaluation of the model's performance in simulating the observed climatological states of water-column biogeochemistry and in simulating transient evolution over the historical period. Compared to its predecessor NorESM1, the new model's performance has improved considerably in many aspects. In the interior, the observed spatial patterns of nutrients, oxygen, and carbon chemistry are better reproduced, reducing the overall model biases. A new set of ecosystem parameters and improved mixed layer dynamics improve the representation of upper-ocean processes (biological production and air–sea CO 2 fluxes) at seasonal timescale. Transient warming and air–sea CO 2 fluxes over the historical period are also in good agreement with observation-based estimates. NorESM2 participates in the Coupled Model Intercomparison Project phase 6 (CMIP6) through DECK (Diagnostic, Evaluation and Characterization of Klima) and several endorsed MIP simulations.",
+  "link": "https://doi.org/10.5194/gmd-13-2393-2020",
+  "authors": "Jerry F. Tjiputra, Jörg Schwinger, Mats Bentsen, Anne L. Morée, Shuang Gao, Ingo Bethke",
+  "source": "Geoscientific Model Development",
+  "published": "2020-5-26",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-18-6095-2025": {
+  "key": "doi:10.5194/gmd-18-6095-2025",
+  "title": "Impact of spatial resolution on multi-scenario WRF-ARW simulations driven by the CMIP6 MPI-ESM1-2-HR global model: a focus on precipitation distribution over Italy",
+  "summary": "We present the results of downscaling CMIP6 global climate projections to local scales for the Mediterranean and Italian regions, aiming to produce high-resolution climate information for the assessment of climate change signals, with a focus on precipitation extreme events. We performed hindcast (i.e., ERA5-driven) and historical simulations (driven by the MPI-ESM1-2-HR model) to simulate the present (1980–2014) and future (2015–2100) climate under three different emission scenarios (SSP1-2.6, SSP2-4.5, SSP5-8.5). For each experiment, a double-nesting approach is adopted to dynamically downscale global data to the regional domain of interest, firstly over the Europe (EURO) COordinated Regional climate Downscaling Experiment (CORDEX) domain, at a spatial resolution of 15 km, and then further refined (second nesting) over Italy and the northwestern Mediterranean at a resolution of 5 km, i.e., in the so-called gray zone (5–10 km), close to the convection-permitting (CP) limit. Besides validating the experimental protocol, this work potentially questions the need for climate simulations to always resort to deep convection parameterizations when spatial refinement is increased up to the limit of the CP scale, yet convective processes are still not explicitly resolved. Analyses of air temperature and precipitation are presented, with a focus on the spatial distribution of precipitation, its probability density function, and the statistics of extreme events for both current climate and far-end scenarios. By the end of the century for all the scenarios and seasons there is a projected general warming along with an intensification of the hydrological cycle over most of continental Europe and mean precipitation reduction over the Mediterranean region accompanied, over the Italian Peninsula, by a strong increase in the intensity of extreme precipitation events, particularly relevant for the SSP5-8.5 scenario during autumn.",
+  "link": "https://doi.org/10.5194/gmd-18-6095-2025",
+  "authors": "Maria Vittoria Struglia, Alessandro Anav, Marta Antonelli, Sandro Calmanti, Franco Catalano, Alessandro Dell'Aquila",
+  "source": "Geoscientific Model Development",
+  "published": "2025-9-17",
+  "score": 4,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-18-3623-2025": {
+  "key": "doi:10.5194/gmd-18-3623-2025",
+  "title": "A novel method for quantifying the contribution of regional transport to PM 2.5 in Beijing (2013–2020): combining machine learning with concentration-weighted trajectory analysis",
+  "summary": "Fine particulate matter (PM 2.5 ) is closely linked to human health, with its sources generally divided into local emissions and regional transport. This study combined concentration-weighted trajectory (CWT) analysis with the HYSPLIT trajectory ensemble to obtain hourly resolution pollutant source results. The Extreme Gradient Boosting (XGBoost) model was then employed to simulate local emissions and ambient PM 2.5 in Beijing from 2013 to 2020. The results revealed that clean air masses influencing the Beijing area mainly originated from the north and east regions, exhibiting a strong winter and weak summer pattern. Following the implementation of the Air Pollution Prevention and Control Action Plan (Action Plan) by the Chinese government in 2017, pollution in Beijing decreased significantly, with the most substantial reduction in regional transport pollution events occurring in the west region during summer. Regional transport pollution events were most frequent in spring, up to 1.8 times higher than in winter. Pollutants mainly originated from the west and south regions, while polluted air masses from the east showed the least reduction, and the proportion of pollution sources from this region was gradually increasing. The COVID-19 restrictions might have reduced PM 2.5 concentrations in 2020. From 2013 to 2020, local emissions were the main contributors to pollution events in Beijing. The Action Plan has more effectively reduced pollution caused by regional transport, particularly during autumn and winter. This finding underscores the importance of Beijing prioritizing local emission reduction while also considering potential contributions from the east region to effectively mitigate pollution events.",
+  "link": "https://doi.org/10.5194/gmd-18-3623-2025",
+  "authors": "Kang Hu, Hong Liao, Dantong Liu, Jianbing Jin, Lei Chen, Siyuan Li",
+  "source": "Geoscientific Model Development",
+  "published": "2025-6-19",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-10-19-2017": {
+  "key": "doi:10.5194/gmd-10-19-2017",
+  "title": "CPMIP: measurements of real computational performance of Earth system models in CMIP6",
+  "summary": "Abstract. A climate model represents a multitude of processes on a variety of timescales and space scales: a canonical example of multi-physics multi-scale modeling. The underlying climate system is physically characterized by sensitive dependence on initial conditions, and natural stochastic variability, so very long integrations are needed to extract signals of climate change. Algorithms generally possess weak scaling and can be I/O and/or memory-bound. Such weak-scaling, I/O, and memory-bound multi-physics codes present particular challenges to computational performance. Traditional metrics of computational efficiency such as performance counters and scaling curves do not tell us enough about real sustained performance from climate models on different machines. They also do not provide a satisfactory basis for comparative information across models. codes present particular challenges to computational performance. We introduce a set of metrics that can be used for the study of computational performance of climate (and Earth system) models. These measures do not require specialized software or specific hardware counters, and should be accessible to anyone. They are independent of platform and underlying parallel programming models. We show how these metrics can be used to measure actually attained performance of Earth system models on different machines, and identify the most fruitful areas of research and development for performance engineering. codes present particular challenges to computational performance. We present results for these measures for a diverse suite of models from several modeling centers, and propose to use these measures as a basis for a CPMIP, a computational performance model intercomparison project (MIP).",
+  "link": "https://doi.org/10.5194/gmd-10-19-2017",
+  "authors": "Venkatramani Balaji, Eric Maisonnave, Niki Zadeh, Bryan N. Lawrence, Joachim Biercamp, Uwe Fladrich",
+  "source": "Geoscientific Model Development",
+  "published": "2017-1-2",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-8-1339-2015": {
+  "key": "doi:10.5194/gmd-8-1339-2015",
+  "title": "Development of the GEOS-5 atmospheric general circulation model: evolution from MERRA to MERRA2",
+  "summary": "Abstract. The Modern-Era Retrospective Analysis for Research and Applications-2 (MERRA2) version of the Goddard Earth Observing System-5 (GEOS-5) atmospheric general circulation model (AGCM) is currently in use in the NASA Global Modeling and Assimilation Office (GMAO) at a wide range of resolutions for a variety of applications. Details of the changes in parameterizations subsequent to the version in the original MERRA reanalysis are presented here. Results of a series of atmosphere-only sensitivity studies are shown to demonstrate changes in simulated climate associated with specific changes in physical parameterizations, and the impact of the newly implemented resolution-aware behavior on simulations at different resolutions is demonstrated. The GEOS-5 AGCM presented here is the model used as part of the GMAO MERRA2 reanalysis, global mesoscale simulations at 10 km resolution through 1.5 km resolution, the real-time numerical weather prediction system, and for atmosphere-only, coupled ocean-atmosphere and coupled atmosphere-chemistry simulations. The seasonal mean climate of the MERRA2 version of the GEOS-5 AGCM represents a substantial improvement over the simulated climate of the MERRA version at all resolutions and for all applications. Fundamental improvements in simulated climate are associated with the increased re-evaporation of frozen precipitation and cloud condensate, resulting in a wetter atmosphere. Improvements in simulated climate are also shown to be attributable to changes in the background gravity wave drag, and to upgrades in the relationship between the ocean surface stress and the ocean roughness. The series of resolution-aware parameters related to the moist physics was shown to result in improvements at higher resolutions and result in AGCM simulations that exhibit seamless behavior across different resolutions and applications.",
+  "link": "https://doi.org/10.5194/gmd-8-1339-2015",
+  "authors": "A. Molod, L. Takacs, M. Suarez, J. Bacmeister",
+  "source": "Geoscientific Model Development",
+  "published": "2015-5-12",
+  "score": 4,
+  "topics": [
+   "Climate Modelling",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-19-4095-2026": {
+  "key": "doi:10.5194/gmd-19-4095-2026",
+  "title": "Scenario set-up and the new CMIP6-based climate-related forcings provided within the third round of the Inter-Sectoral Model Intercomparison Project (ISIMIP3b, group I and II)",
+  "summary": "This paper describes the climate-related forcings (CRFs), i.e. change in climate comprising the atmosphere and the ocean, coastal water levels, and atmospheric composition (CO 2 and methane concentrations), provided as input data within the “b” part of the third simulation round of the Inter-Sectoral Impact Model Intercomparison Project (ISIMIP3b). While ISIMIP3a comprises historical impact models simulations forced by observational Direct Human Forcings (DHF), such as changes in population and asset distributions, land use, fishing efforts, agricultural and water management driven by socio-economic development or climate protection strategies, and observational CRF, the ISIMIP3b CRFs are based on climate model simulations generated within the sixth phase of the Coupled Model Intercomparison Project (CMIP6). In a first set of experiments covering the pre-industrial (1601–1849) and historical period (1850–2014) (ISIMIP3b, group I) the CMIP6-based CRFs for the historical period are combined with historical observation-based DHF also considered in ISIMIP3a. These group I simulations allow for the quantification of impacts of historical climate change by comparison to simulations where the observational DHF are combined with simulated pre-industrial CRFs. In addition, the impacts of observed changes in CRFs can be compared to the impacts of simulated changes in CRFs by comparing the ISIMIP3a simulations to the ISIMIP3b, group I simulations. The second group of experiments (ISIMIP3b, group II) comprises future projections assuming constant observational direct human forcings at 2015 levels to estimate the impact of climate change given today's DHF for the low emission scenario SSP1-2.6, the high and the very high emission scenarios SSP3-7.0, SSP5-8.5, and reference simulations based on pre-industrial CRF, respectively. The very high emissions scenarios and the assumption of fixed present day DHF particularly allow for testing the scalability of impacts in terms of global temperature change. The provided CRFs comprise atmospheric CO 2 and CH 4 concentrations, atmospheric and oceanic climate data, coastal water levels, tropical cyclone (TC) tracks and their associated wind speed and precipitation fields. In addition to the CRFs data, this paper describes the experiments belonging to group I and II and the rationale behind them. Another set of future projections accounting for changing DHFs (ISIMIP3b, group III) is in preparation and will be described in another paper.",
+  "link": "https://doi.org/10.5194/gmd-19-4095-2026",
+  "authors": "Katja Frieler, Stefan Lange, Jacob Schewe, Matthias Mengel, Simon Treu, Christian Otto",
+  "source": "Geoscientific Model Development",
+  "published": "2026-5-19",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-14-7073-2021": {
+  "key": "doi:10.5194/gmd-14-7073-2021",
+  "title": "NorCPM1 and its contribution to CMIP6 DCPP",
+  "summary": "The Norwegian Climate Prediction Model version 1 (NorCPM1) is a new research tool for performing climate reanalyses and seasonal-to-decadal climate predictions. It combines the Norwegian Earth System Model version 1 (NorESM1) – which features interactive aerosol–cloud schemes and an isopycnic-coordinate ocean component with biogeochemistry – with anomaly assimilation of sea surface temperature (SST) and T/S-profile observations using the ensemble Kalman filter (EnKF). We describe the Earth system component and the data assimilation (DA) scheme, highlighting implementation of new forcings, bug fixes, retuning and DA innovations. Notably, NorCPM1 uses two anomaly assimilation variants to assess the impact of sea ice initialization and climatological reference period: the first (i1) uses a 1980–2010 reference climatology for computing anomalies and the DA only updates the physical ocean state; the second (i2) uses a 1950–2010 reference climatology and additionally updates the sea ice state via strongly coupled DA of ocean observations. We assess the baseline, reanalysis and prediction performance with output contributed to the Decadal Climate Prediction Project (DCPP) as part of the sixth Coupled Model Intercomparison Project (CMIP6). The NorESM1 simulations exhibit a moderate historical global surface temperature evolution and tropical climate variability characteristics that compare favourably with observations. The climate biases of NorESM1 using CMIP6 external forcings are comparable to, or slightly larger than those of, the original NorESM1 CMIP5 model, with positive biases in Atlantic meridional overturning circulation (AMOC) strength and Arctic sea ice thickness, too-cold subtropical oceans and northern continents, and a too-warm North Atlantic and Southern Ocean. The biases in the assimilation experiments are mostly unchanged, except for a reduced sea ice thickness bias in i2 caused by the assimilation update of sea ice, generally confirming that the anomaly assimilation synchronizes variability without changing the climatology. The i1 and i2 reanalysis/hindcast products overall show comparable performance. The benefits of DA-assisted initialization are seen globally in the first year of the prediction over a range of variables, also in the atmosphere and over land. External forcings are the primary source of multiyear skills, while added benefit from initialization is demonstrated for the subpolar North Atlantic (SPNA) and its extension to the Arctic, and also for temperature over land if the forced signal is removed. Both products show limited success in constraining and predicting unforced surface ocean biogeochemistry variability. However, observational uncertainties and short temporal coverage make biogeochemistry evaluation uncertain, and potential predictability is found to be high. For physical climate prediction, i2 performs marginally better than i1 for a range of variables, especially in the SPNA and in the vicinity of sea ice, with notably improved sea level variability of the Southern Ocean. Despite similar skills, i1 and i2 feature very different drift behaviours, mainly due to their use of different climatologies in DA; i2 exhibits an anomalously strong AMOC that leads to forecast drift with unrealistic warming in the SPNA, whereas i1 exhibits a weaker AMOC that leads to unrealistic cooling. In polar regions, the reduction in climatological ice thickness in i2 causes additional forecast drift as the ice grows back. Posteriori lead-dependent drift correction removes most hindcast differences; applications should therefore benefit from combining the two products. The results confirm that the large-scale ocean circulation exerts strong control on North Atlantic temperature variability, implying predictive potential from better synchronization of circulation variability. Future development will therefore focus on improving the representation of mean state and variability of AMOC and its initialization, in addition to upgrades of the atmospheric component. Other efforts will be directed to refining the anomaly assimilation scheme – to better separate internal and forced signals, to include land and atmosphere initialization and new observational types – and improving biogeochemistry prediction capability. Combined with other systems, NorCPM1 may already contribute to skilful multiyear climate prediction that benefits society.",
+  "link": "https://doi.org/10.5194/gmd-14-7073-2021",
+  "authors": "Ingo Bethke, Yiguo Wang, François Counillon, Noel Keenlyside, Madlen Kimmritz, Filippa Fransner",
+  "source": "Geoscientific Model Development",
+  "published": "2021-11-19",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-12-3241-2019": {
+  "key": "doi:10.5194/gmd-12-3241-2019",
+  "title": "Max Planck Institute Earth System Model (MPI-ESM1.2) for the High-Resolution Model Intercomparison Project (HighResMIP)",
+  "summary": "As a contribution towards improving the climate mean state of the atmosphere and the ocean in Earth system models (ESMs), we compare several coupled simulations conducted with the Max Planck Institute for Meteorology Earth System Model (MPI-ESM1.2) following the HighResMIP protocol. Our simulations allow to analyse the separate effects of increasing the horizontal resolution of the ocean (0.4 to 0.1 ∘ ) and atmosphere (T127 to T255) submodels, and the effects of substituting the Pacanowski and Philander (PP) vertical ocean mixing scheme with the K-profile parameterization (KPP). The results show clearly distinguishable effects from all three factors. The high resolution in the ocean removes biases in the ocean interior and in the atmosphere. This leads to the important conclusion that a high-resolution ocean has a major impact on the mean state of the ocean and the atmosphere. The T255 atmosphere reduces the surface wind stress and improves ocean mixed layer depths in both hemispheres. The reduced wind forcing, in turn, slows the Antarctic Circumpolar Current (ACC), reducing it to observed values. In the North Atlantic, however, the reduced surface wind causes a weakening of the subpolar gyre and thus a slowing down of the Atlantic meridional overturning circulation (AMOC), when the PP scheme is used. The KPP scheme, on the other hand, causes stronger open-ocean convection which spins up the subpolar gyres, ultimately leading to a stronger and stable AMOC, even when coupled to the T255 atmosphere, thus retaining all the positive effects of a higher-resolved atmosphere.",
+  "link": "https://doi.org/10.5194/gmd-12-3241-2019",
+  "authors": "Oliver Gutjahr, Dian Putrasahan, Katja Lohmann, Johann H. Jungclaus, Jin-Song von Storch, Nils Brüggemann",
+  "source": "Geoscientific Model Development",
+  "published": "2019-7-25",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-17-399-2024": {
+  "key": "doi:10.5194/gmd-17-399-2024",
+  "title": "GAN-argcPredNet v2.0: a radar echo extrapolation model based on spatiotemporal process enhancement",
+  "summary": "Abstract. Precipitation nowcasting has important implications for urban operation and flood prevention. Radar echo extrapolation is a common method in precipitation nowcasting. Using deep learning models to extrapolate radar echo data has great potential. The increase of lead time leads to a weaker correlation between the real rainfall evolution and the generated images. The evolution information is easily lost during extrapolation, which is reflected as echo attenuation. Existing models, including generative adversarial network (GAN)-based models, have difficulty curbing attenuation, resulting in insufficient accuracy in rainfall prediction. To solve this issue, a spatiotemporal process enhancement network (GAN-argcPredNet v2.0) based on GAN-argcPredNet v1.0 has been designed. GAN-argcPredNet v2.0 curbs attenuation by avoiding blurring or maintaining the intensity. A spatiotemporal image correlation (STIC) prediction network is designed as the generator. By suppressing the blurring effect of rain distribution and reducing the negative bias by STIC attention, the generator generates more accurate images. Furthermore, the discriminator is a channel–spatial (CS) convolution network. The discriminator enhances the discrimination of echo information and provides better guidance to the generator in image generation by CS attention. The experiments are based on the radar dataset of southern China. The results show that GAN-argcPredNet v2.0 performs better than other models. In heavy rainfall prediction, compared with the baseline, the probability of detection (POD), the critical success index (CSI), the Heidke skill score (HSS) and bias score increase by 18.8 %, 17.0 %, 17.2 % and 26.3 %, respectively. The false alarm ratio (FAR) decreases by 3.0 %.",
+  "link": "https://doi.org/10.5194/gmd-17-399-2024",
+  "authors": "Kun Zheng, Qiya Tan, Huihua Ruan, Jinbiao Zhang, Cong Luo, Siyu Tang",
+  "source": "Geoscientific Model Development",
+  "published": "2024-1-16",
+  "score": 5,
+  "topics": [
+   "Deep Learning",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-11-2563-2018": {
+  "key": "doi:10.5194/gmd-11-2563-2018",
+  "title": "Comparison of spatial downscaling methods of general circulation model results to study climate variability during the Last Glacial Maximum",
+  "summary": "The extent to which climate conditions influenced the spatial distribution of hominin populations in the past is highly debated. General circulation models (GCMs) and archaeological data have been used to address this issue. Most GCMs are not currently capable of simulating past surface climate conditions with sufficiently detailed spatial resolution to distinguish areas of potential hominin habitat, however. In this paper, we propose a statistical downscaling method (SDM) for increasing the resolution of climate model outputs in a computationally efficient way. Our method uses a generalised additive model (GAM), calibrated over present-day climatology data, to statistically downscale temperature and precipitation time series from the outputs of a GCM simulating the climate of the Last Glacial Maximum (19 000–23 000 BP) over western Europe. Once the SDM is calibrated, we first interpolate the coarse-scale GCM outputs to the final resolution and then use the GAM to compute surface air temperature and precipitation levels using these interpolated GCM outputs and fine-resolution geographical variables such as topography and distance from an ocean. The GAM acts as a transfer function, capturing non-linear relationships between variables at different spatial scales and correcting for the GCM biases. We tested three different techniques for the first interpolation of GCM output: bilinear, bicubic and kriging. The resulting SDMs were evaluated by comparing downscaled temperature and precipitation at local sites with paleoclimate reconstructions based on paleoclimate archives (archaeozoological and palynological data) and the impact of the interpolation technique on patterns of variability was explored. The SDM based on kriging interpolation, providing the best accuracy, was then validated on present-day data outside of the calibration period. Our results show that the downscaled temperature and precipitation values are in good agreement with paleoclimate reconstructions at local sites, and that our method for producing fine-grained paleoclimate simulations is therefore suitable for conducting paleo-anthropological research. It is nonetheless important to calibrate the GAM on a range of data encompassing the data to be downscaled. Otherwise, the SDM is likely to overcorrect the coarse-grain data. In addition, the bilinear and bicubic interpolation techniques were shown to distort either the temporal variability or the values of the response variables, while the kriging method offered the best compromise. Since climate variability is an aspect of the environment to which human populations may have responded in the past, the choice of interpolation technique is therefore an important consideration.",
+  "link": "https://doi.org/10.5194/gmd-11-2563-2018",
+  "authors": "Guillaume Latombe, Ariane Burke, Mathieu Vrac, Guillaume Levavasseur, Christophe Dumas, Masa Kageyama",
+  "source": "Geoscientific Model Development",
+  "published": "2018-7-3",
+  "score": 6,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-17-8639-2024": {
+  "key": "doi:10.5194/gmd-17-8639-2024",
+  "title": "SLUCM+BEM (v1.0): a simple parameterisation for dynamic anthropogenic heat and electricity consumption in WRF-Urban (v4.3.2)",
+  "summary": "We propose a simple dynamic anthropogenic heat ( Q F ) parameterisation for the Weather Research and Forecasting (WRF) single-layer urban canopy model (SLUCM). The SLUCM is a remarkable physically based urban canopy model that is widely used. However, a limitation of SLUCM is that it considers a statistically based diurnal pattern of Q F . Consequently, Q F is not affected by outdoor temperature changes, and the diurnal pattern of Q F is constant throughout the simulation period. To address these limitations, based on the concept of a building-energy model (BEM), which has been officially introduced in WRF, we propose a parameterisation to dynamically and simply simulate Q F from buildings ( Q FB ) through a physically based calculation of the indoor heat load and input parameters for BEM and SLUCM. This method allows users to simulate the dynamic Q F and the electricity consumption (EC) as the outdoor temperature, building insulation, and heating and air conditioning (HAC) performance change. This is achieved via the simple selection of certain Q F options among the urban parameters of WRF. The new parameterisation, SLUCM+BEM, was shown to simulate temporal variations in Q FB and EC for HAC (EC HAC ) and broadly reproduce the EC HAC estimates of more sophisticated BEM and EC HAC observations in the world's largest metropolis, Tokyo.",
+  "link": "https://doi.org/10.5194/gmd-17-8639-2024",
+  "authors": "Yuya Takane, Yukihiro Kikegawa, Ko Nakajima, Hiroyuki Kusaka",
+  "source": "Geoscientific Model Development",
+  "published": "2024-12-6",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.5194/gmd-17-957-2024": {
+  "key": "doi:10.5194/gmd-17-957-2024",
+  "title": "GeoPDNN 1.0: a semi-supervised deep learning neural network using pseudo-labels for three-dimensional shallow strata modelling and uncertainty analysis in urban areas from borehole data",
+  "summary": "Abstract. Borehole data are essential for conducting precise urban geological surveys and large-scale geological investigations. Traditionally, explicit modelling and implicit modelling have been the primary methods for visualizing borehole data and constructing 3D geological models. However, explicit modelling requires substantial manual labour, while implicit modelling faces problems related to uncertainty analysis. Recently, machine learning approaches have emerged as effective solutions for addressing these issues in 3D geological modelling. Nevertheless, the use of machine learning methods for constructing 3D geological models is often limited by insufficient training data. In this paper, we propose the semi-supervised deep learning using pseudo-labels (SDLP) algorithm to overcome the issue of insufficient training data. Specifically, we construct the pseudo-labels in the training dataset using the triangular irregular network (TIN) method. A 3D geological model is constructed using borehole data obtained from a real building engineering project in Shenyang, Liaoning Province, NE China. Then, we compare the results of the 3D geological model constructed based on SDLP with those constructed by a support vector machine (SVM) method and an implicit Hermite radial basis function (HRBF) modelling method. Compared to the 3D geological models constructed using the HRBF algorithm and the SVM algorithm, the 3D geological model constructed based on the SDLP algorithm better conforms to the sedimentation patterns of the region. The findings demonstrate that our proposed method effectively resolves the issues of insufficient training data when using machine learning methods and the inability to perform uncertainty analysis when using the implicit method. In conclusion, the semi-supervised deep learning method with pseudo-labelling proposed in this paper provides a solution for 3D geological modelling in engineering project areas with borehole data.",
+  "link": "https://doi.org/10.5194/gmd-17-957-2024",
+  "authors": "Jiateng Guo, Xuechuang Xu, Luyuan Wang, Xulei Wang, Lixin Wu, Mark Jessell",
+  "source": "Geoscientific Model Development",
+  "published": "2024-2-5",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1002/2017ms001003": {
+  "key": "doi:10.1002/2017ms001003",
+  "title": "Impact of bias‐corrected reanalysis‐derived lateral boundary conditions on WRF simulations",
+  "summary": "Abstract Lateral and lower boundary conditions derived from a suitable global reanalysis data set form the basis for deriving a dynamically consistent finer resolution downscaled product for climate and hydrological assessment studies. A problem with this, however, is that systematic biases have been noted to be present in the global reanalysis data sets that form these boundaries, biases which can be carried into the downscaled simulations thereby reducing their accuracy or efficacy. In this work, three Weather Research and Forecasting (WRF) model downscaling experiments are undertaken to investigate the impact of bias correcting European Centre for Medium range Weather Forecasting Reanalysis ERA‐Interim (ERA‐I) atmospheric temperature and relative humidity using Atmospheric Infrared Sounder (AIRS) satellite data. The downscaling is performed over a domain centered over southern Africa between the years 2003 and 2012. The sample mean and the mean as well as standard deviation at each grid cell for each variable are used for bias correction. The resultant WRF simulations of near‐surface temperature and precipitation are evaluated seasonally and annually against global gridded observational data sets and compared with ERA‐I reanalysis driving field. The study reveals inconsistencies between the impact of the bias correction prior to downscaling and the resultant model simulations after downscaling. Mean and standard deviation bias‐corrected WRF simulations are, however, found to be marginally better than mean only bias‐corrected WRF simulations and raw ERA‐I reanalysis‐driven WRF simulations. Performances, however, differ when assessing different attributes in the downscaled field. This raises questions about the efficacy of the correction procedures adopted.",
+  "link": "https://doi.org/10.1002/2017ms001003",
+  "authors": "Ditiro Benson Moalafhi, Ashish Sharma, Jason Peter Evans, Rajeshwar Mehrotra, Eytan Rocheta",
+  "source": "Journal of Advances in Modeling Earth Systems",
+  "published": "2017-8",
+  "score": 5,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2024ms004237": {
+  "key": "doi:10.1029/2024ms004237",
+  "title": "A Novel Ensemble‐Based Parameter Estimation for Improving Ocean Biogeochemistry in an Earth System Model",
+  "summary": "Abstract Estimating ocean biogeochemistry (BGC) parameters in Earth System Models is challenging due to multiple error sources and interlinked parameter sensitivities. Reducing the temperature and salinity bias in the ocean physical component of the Norwegian Earth System Model (NorESM) diminishes the BGC state bias at intermediate depth but leads to a greater bias increase near the surface. This suggests that BGC parameters are tuned to compensate for the physical ocean model biases. We successfully apply the iterative ensemble smoother data assimilation technique to estimate BGC parameters in NorESM with reduced bias in its physical ocean component. We estimate BGC parameters based on the monthly climatological error of nitrate, phosphate, and oxygen in a coupled reanalysis of NorESM that assimilates observed monthly climatology of temperature and salinity. First, we compare the performance of globally uniform and spatially varying parameter estimations. Both approaches reduce BGC bias obtained with default parameters, even for variables not assimilated in the parameter estimation (e.g., fluxes and primary production). While spatial parameter estimation performs locally best, it also increases biases in areas with few observations, and overall performs poorer than global parameter estimation. A second iteration further reduces the bias in the near‐surface BGC with global parameter estimation. Finally, we assess the performance of global estimated parameters in a 30‐year coupled reanalysis produced by assimilating time‐varying temperature and salinity observations. This reanalysis reduces error by 10%–20% for phosphate, nitrate, oxygen, and dissolved inorganic carbon compared to a reanalysis done with default parameters.",
+  "link": "https://doi.org/10.1029/2024ms004237",
+  "authors": "Tarkeshwar Singh, François Counillon, Jerry Tjiputra, Yiguo Wang",
+  "source": "Journal of Advances in Modeling Earth Systems",
+  "published": "2025-2",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2017ms001262": {
+  "key": "doi:10.1029/2017ms001262",
+  "title": "Long‐Term Climate Simulations Using the IITM Earth System Model (IITM‐ESMv2) With Focus on the South Asian Monsoon",
+  "summary": "Abstract Long‐term climate simulations are performed using the IITM Earth System Model version 2 (IITM‐ESMv2), a sequel to the earlier version (IITM‐ESMv1), to assess climate variability and change with a special focus on the South Asian monsoon. Substantial improvements are incorporated in IITM‐ESMv2 to obtain a radiatively balanced global climate modeling framework. The IITM‐ESMv2 includes time‐varying aerosol forcing and land‐use land‐cover changes. Multicentury simulations corresponding to preindustrial and present‐day conditions show major improvements in capturing key aspects of time‐mean atmosphere and ocean large‐scale circulation. Representations of the Atlantic Meridional Overturning Circulation and poleward ocean heat transport, and major global climate drivers are superior to ESMv1. Teleconnections of the South Asian monsoon with climate drivers such as the El‐Niño–Southern Oscillation (ENSO) and the Indian Ocean Dipole (IOD) are found to be more robust in IITM‐ESMv2, thus leading to improved simulation of South Asian monsoon and its variability. The IITM‐ESMv2 takes a novel pursuit from India to contribute in the Intergovernmental Panel for Climate Change (IPCC) sixth assessment report (AR6).",
+  "link": "https://doi.org/10.1029/2017ms001262",
+  "authors": "P. Swapna, R. Krishnan, N. Sandeep, A. G. Prajeesh, D. C. Ayantika, S. Manmeet",
+  "source": "Journal of Advances in Modeling Earth Systems",
+  "published": "2018-5",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2024gl111445": {
+  "key": "doi:10.1029/2024gl111445",
+  "title": "Correcting Multivariate Biases in Regional Climate Model Boundaries: How Are Synoptic Systems Impacted Over the Australian Region?",
+  "summary": "Abstract Synoptic climatology, which connects atmospheric circulation with regional environmental conditions, is pivotal to understanding climate dynamics. While regional climate models (RCMs) can reproduce key mesoscale precipitation patterns, biases related to synoptic circulation from the driving model, typically global climate models (GCMs), often remain unaddressed. This study examines the influence of correcting systematic bias in RCM boundaries on the representation of Australian synoptic systems. We utilize a structural self‐organizing map to evaluate the frequency, persistence, and transitions of daily synoptic systems. Our findings reveal that an RCM with multivariate bias‐corrected boundaries improves the representation of synoptic systems compared to the driving GCM, or an RCM with uncorrected or simply bias‐corrected boundaries, particularly in reference to the frequency of systems identified. This demonstrates that appropriately correcting RCM boundary conditions helps correct many of the circulation errors inherited from the driving GCM but not all.",
+  "link": "https://doi.org/10.1029/2024gl111445",
+  "authors": "Youngil Kim, Jason P. Evans, Ashish Sharma",
+  "source": "Geophysical Research Letters",
+  "published": "2024-11-8",
+  "score": 6,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2019gl085291": {
+  "key": "doi:10.1029/2019gl085291",
+  "title": "Physics‐Constrained Machine Learning of Evapotranspiration",
+  "summary": "Abstract Estimating ecosystem evapotranspiration (ET) is important to understanding the global water cycle and to study land‐atmosphere interactions. We developed a physics constrained machine learning (ML) model (hybrid model) to estimate latent heat flux (LE), which conserves the surface energy budget. By comparing model predictions with observations at 82 eddy covariance tower sites, our hybrid model shows similar performance to the pure ML model in terms of mean metrics (e.g., mean absolute percent errors) but, importantly, the hybrid model conserves the surface energy balance, while the pure ML model does not. A second key result is that the hybrid model extrapolates much better than the pure ML model, emphasizing the benefits of combining physics with ML for increased generalizations. The hybrid model allows inferring the structural dependence of ET and surface resistance ( r s ), and we find that vegetation height and soil moisture are the main regulators of ET and r s .",
+  "link": "https://doi.org/10.1029/2019gl085291",
+  "authors": "Wen Li Zhao, Pierre Gentine, Markus Reichstein, Yao Zhang, Sha Zhou, Yeqiang Wen",
+  "source": "Geophysical Research Letters",
+  "published": "2019-12-23",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2022gl100011": {
+  "key": "doi:10.1029/2022gl100011",
+  "title": "Systematic Climate Model Biases in the Large‐Scale Patterns of Recent Sea‐Surface Temperature and Sea‐Level Pressure Change",
+  "summary": "Abstract Observed surface temperature trends over recent decades are characterized by (a) intensified warming in the Indo‐Pacific Warm Pool and slight cooling in the eastern equatorial Pacific, consistent with Walker circulation strengthening, and (b) Southern Ocean cooling. In contrast, state‐of‐the‐art coupled climate models generally project enhanced warming in the eastern equatorial Pacific, Walker circulation weakening, and Southern Ocean warming. Here we investigate the ability of 16 climate model large ensembles to reproduce observed sea‐surface temperature and sea‐level pressure trends over 1979–2020 through a combination of externally forced climate change and internal variability. We find large‐scale differences between observed and modeled trends that are very unlikely (<5% probability) to occur due to internal variability as represented in models. Disparate trends in the ratio of Indo‐Pacific Warm Pool to tropical‐mean warming, which shows little multi‐decadal variability in models, hint that model biases in the response to historical forcing constitute part of the discrepancy.",
+  "link": "https://doi.org/10.1029/2022gl100011",
+  "authors": "Robert C. J. Wills, Yue Dong, Cristian Proistosecu, Kyle C. Armour, David S. Battisti",
+  "source": "Geophysical Research Letters",
+  "published": "2022-9-7",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2019gl083898": {
+  "key": "doi:10.1029/2019gl083898",
+  "title": "Equilibrium Climate Sensitivity Estimated by Equilibrating Climate Models",
+  "summary": "Abstract The methods to quantify equilibrium climate sensitivity are still debated. We collect millennial‐length simulations of coupled climate models and show that the global mean equilibrium warming is higher than those obtained using extrapolation methods from shorter simulations. Specifically, 27 simulations with 15 climate models forced with a range of CO 2 concentrations show a median 17% larger equilibrium warming than estimated from the first 150 years of the simulations. The spatial patterns of radiative feedbacks change continuously, in most regions reducing their tendency to stabilizing the climate. In the equatorial Pacific, however, feedbacks become more stabilizing with time. The global feedback evolution is initially dominated by the tropics, with eventual substantial contributions from the mid‐latitudes. Time‐dependent feedbacks underscore the need of a measure of climate sensitivity that accounts for the degree of equilibration, so that models, observations, and paleo proxies can be adequately compared and aggregated to estimate future warming.",
+  "link": "https://doi.org/10.1029/2019gl083898",
+  "authors": "Maria Rugenstein, Jonah Bloch‐Johnson, Jonathan Gregory, Timothy Andrews, Thorsten Mauritsen, Chao Li",
+  "source": "Geophysical Research Letters",
+  "published": "2020-2-20",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2012gl053153": {
+  "key": "doi:10.1029/2012gl053153",
+  "title": "How well do climate models simulate cloud vertical structure? A comparison between CALIPSO‐GOCCP satellite observations and CMIP5 models",
+  "summary": "The Cloud‐Aerosol Lidar and Infrared Pathfinder Satellite Observation (CALIPSO) satellite provides robust and global direct measurements of the cloud vertical structure. The GCM‐Oriented CALIPSO Cloud Product is used to evaluate the simulated clouds in five climate models using a lidar simulator. The total cloud cover is underestimated in all models (51% to 62% vs. 64% in observations) except in the Arctic. Continental cloud covers (at low, mid, high altitudes) are highly variable depending on the model. In the tropics, the top of deep convective clouds varies between 14 and 18 km in the models versus 16 km in the observations, and all models underestimate the low cloud amount (16% to 25%) compared to observations (29%). In the Arctic, the modeled low cloud amounts (37% to 57%) are slightly biased compared to observations (44%), and the models do not reproduce the observed seasonal variation.",
+  "link": "https://doi.org/10.1029/2012gl053153",
+  "authors": "G. Cesana, H. Chepfer",
+  "source": "Geophysical Research Letters",
+  "published": "2012-10-19",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1002/2013gl058705": {
+  "key": "doi:10.1002/2013gl058705",
+  "title": "Responses of East Asian summer monsoon to natural and anthropogenic forcings in the 17 latest CMIP5 models",
+  "summary": "Abstract In this study, we examined the responses of East Asian summer monsoon (EASM) to natural (solar variability and volcanic aerosols) and anthropogenic (greenhouse gasses and aerosols) forcings simulated in the 17 latest Coupled Model Intercomparison Program phase 5 models with 105 realizations. The observed weakening trend of low‐level EASM circulation during 1958–2001 is partly reproduced under all‐forcing runs. A comparison of separate forcing experiments reveals that the aerosol forcing plays a primary role in driving the weakened low‐level monsoon circulation. The preferential cooling over continental East Asia caused by aerosol affects the monsoon circulation through reducing the land‐sea thermal contrast and results in higher sea level pressure over northern China. In the upper level, both natural forcing and aerosol forcing contribute to the observed southward shift of East Asian subtropical jet through changing the meridional temperature gradient.",
+  "link": "https://doi.org/10.1002/2013gl058705",
+  "authors": "Fengfei Song, Tianjun Zhou, Yun Qian",
+  "source": "Geophysical Research Letters",
+  "published": "2014-1-28",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2019gl086902": {
+  "key": "doi:10.1029/2019gl086902",
+  "title": "Global Land Monsoon Precipitation Changes in CMIP6 Projections",
+  "summary": "Abstract Changes in global land monsoon (GLM) precipitation determine the local water resource, affecting two thirds of global population. The future changes in GLM summer precipitation and the sources of projection uncertainty under four scenarios are investigated using the Coupled Model Intercomparison Project Phase 6 (CMIP6) models. The GLM summer precipitation is projected to increase by 1.76 ± 1.57% (2.54 ± 2.22%), 1.33 ± 1.97% (3.52 ± 3.05%), 0.96 ± 2.04% (3.51 ± 4.97%), and 1.71 ± 2.38% (5.75 ± 5.92%) in the near (long) term under Shared Socioeconomic Pathway (SSP) 1–2.6, SSP2–4.5, SSP3–7.0, and SSP5–8.5, respectively. The enhancement is caused by thermodynamic responses due to increased moisture, which is partly offset by dynamic responses due to weakened circulation. The uncertainty in GLM precipitation projection is the largest in SSP5–8.5 long‐term projection. The uncertainty of submonsoon precipitation projections is larger than that in GLM precipitation. The uncertainty of monsoon precipitation projection arises from the circulation changes, which can be partly explained by model‐dependent response to uniform sea surface temperature warming.",
+  "link": "https://doi.org/10.1029/2019gl086902",
+  "authors": "Ziming Chen, Tianjun Zhou, Lixia Zhang, Xiaolong Chen, Wenxia Zhang, Jie Jiang",
+  "source": "Geophysical Research Letters",
+  "published": "2020-7-22",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2004gl020283": {
+  "key": "doi:10.1029/2004gl020283",
+  "title": "Comparison of local precipitation–SST relationship between the observation and a reanalysis dataset",
+  "summary": "We defined a grid–scale time–phase relationship between precipitation (PR) and underlying sea surface temperature (SST) as the local PR–SST relationship, and compared the spatial distribution of the relationship in the observation with that in a reanalysis dataset. An analysis using observed pentad mean data shows precipitation lagging SST for two pentads over large areas of tropical oceans. A reanalysis dataset, on the other hand, has a shorter time–phase difference between precipitation and SST than that in the observation and does not match the spatial distribution of the observed local PR–SST relationship over the tropical Indian Ocean and the tropical western Pacific. A reanalysis dataset may not capture the observed local PR–SST relationship in terms of either time–phase difference or spatial distribution because a numerical model in a data assimilation system uses SST as a lower boundary condition as well as the inhomogeneity of observations the system used.",
+  "link": "https://doi.org/10.1029/2004gl020283",
+  "authors": "Osamu Arakawa, Akio Kitoh",
+  "source": "Geophysical Research Letters",
+  "published": "2004-6",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2012gl051644": {
+  "key": "doi:10.1029/2012gl051644",
+  "title": "Evaluation of short‐term climate change prediction in multi‐model CMIP5 decadal hindcasts",
+  "summary": "This study assesses the CMIP5 decadal hindcast/forecast simulations of seven state‐of‐the‐art ocean‐atmosphere coupled models. Each decadal prediction consists of simulations over a 10 year period each of which are initialized every five years from climate states of 1960/1961 to 2005/2006. Most of the models overestimate trends, whereby the models predict less warming or even cooling in the earlier decades compared to observations and too much warming in recent decades. All models show high prediction skill for surface temperature over the Indian, North Atlantic and western Pacific Oceans where the externally forced component and low‐frequency climate variability is dominant. However, low prediction skill is found over the equatorial and North Pacific Ocean. The Atlantic Multidecadal Oscillation (AMO) index is predicted in most of the models with significant skill, while the Pacific Decadal Oscillation (PDO) index shows relatively low predictive skill. The multi‐model ensemble has in general better‐forecast quality than the single‐model systems for global mean surface temperature, AMO and PDO.",
+  "link": "https://doi.org/10.1029/2012gl051644",
+  "authors": "Hye‐Mi Kim, Peter J. Webster, Judith A. Curry",
+  "source": "Geophysical Research Letters",
+  "published": "2012-5-16",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2023ea003243": {
+  "key": "doi:10.1029/2023ea003243",
+  "title": "Model of Storm Surge Maximum Water Level Increase in a Coastal Area Using Ensemble Machine Learning and Explicable Algorithm",
+  "summary": "Abstract This study proposes a novel, new ensemble model (NEM) designed to simulate the maximum water level increases caused by storm surges in a frequently cyclone‐affected coastal water of Hong Kong, China. The model relies on storm and water level data spanning 1978–2022. The NEM amalgamates three machine learning algorithms: Random Forest (RF), Gradient Boosting Decision Tree (GBDT), and XGBoost (XGB), employing a stacking technique for integration. Six parameters, determined using the Random Forest and Recursive Feature Elimination algorithms (RF‐RFE), are used as input features for the NEM. These parameters are the nearest wind speed, gale distance, nearest air pressure, minimum distance, maximum pressure drop within 24 hr, and large wind radius. Model assessment results suggest that the NEM exhibits superior performance over RF, GBDT, and XGB, delivering high stability and precision. It reaches a coefficient of determination ( R 2 ) up to 0.95 and a mean absolute error (MAE) that fluctuates between 0.08 and 0.20 m for the test data set. An interpretability analysis conducted using the SHapley Additive exPlanations (SHAP) method shows that gale distance and nearest wind speed are the most significant features for predicting peak water level increases during storm surges. The results of this study could provide practical implications for predictive models concerning storm surges. These findings present essential tools for the mitigation of coastal disasters and the improvement of marine disaster warning systems.",
+  "link": "https://doi.org/10.1029/2023ea003243",
+  "authors": "Kun Sun, Jiayi Pan",
+  "source": "Earth and Space Science",
+  "published": "2023-12",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2020jd032701": {
+  "key": "doi:10.1029/2020jd032701",
+  "title": "The Response of the Northern Hemisphere Storm Tracks and Jet Streams to Climate Change in the CMIP3, CMIP5, and CMIP6 Climate Models",
+  "summary": "Abstract The representation of the Northern Hemisphere (NH) storm tracks and jet streams and their response to climate change have been evaluated in climate model simulations from Phases 3, 5, and 6 of the Coupled Model Intercomparison Project (CMIP3, CMIP5, and CMIP6, respectively). The spatial patterns of the multimodel biases in CMIP3, CMIP5, and CMIP6 are similar; however, the magnitudes of the biases in the CMIP6 models are substantially lower. For instance, the multimodel mean RMSE of the North Atlantic storm track for the CMIP6 models (as measured by time‐filtered sea‐level pressure variance) is over 50% smaller than that of the CMIP3 models in both winter and summer, and over 40% smaller for the North Pacific. The magnitude of the jet stream biases is also reduced in CMIP6, but by a lesser extent. Despite this improved representation of the current climate, the spatial patterns of the climate change response of the NH storm tracks and jet streams remain similar in the CMIP3, CMIP5, and CMIP6 models. The SSP2‐4.5 scenario responses in the CMIP6 models are substantially larger than in the RCP4.5 CMIP5 models, which is consistent with the larger climate sensitivities of the CMIP6 models compared to CMIP5.",
+  "link": "https://doi.org/10.1029/2020jd032701",
+  "authors": "B. J. Harvey, P. Cook, L. C. Shaffrey, R. Schiemann",
+  "source": "JGR: Atmospheres",
+  "published": "2020-12-11",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1002/2015jd023480": {
+  "key": "doi:10.1002/2015jd023480",
+  "title": "Chemical imaging of ambient aerosol particles: Observational constraints on mixing state parameterization",
+  "summary": "Abstract A new parameterization for quantifying the mixing state of aerosol populations has been applied for the first time to samples of ambient particles analyzed using spectro‐microscopy techniques. Scanning transmission X‐ray microscopy/near edge X‐ray absorption fine structure (STXM/NEXAFS) and computer‐controlled scanning electron microscopy/energy dispersive X‐ray spectroscopy (CCSEM/EDX) were used to probe the composition of the organic and inorganic fraction of individual particles collected on 27 and 28 June during the 2010 Carbonaceous Aerosols and Radiative Effects study in the Central Valley, California. The first field site, T0, was located in downtown Sacramento, while T1 was located near the Sierra Nevada Mountains. Mass estimates of the aerosol particle components were used to calculate mixing state metrics, such as the particle‐specific diversity, bulk population diversity, and mixing state index, for each sample. The STXM data showed evidence of changes in the mixing state associated with a buildup of organic matter confirmed by collocated measurements, and the largest impact on the mixing state was due to an increase in soot dominant particles during this buildup. The mixing state from STXM was similar between T0 and T1, indicating that the increased organic fraction at T1 had a small effect on the mixing state of the population. The CCSEM/EDX analysis showed the presence of two types of particle populations: the first was dominated by aged sea‐salt particles and had a higher mixing state index (indicating a more homogeneous population); the second was dominated by carbonaceous particles and had a lower mixing state index.",
+  "link": "https://doi.org/10.1002/2015jd023480",
+  "authors": "Rachel E. O'Brien, Bingbing Wang, Alexander Laskin, Nicole Riemer, Matthew West, Qi Zhang",
+  "source": "JGR: Atmospheres",
+  "published": "2015-9-27",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2023jd038719": {
+  "key": "doi:10.1029/2023jd038719",
+  "title": "Process‐Based Intercomparison of Water Isotope‐Enabled Models and Reanalysis Nudging Effects",
+  "summary": "Abstract The products from the Stable Water Isotope Intercomparison Group, Phase 2, are currently used for numerous studies, allowing water isotope model‐data comparisons with various isotope‐enabled atmospheric general circulation model (AGCMs) outputs. However, the simulations under this framework were performed using different parameterizations and forcings. Therefore, a uniform experimental design with state‐of‐the‐art AGCMs is required to interpret isotope observations rigorously. Here, we evaluate the outputs from three isotope‐enabled numerical models nudged by three different reanalysis products and investigate the ability of the isotope‐enabled AGCMs to reproduce the spatial and temporal patterns of water isotopic composition observed at the surface and in the atmospheric airborne water. Through correlation analyses at various spatial and temporal scales, we found that the model's performance depends on the model or reanalysis we use, the observations we compare, and the vertical levels we select. Moreover, we employed the stable isotope mass balance method to conduct decomposition analyses on the ratio of isotopic changes in the atmosphere. Our goal was to elucidate the spread in simulated atmospheric column δ 18 O, which is influenced by factors such as evaporation, precipitation, and horizontal moisture flux. Satisfying the law of conservation of water isotopes, this budget method is expected to explain various fractionation phenomena in atmospheric meteorological and climatic events. It also aims to highlight the spreads in modeled isotope results among different experiments using multiple models and reanalyses, which are primarily dominated by uncertainties in moisture flux and precipitation, respectively.",
+  "link": "https://doi.org/10.1029/2023jd038719",
+  "authors": "Hayoung Bong, Alexandre Cauquoin, Atsushi Okazaki, Eun‐Chul Chang, Martin Werner, Zhongwang Wei",
+  "source": "JGR: Atmospheres",
+  "published": "2024-1",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2021jd035198": {
+  "key": "doi:10.1029/2021jd035198",
+  "title": "Evaluating Climate Models’ Cloud Feedbacks Against Expert Judgment",
+  "summary": "Abstract The persistent and growing spread in effective climate sensitivity (ECS) across global climate models necessitates rigorous evaluation of their cloud feedbacks. Here we evaluate several cloud feedback components simulated in 19 climate models against benchmark values determined via an expert synthesis of observational, theoretical, and high‐resolution modeling studies. We find that models with smallest feedback errors relative to these benchmark values generally have moderate total cloud feedbacks (0.4–0.6 W m −2 K −1 ) and ECS (3–4 K). Those with largest errors generally have total cloud feedback and ECS values that are too large or too small. Models tend to achieve large positive total cloud feedbacks by having several cloud feedback components that are systematically biased high rather than by having a single anomalously large component, and vice versa. In general, better simulation of mean‐state cloud properties leads to stronger but not necessarily better cloud feedbacks. The Python code base provided herein could be applied to developmental versions of models to assess cloud feedbacks and cloud errors and place them in the context of other models and of expert judgment in real‐time during model development.",
+  "link": "https://doi.org/10.1029/2021jd035198",
+  "authors": "Mark D. Zelinka, Stephen A. Klein, Yi Qin, Timothy A. Myers",
+  "source": "JGR: Atmospheres",
+  "published": "2022-1-24",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1002/jgrd.50145": {
+  "key": "doi:10.1002/jgrd.50145",
+  "title": "Future change of the global monsoon revealed from 19 CMIP5 models",
+  "summary": "The variability of global monsoon area (GMA), global monsoon precipitation (GMP), and global monsoon intensity (GMI) in the present climate (1979–2003) and the future warmer climate (2075–2099) under Representative Concentration Pathways 4.5 (RCP4.5) scenario was examined based on 19 Coupled Model Intercomparison Project Phase 5 (CMIP5) simulations. In the present‐day simulations, the ensemble mean precipitation reproduces the observed GMA, GMP, and GMI, although the spread of individual models is large. In the RCP4.5 simulations, most (17 of 19) of the CMIP5 models project enhanced global monsoon activity, with the increases of GMA, GMP, and GMI by 1.9%, 3.2%, and 1.3%, respectively, per 1 K of surface warming. The diagnosis of a column‐integrated moisture budget indicates that the increase in GMP is primarily attributed to the increases of moisture convergence and surface evaporation, whereas horizontal moisture advection has little effect. A further separation of dynamic and thermodynamic factors shows that increase of the moisture convergence comes mainly from the increase of water vapor, but is partly offset by the convergence effect. The increase of the surface evaporation is caused by the increase of sea‐air specific humidity difference, while the change in surface wind speed plays a minor role. The GMP experiences a great year‐to‐year variation, and it is significantly negatively correlated with the Niño3.4 index averaged over a typical monsoon year (defined from May to the following April) in the pre‐industrial control and present‐day simulations, similar to observations. Under the RCP4.5 warming, such rainfall variability is intensified, and the relationship between monsoon and El Niño strengthens. A large proportion of intensification in the year‐to‐year monsoon rainfall variability arises from the land monsoon region.",
+  "link": "https://doi.org/10.1002/jgrd.50145",
+  "authors": "Pang‐chi Hsu, Tim Li, Hiroyuki Murakami, Akio Kitoh",
+  "source": "JGR: Atmospheres",
+  "published": "2013-2-13",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1002/2015jd024519": {
+  "key": "doi:10.1002/2015jd024519",
+  "title": "Future summer precipitation changes over CORDEX‐East Asia domain downscaled by a regional ocean‐atmosphere coupled model: A comparison to the stand‐alone RCM",
+  "summary": "Abstract Climate changes under the RCP8.5 scenario over the Coordinated Regional Downscaling Experiment (CORDEX)‐East Asia domain downscaled by a regional ocean‐atmosphere coupled model Flexible Regional Ocean‐Atmosphere Land System (FROALS) are compared to those downscaled by the corresponding atmosphere‐only regional climate model driven by a global climate system model. Changes in the mean and interannual variability of summer rainfall were discussed for the period of 2051–2070 with respect to the present‐day period of 1986–2005. Followed by an enhanced western North Pacific subtropical high and an intensified East Asian summer monsoon, an increase in total rainfall over north China, the Korean Peninsula, and Japan but a decrease in total rainfall over southern China are observed in the FROALS projection. Homogeneous increases of extreme rainfall amounts were found over the CORDEX‐East Asia domain. A predominant increase in the interannual variability was evident for both total rainfall and the extreme rainfall amount. The spatial patterns of the projected rainfall changes by FROALS were generally consistent with those from the driving global model at a broad scale due to similar projected circulation changes. In both models, the enhanced southerlies over east China increased the moisture divergences over southern China and enhanced the moisture advection over north China. However, the atmosphere‐only regional climate model (RCM) exhibited responses to the underlying sea surface temperature (SST) warming anomalies that were too strong, which induced an anomalous cyclone over the north South China Sea, followed by increases (decreases) of total and extreme rainfall over southern China (central China). The differences of the projected changes in both rainfall and circulation between FROALS and the atmosphere‐only RCM were partly affected by the differences in the projected SST changes. The results recommend the employment of a regional ocean‐atmosphere coupled model in the dynamical downscaling of climate change over the CORDEX‐East Asian domain.",
+  "link": "https://doi.org/10.1002/2015jd024519",
+  "authors": "Liwei Zou, Tianjun Zhou",
+  "source": "JGR: Atmospheres",
+  "published": "2016-3-24",
+  "score": 4,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1029/2017jd027559": {
+  "key": "doi:10.1029/2017jd027559",
+  "title": "Investigating Satellite Precipitation Uncertainty Over Complex Terrain",
+  "summary": "Abstract The estimation of heavy precipitation events is a particularly difficult task, especially over high mountainous terrain typically associated with scant availability of in situ observations. Therefore, quantification of precipitation variability in such data‐limited regions relies on remote sensing estimates, due to their global coverage and near real‐time availability. However, strong underestimation of precipitation associated with low‐level orographic enhancement often limits the quantitative use of these data in applications. This study utilizes state‐of‐the‐art numerical weather prediction simulations, toward the reduction of quantitative errors in satellite precipitation estimates and an insight on the nature of detection limitations. Satellite precipitation products based on different retrieval algorithms (Climate Prediction Center morphing method, Precipitation Estimation from Remotely Sensed Information Using Artificial Neural Networks‐Cloud Classification System, and Global Satellite Mapping of Precipitation) are evaluated for their performance in a number of storm events over mountainous areas with distinct storm characteristics: Upper Blue Nile in Ethiopia and Alto Adige in NE Italy. High‐resolution (1 and 2 km) simulations from the Regional Atmospheric Modeling System/Integrated Community Limited Area Modeling System are used to derive adjustments to the magnitude of satellite estimates. Finally, a microphysical investigation is presented for occurrences of erroneous precipitation detection from the satellite instruments. Statistical indexes showcase improvement in numerical weather prediction‐adjusted satellite products and microphysical commodities among cases of no detection are discussed.",
+  "link": "https://doi.org/10.1029/2017jd027559",
+  "authors": "N. S. Bartsotas, E. N. Anagnostou, E. I. Nikolopoulos, G. Kallos",
+  "source": "JGR: Atmospheres",
+  "published": "2018-5-18",
+  "score": 5,
+  "topics": [
+   "Deep Learning",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s41612-025-01279-3": {
+  "key": "doi:10.1038/s41612-025-01279-3",
+  "title": "Accurate tropical cyclone intensity forecasts using a non-iterative spatiotemporal transformer model",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s41612-025-01279-3",
+  "authors": "Hongyu Qu, Hongxiong Xu, Lin Dong, Chunyi Xiang, Gaozhen Nie",
+  "source": "npj Climate and Atmospheric Science",
+  "published": "2025-12-6",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-013-2046-8": {
+  "key": "doi:10.1007/s00382-013-2046-8",
+  "title": "Simulation of the annual and diurnal cycles of rainfall over South Africa by a regional climate model",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-013-2046-8",
+  "authors": "Benjamin Pohl, Mathieu Rouault, Shouraseni Sen Roy",
+  "source": "Climate Dynamics",
+  "published": "2014-1-10",
+  "score": 6,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-022-06379-x": {
+  "key": "doi:10.1007/s00382-022-06379-x",
+  "title": "Evaluation of precipitation and its time series components in CMIP6 over the Yellow River Basin",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-022-06379-x",
+  "authors": "Yibo Ding, Chengzhen Jiang, Zhaoqiang Zhou, Tianao Gao, Shurong Wang, Xuecai Zhang",
+  "source": "Climate Dynamics",
+  "published": "2022-6-26",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-026-08092-5": {
+  "key": "doi:10.1007/s00382-026-08092-5",
+  "title": "Representation of flavours of El Niño in CMIP6-DCPP lead year-1 hindcasts",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-026-08092-5",
+  "authors": "Rashmi Kakatkar, C. Gnanaseelan",
+  "source": "Climate Dynamics",
+  "published": "2026-2-16",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-021-05701-3": {
+  "key": "doi:10.1007/s00382-021-05701-3",
+  "title": "The sea level variability and its projections over the Indo‐Pacific Ocean in CMIP5 models",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-021-05701-3",
+  "authors": "J. S. Deepa, C. Gnanaseelan, Anant Parekh",
+  "source": "Climate Dynamics",
+  "published": "2021-2-23",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-015-2757-0": {
+  "key": "doi:10.1007/s00382-015-2757-0",
+  "title": "Long-lead ENSO predictability from CMIP5 decadal hindcasts",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-015-2757-0",
+  "authors": "Paula L. M. Gonzalez, Lisa Goddard",
+  "source": "Climate Dynamics",
+  "published": "2015-7-23",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-024-07406-9": {
+  "key": "doi:10.1007/s00382-024-07406-9",
+  "title": "Multivariate bias correction and downscaling of climate models with trend-preserving deep learning",
+  "summary": "Abstract Global climate models (GCMs) and Earth system models (ESMs) exhibit biases, with resolutions too coarse to capture local variability for fine-scale, reliable drought and climate impact assessment. However, conventional bias correction approaches may cause implausible climate change signals due to unrealistic representations of spatial and intervariable dependences. While purely data-driven deep learning has achieved significant progress in improving climate and earth system simulations and predictions, they cannot reliably learn the circumstances (e.g., extremes) that are largely unseen in historical climate but likely becoming more frequent in the future climate (i.e., climate non-stationarity). This study shows an integrated trend-preserving deep learning approach that can address the spatial and intervariable dependences and climate non-stationarity issues for downscaling and bias correcting GCMs/ESMs. Here we combine the super-resolution deep residual network (SRDRN) with the trend-preserving quantile delta mapping (QDM) to downscale and bias correct six primary climate variables at once (including daily precipitation, maximum temperature, minimum temperature, relative humidity, solar radiation, and wind speed) from five state-of-the-art GCMs/ESMs in the Coupled Model Intercomparison Project Phase 6 (CMIP6). We found that the SRDRN-QDM approach greatly reduced GCMs/ESMs biases in spatial and intervariable dependences while significantly better-reducing biases in extremes compared to deep learning. The estimated drought based on the six bias-corrected and downscaled variables captured the observed drought intensity and frequency, which outperformed state-of-the-art multivariate bias correction approaches, demonstrating its capability for correcting GCMs/ESMs biases in spatial and multivariable dependences and extremes.",
+  "link": "https://doi.org/10.1007/s00382-024-07406-9",
+  "authors": "Fang Wang, Di Tian",
+  "source": "Climate Dynamics",
+  "published": "2024-9-4",
+  "score": 12,
+  "topics": [
+   "Downscaling",
+   "Deep Learning",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-011-1075-4": {
+  "key": "doi:10.1007/s00382-011-1075-4",
+  "title": "Shortcomings in climate model simulations of the ENSO-Atlantic hurricane teleconnection",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-011-1075-4",
+  "authors": "Jeffrey Shaman, Eric D. Maloney",
+  "source": "Climate Dynamics",
+  "published": "2011-4-21",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-011-1220-0": {
+  "key": "doi:10.1007/s00382-011-1220-0",
+  "title": "The simulation of medicanes in a high-resolution regional climate model",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-011-1220-0",
+  "authors": "Leone Cavicchia, Hans von Storch",
+  "source": "Climate Dynamics",
+  "published": "2011-10-29",
+  "score": 6,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1007/s00382-023-06745-3": {
+  "key": "doi:10.1007/s00382-023-06745-3",
+  "title": "How well do high-resolution Global Climate Models (GCMs) simulate tropical cyclones in the Bay of Bengal?",
+  "summary": "Abstract Using six HighResMIP multi-ensemble GCMs (both the atmosphere-only and coupled versions) at 25 km resolution, the Tropical Cyclone (TC) activity over the Bay of Bengal (BoB) is examined in the present (1950–2014) climate. We use the Genesis Potential Index (GPI) to study the large-scale environmental conditions associated with the TC frequency in the models. Although the models struggle to reproduce the observed frequency and intensity of TCs, most models can capture the bimodal characteristics of the seasonal cycle of cyclones over the BoB (with fewer TCs during the pre-monsoon [April–May] than the post-monsoon [October–November] season). We find that GPI can capture the seasonal variation of the TC frequency over the BoB in both the observations and models. After calibrating the maximum sustained windspeeds in the models with IBTrACS, we find that like the observations the proportion of strong cyclones is also higher in the pre-monsoon than the post-monsoon. However, the inter-seasonal contrast of the proportion of strong cyclones between the pre-monsoon and post-monsoon seasons is reduced in almost all the models compared to the observations. The windshear term in GPI contributes the most to the model biases in all models during the post-monsoon season. This bias is caused by weakening of upper-level (200 hPa) easterlies in analysed models. During the pre-monsoon season, the environmental term in GPI dominating the model biases varies from model to model. When comparing the atmosphere-only and coupled versions of the models, a reduction of 0.5 °C in the sea surface temperature (SST) and a lowering of TC frequency occur in almost all the coupled models compared to their atmosphere-only counterparts.",
+  "link": "https://doi.org/10.1007/s00382-023-06745-3",
+  "authors": "Shammi Akhter, Christopher E. Holloway, Kevin Hodges, Benoit Vanniere",
+  "source": "Climate Dynamics",
+  "published": "2023-3-27",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1175/2008mwr2464.1": {
+  "key": "doi:10.1175/2008mwr2464.1",
+  "title": "Parameterization of PBL Processes in an Atmospheric General Circulation Model: Description and Preliminary Assessment",
+  "summary": "Abstract This paper presents the basic features of a newly developed planetary boundary layer (PBL) parameterization, and the performance assessment of a version of the University of California, Los Angeles (UCLA), Atmospheric General Circulation Model (AGCM) to which the parameterization is incorporated. The UCLA AGCM traditionally uses a framework in which a sigma-type vertical coordinate for the PBL shares a coordinate surface with the free atmosphere at the PBL top. This framework facilitates an explicit representation of processes concentrated near the PBL top, which is crucially important especially for predicting PBL clouds. In the new framework, multiple layers are introduced between the PBL top and earth’s surface, allowing for predictions of the vertical profiles of potential temperature, total water mixing ratio, and horizontal winds within the PBL. The vertically integrated “bulk” turbulent kinetic energy (TKE) is also predicted for the PBL. The PBL-top mass entrainment is determined through an equation including the effects of TKE and the radiative and evaporative cooling processes concentrated near the PBL top. The surface fluxes are determined from an aerodynamic formula in which the velocity scale depends both on the square root of TKE and the grid-scale PBL velocity at the lowermost model layer. The turbulent fluxes within the PBL are determined through an approach that includes the effects of both large convective and small diffusive eddies. AGCM simulations with the new formulation of PBL are analyzed with a focus on the seasonal and diurnal variations. The simulated seasonal cycle of stratocumulus over the eastern oceans is realistic, as are the diurnal cycles of the PBL depth and precipitation over land. The simulated fluxes of latent heat, momentum, and shortwave radiation at the ocean surface and baroclinic activity in the middle latitudes show significant improvements over the previous versions of the AGCM based on the single-layer PBL.",
+  "link": "https://doi.org/10.1175/2008mwr2464.1",
+  "authors": "Celal S. Konor, Gabriel Cazes Boezio, Carlos R. Mechoso, Akio Arakawa",
+  "source": "Monthly Weather Review",
+  "published": "2009-3-1",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1175/1520-0493(1983)111<2224:tpotpb>2.0.co;2": {
+  "key": "doi:10.1175/1520-0493(1983)111<2224:tpotpb>2.0.co;2",
+  "title": "The Parameterization Of the Planetary Boundary Layer in the UCLA General Circulation Model: Formulation and Results",
+  "summary": "",
+  "link": "https://doi.org/10.1175/1520-0493(1983)111<2224:tpotpb>2.0.co;2",
+  "authors": "Max J. Suarez, Akio Arakawa, David A. Randall",
+  "source": "Monthly Weather Review",
+  "published": "1983-11",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1175/mwr-d-14-00329.1": {
+  "key": "doi:10.1175/mwr-d-14-00329.1",
+  "title": "Improving Precipitation Forecasts by Generating Ensembles through Postprocessing",
+  "summary": "Abstract This paper evaluates a postprocessing method for deterministic quantitative precipitation forecasts (raw QPFs) from a numerical weather prediction model. The postprocessing aims to produce calibrated QPF ensembles that are bias free, more accurate than raw QPFs, and reliable for use in streamflow forecasting applications. The method combines a simplified version of the Bayesian joint probability (BJP) modeling approach and the Schaake shuffle. The BJP modeling approach relates raw QPFs and observed precipitation by modeling their joint distribution. It corrects biases in the raw QPFs and generates ensemble forecasts that reflect the uncertainty in the raw QPFs. The BJP modeling approach is applied to each lead time and each forecast location separately. The Schaake shuffle is then employed to produce calibrated QPFs with appropriate space–time correlations by linking ensemble members generated by the BJP modeling approach. Calibrated QPFs are produced for 10 Australian catchments that cover a wide range of climatic conditions and hydrological characteristics. The calibrated QPFs are bias free, contain smaller forecast errors than that of the raw QPFs, reliably quantify the forecast uncertainty at a range of lead times, and successfully discriminate common and rare events of precipitation occurrences at shorter lead times. The postprocessing method is able to instill realistic within-catchment spatial variability in the QPFs, which is crucial for accurate and reliable streamflow forecasting.",
+  "link": "https://doi.org/10.1175/mwr-d-14-00329.1",
+  "authors": "Durga Lal Shrestha, David E. Robertson, James C. Bennett, Q. J. Wang",
+  "source": "Monthly Weather Review",
+  "published": "2015-8-31",
+  "score": 3,
+  "topics": [
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1175/mwr-d-23-0227.1": {
+  "key": "doi:10.1175/mwr-d-23-0227.1",
+  "title": "Implementation of All-Sky Assimilation of Microwave Humidity Sounding Channels in Environment Canada’s Global Deterministic Weather Prediction System",
+  "summary": "Abstract Cloud-affected microwave humidity sounding radiances were excluded from assimilation in the hybrid four-dimensional ensemble–variational (4D-EnVar) system of the Global Deterministic Prediction System (GDPS) at Environment and Climate Change Canada (ECCC). This was due to the inability of the current radiative transfer model to consider the scattering effect from frozen hydrometeors at these frequencies. In addition to upgrading the observation operator to RTTOV-SCATT, quality control, bias correction, and 4D-EnVar assimilation components are modified to perform all-sky assimilation of Microwave Humidity Sounder (MHS) channel 2–5 observations over ocean in the GDPS. The input profiles to RTTOV-SCATT are extended to include liquid cloud, ice cloud, and cloud fraction profiles for the simulation and assimilation of MHS observations over water. There is a maximum (35%) increase in the number of channel 2 assimilated MHS observations with smaller increases for channels 3–5 in the all-sky experiment compared to the clear-sky experiment, mostly because of newly assimilated cloud-affected observations. The standard deviation (stddev) of difference between the observed global positioning system radio occultation (GPSRO) refractivity observations and the corresponding simulated values using the background state was reduced in the lower troposphere below 9 km in the all-sky experiment. Verifications of forecasts against the radiosonde observations show statistically significant reductions of 1% in the stddev of error for geopotential height, temperature, and horizontal wind for the all-sky experiment between 72- and 120-h forecast ranges in the troposphere in the Northern Hemisphere domain. Verifications of forecasts against ECMWF analyses also show small improvements in the zonal mean of stddev of error for temperature and horizontal wind for the all-sky experiment between 72- and 120-h forecast ranges. This work was planned for operational implementation in the GDPS in fall 2023.",
+  "link": "https://doi.org/10.1175/mwr-d-23-0227.1",
+  "authors": "Maziar Bani Shahabadi, Mark Buehner",
+  "source": "Monthly Weather Review",
+  "published": "2024-4",
+  "score": 4,
+  "topics": [
+   "Downscaling",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1175/mwr-d-12-00152.1": {
+  "key": "doi:10.1175/mwr-d-12-00152.1",
+  "title": "The Impact of SST Bias Correction on North Atlantic Hurricane Retrospective Forecasts",
+  "summary": "Abstract The impact of sea surface temperature (SST) bias correction on seasonal North Atlantic hurricane retrospective forecasts is examined with the Florida State University/Center for Ocean–Atmospheric Prediction Studies (FSU/COAPS) atmospheric global spectral model. The retrospective forecasts cover a 28-yr period (1982–2009). For each year of the retrospective forecast, two, four-member ensembles are developed using predicted SSTs from the National Oceanic and Atmospheric Administration’s Climate Forecast System, version 1 (CFSv1), model. The first ensemble uses the SSTs forecasted from the CFSv1 model and the second ensemble uses the same SSTs with a simple bias correction applied. Seasonal hurricane counts determined using both SSTs are shown to have skill, although the skill is much greater using the bias-corrected SSTs. In addition, a positive significant trend in the hurricane counts is noted using the bias-corrected SSTs, in good agreement with observations while no significant trend is noted using the non-bias-corrected SST. The reason for the enhanced skill is related in part to the magnitude of the mean SST allowing stronger convective activity in the equatorial Pacific to more effectively alter the vertical wind shear in the tropical North Atlantic through changes in the Walker cell.",
+  "link": "https://doi.org/10.1175/mwr-d-12-00152.1",
+  "authors": "Timothy E. LaRow",
+  "source": "Monthly Weather Review",
+  "published": "2013-2-1",
+  "score": 3,
+  "topics": [
+   "Downscaling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1175/1520-0434(2002)016<0725:adatsp>2.0.co;2": {
+  "key": "doi:10.1175/1520-0434(2002)016<0725:adatsp>2.0.co;2",
+  "title": "A Dynamical Approach to Seasonal Prediction of Atlantic Tropical Cyclone Activity",
+  "summary": "",
+  "link": "https://doi.org/10.1175/1520-0434(2002)016<0725:adatsp>2.0.co;2",
+  "authors": "Chris Thorncroft, Ioannis Pytharoulis",
+  "source": "Weather and Forecasting",
+  "published": "2001-12",
+  "score": 3,
+  "topics": [
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1002/qj.4976": {
+  "key": "doi:10.1002/qj.4976",
+  "title": "Association between the meridional displacement of the Asian jet and Indian summer monsoon rainfall in CMIP6 models: Impact of El Niño and Pacific decadal oscillation",
+  "summary": "Abstract The relationship between meridional displacement of the Asian jet and Indian summer monsoon (ISM) is examined in the observations and 40 state‐of‐the‐art Coupled Model Intercomparison Project, phase 6 (CMIP6) historical simulations. The southward displacement of the Asian jet (SWDAJ) is found to be linked with reduced rainfall over central and north India including monsoon trough region in both the observations and most of the CMIP6 models. In general, models are able to simulate the characteristics of the SWDAJ during summer with some differences in zonal asymmetry. Detailed analysis elucidated two observed pathways that connect the SWDAJ with ISM rainfall variability. The first is the west Asian jet–easterly jet pathway, where the SWDAJ is linked with the southeastward shift of the South Asian high, contributing to the weakening of tropical easterly jet. This pattern aligns with changes in low‐level ISM circulation and contributed to reduced rainfall over India. The west Asian jet–easterly jet pathway is well represented by most of the CMIP6 models. The second pathway involves the East Asian jet–Pacific Japan pattern, in which the SWDAJ over East Asia strengthens the western North Pacific anticyclone through the barotropic–baroclinic coupling. The anomalous westward extended easterlies originating from the western North Pacific anticyclone hinder the southwesterly monsoon flow and suppress the rainfall. It is found that CMIP6 models largely failed to capture the East Asian jet–Pacific Japan pathway, likely due to the models' tendency to overestimate the simulation of the Indian Ocean dipole, and westward extension of El Niño‐related sea‐surface temperature anomalies in most of the models. Further, the combined influence of El Niño and the Pacific decadal oscillation and El Niño alone on the SWDAJ and ISM rainfall is also discussed in detail. Results obtained in this study are useful to understand the ability of CMIP6 models in representing the midlatitude circulation associated with ISM rainfall variability.",
+  "link": "https://doi.org/10.1002/qj.4976",
+  "authors": "Amol Vibhute, Jasti S. Chowdary, Patekar Darshana, Anant Parekh, C. Gnanaseelan",
+  "source": "Quarterly Journal of the Royal Meteorological Society",
+  "published": "2025-3-23",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-019-0139-8": {
+  "key": "doi:10.1038/s42256-019-0139-8",
+  "title": "Validity of machine learning in biology and medicine increased through collaborations across fields of expertise",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-019-0139-8",
+  "authors": "Maria Littmann, Katharina Selig, Liel Cohen-Lavi, Yotam Frank, Peter Hönigschmid, Evans Kataka",
+  "source": "Nature Machine Intelligence",
+  "published": "2020-1-13",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-021-00353-8": {
+  "key": "doi:10.1038/s42256-021-00353-8",
+  "title": "Machine learning to guide the use of adjuvant therapies for breast cancer",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-021-00353-8",
+  "authors": "Ahmed M. Alaa, Deepti Gurdasani, Adrian L. Harris, Jem Rashbass, Mihaela van der Schaar",
+  "source": "Nature Machine Intelligence",
+  "published": "2021-6-24",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-021-00303-4": {
+  "key": "doi:10.1038/s42256-021-00303-4",
+  "title": "Morphological and molecular breast cancer profiling through explainable machine learning",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-021-00303-4",
+  "authors": "Alexander Binder, Michael Bockmayr, Miriam Hägele, Stephan Wienert, Daniel Heim, Katharina Hellweg",
+  "source": "Nature Machine Intelligence",
+  "published": "2021-3-8",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-024-00797-8": {
+  "key": "doi:10.1038/s42256-024-00797-8",
+  "title": "A causal perspective on dataset bias in machine learning for medical imaging",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-024-00797-8",
+  "authors": "Charles Jones, Daniel C. Castro, Fabio De Sousa Ribeiro, Ozan Oktay, Melissa McCradden, Ben Glocker",
+  "source": "Nature Machine Intelligence",
+  "published": "2024-2-15",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-022-00445-z": {
+  "key": "doi:10.1038/s42256-022-00445-z",
+  "title": "Stable learning establishes some common ground between causal inference and machine learning",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-022-00445-z",
+  "authors": "Peng Cui, Susan Athey",
+  "source": "Nature Machine Intelligence",
+  "published": "2022-2-23",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-025-01139-y": {
+  "key": "doi:10.1038/s42256-025-01139-y",
+  "title": "Are neural network representations universal or idiosyncratic?",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-025-01139-y",
+  "authors": "",
+  "source": "Nature Machine Intelligence",
+  "published": "2025-10-21",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-020-0183-4": {
+  "key": "doi:10.1038/s42256-020-0183-4",
+  "title": "Towards a new generation of artificial intelligence in China",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-020-0183-4",
+  "authors": "Fei Wu, Cewu Lu, Mingjie Zhu, Hao Chen, Jun Zhu, Kai Yu",
+  "source": "Nature Machine Intelligence",
+  "published": "2020-6-16",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-021-00365-4": {
+  "key": "doi:10.1038/s42256-021-00365-4",
+  "title": "Learning equilibria in symmetric auction games using artificial neural networks",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-021-00365-4",
+  "authors": "Martin Bichler, Maximilian Fichtl, Stefan Heidekrüger, Nils Kohring, Paul Sutterer",
+  "source": "Nature Machine Intelligence",
+  "published": "2021-8-9",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-025-01030-w": {
+  "key": "doi:10.1038/s42256-025-01030-w",
+  "title": "Generating 3D small binding molecules using shape-conditioned diffusion models with guidance",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-025-01030-w",
+  "authors": "Ziqi Chen, Bo Peng, Tianhua Zhai, Daniel Adu-Ampratwum, Xia Ning",
+  "source": "Nature Machine Intelligence",
+  "published": "2025-5-12",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-021-00409-9": {
+  "key": "doi:10.1038/s42256-021-00409-9",
+  "title": "A geometric deep learning approach to predict binding conformations of bioactive molecules",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-021-00409-9",
+  "authors": "Oscar Méndez-Lucio, Mazen Ahmad, Ehecatl Antonio del Rio-Chanona, Jörg Kurt Wegner",
+  "source": "Nature Machine Intelligence",
+  "published": "2021-12-2",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-025-01055-1": {
+  "key": "doi:10.1038/s42256-025-01055-1",
+  "title": "A framework to evaluate machine learning crystal stability predictions",
+  "summary": "Abstract The rapid adoption of machine learning in various scientific domains calls for the development of best practices and community agreed-upon benchmarking tasks and metrics. We present Matbench Discovery as an example evaluation framework for machine learning energy models, here applied as pre-filters to first-principles computed data in a high-throughput search for stable inorganic crystals. We address the disconnect between (1) thermodynamic stability and formation energy and (2) retrospective and prospective benchmarking for materials discovery. Alongside this paper, we publish a Python package to aid with future model submissions and a growing online leaderboard with adaptive user-defined weighting of various performance metrics allowing researchers to prioritize the metrics they value most. To answer the question of which machine learning methodology performs best at materials discovery, our initial release includes random forests, graph neural networks, one-shot predictors, iterative Bayesian optimizers and universal interatomic potentials. We highlight a misalignment between commonly used regression metrics and more task-relevant classification metrics for materials discovery. Accurate regressors are susceptible to unexpectedly high false-positive rates if those accurate predictions lie close to the decision boundary at 0 eV per atom above the convex hull. The benchmark results demonstrate that universal interatomic potentials have advanced sufficiently to effectively and cheaply pre-screen thermodynamic stable hypothetical materials in future expansions of high-throughput materials databases.",
+  "link": "https://doi.org/10.1038/s42256-025-01055-1",
+  "authors": "Janosh Riebesell, Rhys E. A. Goodall, Philipp Benner, Yuan Chiang, Bowen Deng, Gerbrand Ceder",
+  "source": "Nature Machine Intelligence",
+  "published": "2025-6-23",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-020-00285-9": {
+  "key": "doi:10.1038/s42256-020-00285-9",
+  "title": "A deep learning framework for high-throughput mechanism-driven phenotype compound screening and its application to COVID-19 drug repurposing",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-020-00285-9",
+  "authors": "Thai-Hoang Pham, Yue Qiu, Jucheng Zeng, Lei Xie, Ping Zhang",
+  "source": "Nature Machine Intelligence",
+  "published": "2021-2-1",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-021-00309-y": {
+  "key": "doi:10.1038/s42256-021-00309-y",
+  "title": "A versatile deep learning architecture for classification and label-free prediction of hyperspectral images",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-021-00309-y",
+  "authors": "Bryce Manifold, Shuaiqian Men, Ruoqian Hu, Dan Fu",
+  "source": "Nature Machine Intelligence",
+  "published": "2021-3-11",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-023-00780-9": {
+  "key": "doi:10.1038/s42256-023-00780-9",
+  "title": "Capturing complex hand movements and object interactions using machine learning-powered stretchable smart textile gloves",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-023-00780-9",
+  "authors": "Arvin Tashakori, Zenan Jiang, Amir Servati, Saeid Soltanian, Harishkumar Narayana, Katherine Le",
+  "source": "Nature Machine Intelligence",
+  "published": "2024-1-12",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-025-01070-2": {
+  "key": "doi:10.1038/s42256-025-01070-2",
+  "title": "Deep-learning-aided dismantling of interdependent networks",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-025-01070-2",
+  "authors": "Weiwei Gu, Chen Yang, Lei Li, Jinqiang Hou, Filippo Radicchi",
+  "source": "Nature Machine Intelligence",
+  "published": "2025-7-14",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-021-00394-z": {
+  "key": "doi:10.1038/s42256-021-00394-z",
+  "title": "Harnessing the power of artificial intelligence to transform hearing healthcare and research",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-021-00394-z",
+  "authors": "Nicholas A. Lesica, Nishchay Mehta, Joseph G. Manjaly, Li Deng, Blake S. Wilson, Fan-Gang Zeng",
+  "source": "Nature Machine Intelligence",
+  "published": "2021-10-18",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-025-01160-1": {
+  "key": "doi:10.1038/s42256-025-01160-1",
+  "title": "Assessing the potential of deep learning for protein–ligand docking",
+  "summary": "Abstract The effects of ligand binding on protein structures and their in vivo functions carry numerous implications for modern biomedical research and biotechnology development efforts such as drug discovery. Although several deep learning (DL) methods and benchmarks designed for protein–ligand docking have recently been introduced, so far no previous works have systematically studied the behaviour of the latest docking and structure prediction methods within the broadly applicable context of: (1) using predicted (apo) protein structures for docking (for example, for applicability to new proteins); (2) binding multiple (cofactor) ligands concurrently to a given target protein (for example, for enzyme design); and (3) having no previous knowledge of binding pockets (for example, for generalization to unknown pockets). To enable a deeper understanding of the real-world utility of docking methods, we introduce PoseBench, a comprehensive benchmark for broadly applicable protein–ligand docking. PoseBench enables researchers to rigorously and systematically evaluate DL methods for apo-to-holo protein–ligand docking and protein–ligand structure prediction using both primary ligand and multiligand benchmark datasets, the latter of which we introduce to the DL community. Empirically, using PoseBench, we find that: (1) DL cofolding methods generally outperform comparable conventional and DL docking baseline algorithms, but popular methods such as AlphaFold 3 are still challenged by prediction targets with new protein–ligand binding poses; (2) certain DL cofolding methods are highly sensitive to their input multiple sequence alignments, whereas others are not; and (3) DL methods struggle to strike a balance between structural accuracy and chemical specificity when predicting new or multiligand protein targets.",
+  "link": "https://doi.org/10.1038/s42256-025-01160-1",
+  "authors": "Alex Morehead, Nabin Giri, Jian Liu, Pawan Neupane, Jianlin Cheng",
+  "source": "Nature Machine Intelligence",
+  "published": "2025-12-31",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "doi:10.1038/s42256-022-00447-x": {
+  "key": "doi:10.1038/s42256-022-00447-x",
+  "title": "Molecular contrastive learning of representations via graph neural networks",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-022-00447-x",
+  "authors": "Yuyang Wang, Jianren Wang, Zhonglin Cao, Amir Barati Farimani",
+  "source": "Nature Machine Intelligence",
+  "published": "2022-3-3",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-22T12:39:10+00:00"
  }
 }
