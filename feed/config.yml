@@ -6,7 +6,7 @@ site: "https://g-jha-g.github.io/feed/"
 contact_email: "shaileshskj4@gmail.com"   # sent to Crossref as a polite contact, as their API asks
 
 keep_days: 30        # how long an item stays in the feed after it first appears
-max_items: 250       # feed size limit
+max_items: 300       # paper limit (citations and jobs are extra)
 min_score: 3         # items scoring below this are dropped (see scoring at the end of this file)
 
 # Topics and the words that signal them. Matching ignores case. A word ending in * matches any ending,
@@ -146,3 +146,60 @@ watch_people:
   - {name: "Jakob Runge", where: "TU Dresden / DLR", arxiv: "au:Runge_J"}
   - {name: "Henry Addison", where: "Bristol", arxiv: "au:Addison_H"}
   - {name: "Markus Reichstein", where: "MPI Jena", arxiv: "au:Reichstein_M"}
+
+# ---------- your taste profile (used for similarity ranking) ----------
+# Each new paper is compared with these texts; the closer it is, the higher it ranks.
+# Use Semantic Scholar id formats: DOI:10.xxxx/... or ARXIV:2401.12345
+my_papers:
+  - DOI:10.3389/fclim.2025.1572428
+  - DOI:10.1007/978-981-97-7502-6_17
+# Favourite papers that define what you want more of. Add freely.
+seed_papers: []
+# Export your Zotero library (or one collection) as BibTeX with abstracts, name it library.bib,
+# and upload it into this feed folder. It is read automatically.
+zotero_bib: library.bib
+# Short descriptions of your current work. These matter most until the other sources fill up.
+interests:
+  - name: Generative precipitation downscaling over India
+    text: >-
+      Diffusion models (DDPM) and flow matching for statistical downscaling of CMIP6 daily precipitation
+      and temperature to about 0.1 degree over India, evaluated on extremes, spatial structure, power
+      spectra, rank histograms and probabilistic skill, with likelihood-based diagnostics.
+  - name: Latent diffusion emulator of kilometre-scale regional climate
+    text: >-
+      Residual latent diffusion model emulating a 3 km WRF convection-permitting regional climate
+      simulation over the Alps, and transfer of the emulator to the Himalaya and complex terrain.
+  - name: Resolution effects on climate impact indicators
+    text: >-
+      How spatial resolution and subgrid variance change cooling degree days and heat extremes in India.
+  - name: Probabilistic hydrology with generative models
+    text: >-
+      Flow matching and diffusion for probabilistic hourly streamflow prediction, and downscaling of
+      MODIS evapotranspiration with deep learning.
+similarity:
+  model: sentence-transformers/all-MiniLM-L6-v2   # falls back to TF-IDF if it cannot load
+  weight: 0.6                  # share of the score from similarity; the rest comes from keywords
+  admit_without_keywords: 0.75 # papers this close to your profile are kept even with no keyword hit
+daily_picks: 10                # papers per day in "To read"; the rest stay in Everything
+
+# ---------- extra streams (Semantic Scholar, free) ----------
+recommendations: {enabled: true, limit: 100, keep: 15}   # keep = best new recommendations per run
+citations: {enabled: true}                               # new papers citing anything in my_papers
+
+# ---------- postdoc job ads ----------
+# Any RSS feed works. Good ones to add:
+#   Google Alerts (google.com/alerts): set "Deliver to: RSS feed", e.g. for
+#     "postdoc" "machine learning" climate   and   "postdoctoral" downscaling
+#   jobs.ac.uk or EURAXESS saved-search emails, turned into a feed with kill-the-newsletter.com
+#   University job RSS feeds, like the Leeds Faculty of Environment one below.
+jobs:
+  keep_days: 45
+  title_words: [postdoc*, post-doc*, postdoctoral, research fellow, research associate, research scientist]
+  topic_words: [climate, weather, downscal*, machine learning, deep learning, atmospheric, hydrolog*, earth system, precipitation]
+  feeds:
+    - https://jobs.leeds.ac.uk/rss/rss.aspx?cat=225
+
+# ---------- deadlines shown on the desk (past ones hide themselves) ----------
+deadlines:
+  - {name: "EGU27 abstract deadline (check egu27.eu)", date: 2027-01-12, url: "https://meetingorganizer.copernicus.org/EGU27/sessionprogramme"}
+  - {name: "EGU General Assembly 2027, Vienna", date: 2027-04-04, url: "https://meetingorganizer.copernicus.org/EGU27/sessionprogramme"}

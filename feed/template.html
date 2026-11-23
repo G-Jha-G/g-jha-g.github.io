@@ -71,6 +71,13 @@ li.open .ab{display:block}
 .act button,.act a{color:var(--mute);text-decoration:none}
 .act button:hover,.act a:hover{color:var(--ink);text-decoration:underline}
 .act .st[aria-pressed=true]{color:var(--star);font-weight:600}
+#dl h2{margin-top:26px}
+.dl a{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:13px}
+.dl a:hover span:first-child{text-decoration:underline}
+.dl b{color:var(--accent);white-space:nowrap}
+.why{font-size:13px;color:var(--mute);margin-top:4px}
+.why em{font-style:normal;color:var(--ink)}
+.kind{background:var(--ink);color:#fff;border-radius:3px;padding:0 6px;font-size:12px;font-weight:600}
 .empty{padding:50px 0;color:var(--mute);font:16px/1.6 var(--serif)}
 .keys{margin-top:36px;color:var(--mute);font-size:12px}
 kbd{font:12px var(--sans);border:1px solid var(--line);border-bottom-width:2px;border-radius:3px;padding:0 5px}
@@ -94,6 +101,8 @@ kbd{font:12px var(--sans);border:1px solid var(--line);border-bottom-width:2px;b
     <h2>Since your last visit</h2>
     <div class="brief"><b id="newN">0</b><span id="newT">new papers</span></div>
 
+    <div id="dl"></div>
+
     <h2>View</h2>
     <div class="nav" id="views"></div>
 
@@ -107,6 +116,7 @@ kbd{font:12px var(--sans);border:1px solid var(--line);border-bottom-width:2px;b
     <div class="tools">
       <button id="bib">Download BibTeX for Zotero</button>
       <button id="md">Copy as reading notes</button>
+      <button id="teach">Teach the ranker (likes.json)</button>
       <button id="backup">Back up stars and reads</button>
       <button id="restore">Restore from backup</button>
       <a href="feed.xml">RSS feed</a>
@@ -122,7 +132,7 @@ kbd{font:12px var(--sans);border:1px solid var(--line);border-bottom-width:2px;b
     </div>
     <p class="count" id="count"></p>
     <div id="list"></div>
-    <p class="keys"><kbd>j</kbd> <kbd>k</kbd> move, <kbd>a</kbd> abstract, <kbd>s</kbd> star, <kbd>x</kbd> mark read, <kbd>o</kbd> open, <kbd>/</kbd> search. Stars and reads are saved in this browser only; use backup to move them.</p>
+    <p class="keys"><kbd>j</kbd> <kbd>k</kbd> move, <kbd>a</kbd> abstract, <kbd>s</kbd> star, <kbd>x</kbd> mark read, <kbd>n</kbd> not for me, <kbd>o</kbd> open, <kbd>/</kbd> search. Stars and reads are saved in this browser only; use backup to move them.</p>
   </main>
 </div>
 <div class="toast" id="toast" role="status"></div>
@@ -134,17 +144,18 @@ const D = JSON.parse(document.getElementById('data').textContent) || {updated:ne
 const LS = 'readingDesk.v1';
 function load(){ try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch(e){ return {}; } }
 function save(){ try { localStorage.setItem(LS, JSON.stringify(S)); } catch(e){} }
-const S = Object.assign({star:{}, done:{}, last:null}, load());
+const S = Object.assign({star:{}, done:{}, no:{}, last:null}, load());
 const prevVisit = S.last ? new Date(S.last) : null;
 S.last = new Date().toISOString(); save();
 
 const items = D.items.map(it => Object.assign(it, {
+  kind: it.kind || 'paper', topics: it.topics || [],
   seen: new Date(it.first_seen),
   hay: (it.title + ' ' + it.summary + ' ' + it.authors + ' ' + it.source).toLowerCase(),
   isArxiv: it.key.startsWith('arxiv:')
 }));
 const isNew = it => prevVisit ? it.seen > prevVisit : (Date.now() - it.seen) < 864e5;
-const maxScore = Math.max(10, ...items.map(i => i.score));
+
 
 const F = {view:'inbox', topic:null, person:null, win:30, sort:'rel', src:'', q:''};
 let cur = -1, shown = []; const openSet = new Set();
@@ -154,19 +165,26 @@ const esc = s => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;',
 function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toast.h); toast.h=setTimeout(()=>el.classList.remove('on'),1600); }
 
 const upd = new Date(D.updated);
-$('sub').textContent = items.length + ' papers from the last 30 days on downscaling, deep learning, climate modelling, and weather and S2S forecasting. Updated ' + upd.toLocaleDateString(undefined,{day:'numeric',month:'short'}) + '.';
-const nNew = items.filter(isNew).length;
+const nPapers = items.filter(i=>i.kind==='paper').length;
+$('sub').textContent = nPapers + ' papers from the last 30 days, ranked against ' + (D.profile||0) + ' texts that describe your work. Updated ' + upd.toLocaleDateString(undefined,{day:'numeric',month:'short'}) + '.';
+const nNew = items.filter(i => i.kind==='paper' && isNew(i)).length;
 $('newN').textContent = nNew;
 $('newT').textContent = (nNew===1?'new paper':'new papers') + (prevVisit ? ' since ' + prevVisit.toLocaleDateString(undefined,{day:'numeric',month:'short'}) : ' today');
 
+const P = it => it.kind === 'paper';
 const VIEWS = [
-  ['inbox','To read', it => !S.done[it.key]],
-  ['new','New', isNew],
-  ['top','Top picks', it => it.score >= 9],
-  ['watch','From watched people', it => it.watch && it.watch.length],
+  ['inbox','To read', it => P(it) && it.pick && !S.done[it.key] && !S.no[it.key]],
+  ['new','New papers', it => P(it) && isNew(it) && !S.no[it.key]],
+  ['rec','Recommended', it => it.kind==='rec' && !S.no[it.key]],
+  ['cite','Cited your work', it => it.kind==='cite'],
+  ['watch','From watched people', it => P(it) && it.watch && it.watch.length],
+  ['job','Postdoc ads', it => it.kind==='job' && !S.no[it.key]],
   ['star','Starred', it => S.star[it.key]],
-  ['all','Everything', () => true]
+  ['all','All papers', it => P(it)]
 ];
+const dls = (D.deadlines||[]).map(d => { const n = Math.ceil((new Date(d.date) - Date.now())/864e5);
+  return `<a href="${esc(d.url||'#')}" target="_blank" rel="noopener"><span>${esc(d.name)}</span><b>${n<=0?'today':n+' d'}</b></a>`; }).join('');
+$('dl').innerHTML = dls ? '<h2>Coming up</h2><div class="dl">'+dls+'</div>' : '';
 function seg(id, opts, key){
   $(id).innerHTML = opts.map(([v,l]) => `<button data-v="${v}" aria-pressed="${F[key]==v}">${l}</button>`).join('');
   $(id).onclick = e => { const b=e.target.closest('button'); if(!b) return; F[key] = isNaN(+b.dataset.v) ? b.dataset.v : +b.dataset.v; render(); };
@@ -191,10 +209,10 @@ function sidebar(){
   const pool = items.filter(base);
   $('views').innerHTML = VIEWS.map(([v,l,fn]) =>
     `<button data-v="${v}" aria-pressed="${F.view==v}"><span>${l}</span><small>${pool.filter(fn).length}</small></button>`).join('');
-  const tc = t => items.filter(i => i.topics.includes(t)).length;
+  const tc = t => items.filter(i => P(i) && i.topics.includes(t)).length;
   $('topics').innerHTML = D.topics.map(t => `<button class="chip" data-t="${esc(t)}" aria-pressed="${F.topic==t}">${esc(t)} <small>${tc(t)}</small></button>`).join('');
   $('people').innerHTML = D.people.length ? D.people.map(p => {
-    const n = items.filter(i => (i.watch||[]).includes(p.name)).length;
+    const n = items.filter(i => P(i) && (i.watch||[]).includes(p.name)).length;
     return `<button data-p="${esc(p.name)}" aria-pressed="${F.person==p.name}"><span><span class="pn">${esc(p.name)}</span><br><span class="pw">${esc(p.where)}</span></span><span class="pc ${n?'on':''}">${n}</span></button>`;
   }).join('') : '<p class="pw">Add names under watch_people in config.yml.</p>';
 }
@@ -213,23 +231,30 @@ function authorsHtml(it){
   return s;
 }
 function card(it, i){
-  const bars = Math.max(1, Math.min(5, Math.round(it.score / maxScore * 5)));
+  const bars = Math.max(1, Math.min(5, Math.ceil((it.score||0) / 20)));
+  const isJob = it.kind === 'job';
   const id = it.key.replace(/^(arxiv|doi):/,'');
   const links = [];
-  if (it.isArxiv){ links.push(`<a href="https://arxiv.org/pdf/${esc(id)}">PDF</a>`, `<a href="https://www.alphaxiv.org/abs/${esc(id)}">Discuss on alphaXiv</a>`); }
-  links.push(`<a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(it.title)}">Semantic Scholar</a>`);
+  if (isJob) links.length = 0;
+  else if (it.isArxiv){ links.push(`<a href="https://arxiv.org/pdf/${esc(id)}">PDF</a>`, `<a href="https://www.alphaxiv.org/abs/${esc(id)}">Discuss on alphaXiv</a>`); }
+  if (!isJob) links.push(`<a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(it.title)}">Semantic Scholar</a>`);
+  const badge = it.kind==='rec' ? '<span class="kind">Recommended</span>' : it.kind==='cite' ? '<span class="kind">Cites you</span>' : isJob ? '<span class="kind">Job ad</span>' : '';
+  const why = it.kind==='cite' && it.cites && it.cites[0] ? `<div class="why">Cites your paper <em>${esc(it.cites[0])}</em></div>`
+            : it.why && !isJob ? `<div class="why">Close to ${esc(it.why.src)}: <em>${esc(it.why.title)}</em></div>` : '';
   return `<li class="p${S.done[it.key]?' done':''}${openSet.has(it.key)?' open':''}" data-i="${i}">
-    <div class="rel" title="Relevance score ${it.score}">${[1,2,3,4,5].map(n=>`<i class="${n<=bars?'on':''}"></i>`).join('')}</div>
+    <div class="rel" title="Relevance ${it.score} of 100">${[1,2,3,4,5].map(n=>`<i class="${n<=bars?'on':''}"></i>`).join('')}</div>
     <div>
       <a class="t" href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.title)}</a>
-      <div class="m"><span>${esc(it.source)}</span>${isNew(it)?'<span class="w">New</span>':''}${(it.watch||[]).length?'<span class="w">Watched author</span>':''}${it.topics.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}${(it.boosts||[]).length?`<span>also: ${esc(it.boosts.map(b=>b.replace('*','')).join(', '))}</span>`:''}</div>
+      <div class="m">${badge}<span>${esc(it.source)}${it.kind!=='paper'&&it.published?', '+esc(String(it.published).slice(0,10)):''}</span>${isNew(it)?'<span class="w">New</span>':''}${(it.watch||[]).length?'<span class="w">Watched author</span>':''}${it.topics.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}${(it.boosts||[]).length?`<span>also: ${esc(it.boosts.map(b=>b.replace('*','')).join(', '))}</span>`:''}</div>
       ${it.authors?`<div class="au">${authorsHtml(it)}</div>`:''}
+      ${why}
       ${it.summary?`<p class="ab">${esc(it.summary)}</p>`:''}
       <div class="act">
         ${it.summary?'<button data-a="ab">Abstract</button>':''}
         <button class="st" data-a="star" aria-pressed="${!!S.star[it.key]}">${S.star[it.key]?'Starred':'Star'}</button>
         <button data-a="done">${S.done[it.key]?'Mark unread':'Mark read'}</button>
-        <button data-a="cite">Copy BibTeX</button>
+        <button data-a="no">${S.no[it.key]?'Undo not for me':'Not for me'}</button>
+        ${isJob?'':'<button data-a="cite">Copy BibTeX</button>'}
         ${links.join('')}
       </div>
     </div></li>`;
@@ -243,7 +268,9 @@ function render(){
   shown.sort(F.sort==='rel' ? (a,b) => b.score - a.score || b.seen - a.seen : (a,b) => b.seen - a.seen || b.score - a.score);
   $('count').textContent = shown.length + (shown.length===1?' paper':' papers');
   if (!shown.length){
-    const msg = F.view==='inbox' ? 'Nothing left to read in this selection. Try a longer time window, or open Everything.' :
+    const msg = F.view==='inbox' ? 'You are through today\'s picks. Open All papers for the rest, or come back tomorrow.' :
+                F.view==='cite' ? 'No new citations found yet. They appear here as soon as Semantic Scholar lists them.' :
+                F.view==='job' ? 'No matching postdoc ads right now. Add Google Alerts or job-site feeds under jobs in config.yml.' :
                 F.view==='star' ? 'No starred papers yet. Star a paper to keep it here and export it to Zotero.' :
                 'No papers match these filters. Clear the search or pick another topic.';
     $('list').innerHTML = `<p class="empty">${msg}</p>`; cur=-1; return;
@@ -275,6 +302,7 @@ function download(name, text){ const a=document.createElement('a'); a.href=URL.c
 function act(it, a, li){
   if (a==='ab'){ openSet.has(it.key) ? openSet.delete(it.key) : openSet.add(it.key); li.classList.toggle('open'); return; }
   if (a==='star'){ S.star[it.key] ? delete S.star[it.key] : (S.star[it.key] = Object.assign({}, it, {hay:undefined, seen:undefined})); save(); toast(S.star[it.key]?'Starred':'Star removed'); }
+  if (a==='no'){ S.no[it.key] ? delete S.no[it.key] : (S.no[it.key] = {title: it.title, summary: (it.summary||'').slice(0,600)}); save(); toast(S.no[it.key]?'Noted. Export likes.json to teach the ranker':'Undone'); }
   if (a==='done'){ S.done[it.key] ? delete S.done[it.key] : (S.done[it.key]=1); save(); }
   if (a==='cite'){ copy(bib(it), 'BibTeX copied'); return; }
   const keep = cur; render(); cur = Math.min(keep, shown.length-1); mark();
@@ -298,6 +326,7 @@ document.addEventListener('keydown', e => {
     if (e.key==='a') act(shown[cur],'ab',li);
     else if (e.key==='s') act(shown[cur],'star',li);
     else if (e.key==='x') act(shown[cur],'done',li);
+    else if (e.key==='n') act(shown[cur],'no',li);
     else if (e.key==='o') window.open(shown[cur].link,'_blank','noopener');
   }
 });
@@ -306,6 +335,12 @@ const starred = () => Object.values(S.star);
 $('bib').onclick = () => { const s=starred(); if(!s.length) return toast('Star some papers first'); download('starred-papers.bib', s.map(bib).join('\n\n')); };
 $('md').onclick = () => { const s=starred(); if(!s.length) return toast('Star some papers first');
   copy(s.map(it => `- ${it.title} (${(it.authors.split(',')[0]||'').trim()} et al., ${it.source}, ${(it.published||it.first_seen).slice(0,4)}) ${it.link}\n  Why it matters: `).join('\n'), 'Reading notes copied'); };
+$('teach').onclick = () => {
+  const slim = o => Object.fromEntries(Object.entries(o).map(([k,v]) => [k, {title:v.title, summary:(v.summary||'').slice(0,800)}]));
+  if (!Object.keys(S.star).length && !Object.keys(S.no).length) return toast('Star or mark some papers first');
+  download('likes.json', JSON.stringify({star: slim(S.star), no: slim(S.no)}, null, 1));
+  toast('Upload likes.json into the feed folder on GitHub');
+};
 $('backup').onclick = () => download('reading-desk-backup.json', JSON.stringify(S));
 $('restore').onclick = () => { const f=document.createElement('input'); f.type='file'; f.accept='.json';
   f.onchange = () => f.files[0].text().then(t => { try { const o=JSON.parse(t); Object.assign(S.star, o.star||{}); Object.assign(S.done, o.done||{}); save(); render(); toast('Restored'); } catch(e){ toast('That file is not a reading desk backup'); } });
