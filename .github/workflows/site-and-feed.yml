@@ -19,23 +19,37 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - name: Build research feed
+      - name: Cache Python packages and the embedding model
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/pip
+            ~/.cache/huggingface
+          key: feed-deps-v2
+      - name: Install dependencies
         run: |
-          pip install --quiet feedparser pyyaml
-          python feed/build_feed.py
+          pip install --quiet feedparser pyyaml numpy scikit-learn
+          pip install --quiet torch --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet sentence-transformers
+      - name: Build research feed
+        env:
+          S2_API_KEY: ${{ secrets.S2_API_KEY }}
+        run: python feed/build_feed.py
       - name: Save feed memory back to the repository
         run: |
           git config user.name "feed-bot"
           git config user.email "feed-bot@users.noreply.github.com"
           git add feed/state.json feed/feed.xml feed/index.html
+          git add feed/profile_cache.json 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Update research feed [skip ci]"
           git push || echo "nothing to push"
       - uses: actions/configure-pages@v5
