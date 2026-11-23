@@ -15883,5 +15883,591 @@
    "Deep Learning"
   ],
   "first_seen": "2026-11-22T12:39:10+00:00"
+ },
+ "arxiv:2611.27641": {
+  "key": "arxiv:2611.27641",
+  "title": "Beyond Resolution: Inference-Time Parameterized Temporal Consistency in Generative Regional Climate Downscaling",
+  "summary": "GCM-to-RCM downscaling emulation is dominated by generative diffusion models, but most existing work evaluates skill only per timestep, treating each field as an independent snapshot. This leaves open whether generated sequences are temporally coherent or merely independently plausible, a gap that matters increasingly for sub-daily resolutions since downstream impacts depend on accumulation and persistence, not just on isolated states. This study asks whether autoregressive conditioning can deliver coherent rollouts without error accumulation and ensemble-spread collapse, and whether a single model can expose the resulting coherence-diversity trade-off as a controllable inference choice rather than a fixed design commitment. We introduce a noise-conditioned teacher-forcing training scheme conditioning a diffusion U-Net downscaling model on a noised previous high-resolution state, so the trained model interpolates continuously between autoregressive (AR) and per-timestep independent (PTI) sampling via one noise parameter. We apply the scheme to an hourly, European-domain historical simulation downscaling AWI-CM1 (1$^\\circ$) with ICON (0.11$^\\circ$, regridded to 0.25$^\\circ$) for precipitation and 2-meter temperature. The noise parameter traces a smooth interpolation between ICON's autocorrelation and PTI generation. AR rollouts of up to six months show no progressive degradation, with ensemble spread contracting only slightly within the first 24 hours. In contrast, the same architecture trained on noise-free previous states diverges. For precipitation PTI underestimates maxima by up to 2x in daily aggregations, while AR tracks ICON's maxima closely. For temperature, differences between modes are negligible. These results show that in diffusion downscaling temporal consistency can be achieved architecture-agnostically and offered as a controllable, not fixed, inference choice.",
+  "link": "https://arxiv.org/abs/2611.27641",
+  "authors": "Luca Glawion, Julius Polz, Harald Kunstmann, Benjamin Fersch, Patrick Ludwig, Antonio Sánchez-Benítez",
+  "source": "arXiv",
+  "published": "2026-11-20T14:05:14Z",
+  "score": 10,
+  "topics": [
+   "Downscaling",
+   "Deep Learning",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "arxiv:2611.27605": {
+  "key": "arxiv:2611.27605",
+  "title": "Adapting AI Weather Foundation Models to a Changing Climate",
+  "summary": "AI weather foundation models learn from historical archives, while the climate distribution encountered during deployment continues to evolve. This growing model--climate mismatch motivates continual adaptation without repeated full-model retraining, but the structure of weather forecast errors determines how such adaptation should be performed. We develop an online adaptation framework that exploits two complementary error structures: geographically persistent biases and flow-dependent errors that vary with the atmospheric state. Analysis of Aurora-1.3B reveals strongly concentrated forecast-loss sensitivity in its decoder, motivating flow-dependent corrections within fixed low-dimensional sensitivity subspaces. A residual memory tracks persistent errors remaining after this correction, while a variable-wise online gate controls the contribution of the persistent component. We evaluate Aurora-1.3B using ERA5 from 1959--1968 for offline initialization and a strictly chronological 1969--2022 stream for online evaluation, with updates restricted to previously available verification targets. For 2-metre temperature, distributional departure from the historical reference, measured directly from ERA5, is associated with larger frozen-model errors and greater adaptation gains, while the adapted model maintains more stable skill across evaluation periods. Across 69 output fields and five lead times from 6 to 72 hours, our method reduces MSE and MAE by 6.90\\% and 6.45\\%, respectively, relative to $δ$-Adapter, the strongest of six online adaptation baselines.",
+  "link": "https://arxiv.org/abs/2611.27605",
+  "authors": "Xinlei Xiong, Wenbo Hu, Shuxun Zhou, Lingxi Xie, Richang Hong, Qi Tian",
+  "source": "arXiv",
+  "published": "2026-11-20T13:36:07Z",
+  "score": 7,
+  "topics": [
+   "Deep Learning",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-16-3083-2023": {
+  "key": "doi:10.5194/gmd-16-3083-2023",
+  "title": "Updated isoprene and terpene emission factors for the Interactive BVOC (iBVOC) emission scheme in the United Kingdom Earth System Model (UKESM1.0)",
+  "summary": "Biogenic volatile organic compounds (BVOCs) influence atmospheric composition and climate, and their emissions are affected by changes in land use and land cover (LULC). Current Earth system models calculate BVOC emissions using parameterisations involving surface temperature, photosynthetic activity, CO 2 and vegetation type and use emission factors (EFs) to represent the influence of vegetation on BVOC emissions. We present new EFs for the Interactive BVOC Emission Scheme (iBVOC) used in the United Kingdom Earth System Model (UKESM), based on those used by the Model of Emissions of Gases and Aerosols from Nature (MEGAN) v2.1 scheme. Our new EFs provide an alternative to the current EFs used in iBVOC, which are derived from older versions of MEGAN and the Organizing Carbon and Hydrology in Dynamic Ecosystem (ORCHIDEE) emission scheme. We show that current EFs used by iBVOC result in an overestimation of isoprene emissions from grasses, particularly C 4 grasses, due to an oversimplification that incorporates the EF of shrubs (high isoprene emitters) into the EF for C 3 and C 4 grasses (low isoprene emitters). The current approach in iBVOCs assumes that C 4 grasses are responsible for 40 % of total simulated isoprene emissions in the present day, which is much higher than other estimates of ∼ 0.3 %–10 %. Our new isoprene EFs substantially reduce the amount of isoprene emitted by C 4 grasslands, in line with observational studies and other modelling approaches, while also improving the emissions from other known sources, such as tropical broadleaf trees. Similar results are found from the change to the terpene EF. With the new EFs, total global isoprene and terpene emissions are within the range suggested by the literature. While the existing model biases in the isoprene column are slightly exacerbated with the new EFs, other drivers of this bias are also noted. The disaggregation of shrub and grass EFs provides a more faithful description of the contribution of different vegetation types to BVOC emissions, which is critical for understanding BVOC emissions in the pre-industrial and under different future LULC scenarios, such as those involving wide-scale reforestation or deforestation. Our work highlights the importance of using updated and accurate EFs to improve the representation of BVOC emissions in Earth system models and provides a foundation for further improvements in this area.",
+  "link": "https://doi.org/10.5194/gmd-16-3083-2023",
+  "authors": "James Weber, James A. King, Katerina Sindelarova, Maria Val Martin",
+  "source": "Geoscientific Model Development",
+  "published": "2023-6-1",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-7-2077-2014": {
+  "key": "doi:10.5194/gmd-7-2077-2014",
+  "title": "A suite of early Eocene (~ 55 Ma) climate model boundary conditions",
+  "summary": "Abstract. We describe a set of early Eocene (~ 55 Ma) climate model boundary conditions constructed in a self-consistent reference frame and incorporating recent data and methodologies. Given the growing need for uniform experimental design within the Eocene climate modelling community and the challenges faced in simulating the prominent features of Eocene climate, we make publicly available our data sets of Eocene topography, bathymetry, tidal dissipation, vegetation, aerosol distributions and river runoff. Major improvements in our boundary conditions over previous efforts include the implementation of the ANTscape palaeotopography of Antarctica, more accurate representations of the Drake Passage and Tasman Gateway, as well as an approximation of sub grid cell topographic variability. Our boundary conditions also include for the first time modelled estimates of Eocene aerosol distributions and tidal dissipation, both consistent with our palaeotopography and palaeobathymetry. The resolution of our data sets is unprecedented and will facilitate high resolution climate simulations. In light of the inherent uncertainties involved in reconstructing global boundary conditions for past time periods these data sets should be considered as one interpretation of the available data and users are encouraged to modify them according to their needs and interpretations. This paper marks the beginning of a process for reconstructing a set of accurate, open-access Eocene boundary conditions for use in climate models.",
+  "link": "https://doi.org/10.5194/gmd-7-2077-2014",
+  "authors": "N. Herold, J. Buzan, M. Seton, A. Goldner, J. A. M. Green, R. D. Müller",
+  "source": "Geoscientific Model Development",
+  "published": "2014-9-16",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-19-955-2026": {
+  "key": "doi:10.5194/gmd-19-955-2026",
+  "title": "BuRNN (v1.0): a data-driven fire model",
+  "summary": "Fires play an important role in the Earth system but remain complex phenomena that are challenging to model numerically. Here, we present the first version of BuRNN, a data-driven model simulating burned area on a global 0.5° × 0.5° grid with a monthly time resolution. We trained Long Short-Term Memory networks to predict satellite-based burned area (GFED5) from a range of climatic, vegetation and socio-economic parameters. We employed a region-based cross-validation strategy to account for the high spatial autocorrelation in our data. BuRNN outperforms the process-based fire models participating in ISIMIP3a on a global scale across a wide range of metrics. Regionally, BuRNN outperforms almost all models across a set of benchmarking metrics in all regions. Through explainable AI we unravel the difference in regional drivers of burned area in our models, showing that the presence/absence of bare ground and C 4 grasses along with the fire weather index have the largest effects on our predictions of burned area. Lastly, we used BuRNN to reconstruct global burned area for 1901–2019 and compare the simulations against independent long-term historical fire observation databases in five countries and the EU. Our approach highlights the potential of machine learning to improve burned area simulations and our understanding of past fire behaviour.",
+  "link": "https://doi.org/10.5194/gmd-19-955-2026",
+  "authors": "Seppe Lampe, Lukas Gudmundsson, Basil Kraft, Stijn Hantson, Douglas Kelley, Vincent Humphrey",
+  "source": "Geoscientific Model Development",
+  "published": "2026-1-29",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-18-1545-2025": {
+  "key": "doi:10.5194/gmd-18-1545-2025",
+  "title": "Quantifying the analysis uncertainty for nowcasting application",
+  "summary": "This study proposes a method to quantify uncertainty represented by errors in very-high-resolution near-surface analysis, specifically for weather nowcasting applications. Gaussian distributed perturbations are used to perturb the first guess and observation with a variance equal to that of the first-guess error. This error reflects the spatial characteristics of the difference between the first guess and observations and dominates the primary sources of analysis uncertainty. However, mapping perturbations to analyse the grid mesh through interpolation results in underdispersion, particularly in areas without stations. To address this issue, Gaussian perturbations are inflated with an inflation factor to amplify the dispersion. This method was applied to high-resolution analysis and nowcasting for hourly temperature, humidity, and wind components in the Beijing–Tianjin–Hebei region to assess its effectiveness in representing uncertainty. The generated ensemble analysis exhibits reasonable spread and high reliability, indicating accurate quantification of analysis uncertainty. Ensemble nowcasting is extrapolated from ensemble analysis to evaluate the transmission of perturbation during extrapolation. Verification results of ensemble nowcasting reflect the fact that the spread increases effectively during extrapolation up to a lead time of 6 h. However, the increase in the spread is highly dependent on the persistence of numerical weather prediction. The results demonstrate that generating appropriate perturbations based on analysis errors effectively represents the analysis uncertainty and contributes to estimating uncertainty in nowcasting.",
+  "link": "https://doi.org/10.5194/gmd-18-1545-2025",
+  "authors": "Yanwei Zhu, Aitor Atencia, Markus Dabernig, Yong Wang",
+  "source": "Geoscientific Model Development",
+  "published": "2025-3-10",
+  "score": 3,
+  "topics": [
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-15-8111-2022": {
+  "key": "doi:10.5194/gmd-15-8111-2022",
+  "title": "Impact of physical parameterizations on wind simulation with WRF V3.9.1.1 under stable conditions at planetary boundary layer gray-zone resolution: a case study over the coastal regions of North China",
+  "summary": "Reliable simulation of wind fields under stable weather conditions is vital for preventing air pollution. In this study, we investigate how different physical parameterizations impact simulated near-surface wind at 10 m height over the coastal regions of North China using the Weather Research and Forecasting (WRF) model with a horizontal grid spacing of 0.5 km. We performed 640 simulations using combinations of 10 planetary boundary layer (PBL), 16 microphysics (MP), and four shortwave–longwave radiation (SW–LW) schemes. Model performance is evaluated using measurements from 105 weather station observations. The results show that the WRF model can reproduce the temporal variation of wind speed in a reasonable way. The simulated wind speed is most sensitive to the PBL schemes, followed by SW–LW schemes and MP schemes. Among all PBL schemes, the MYJ scheme shows the best temporal correlation with the observed wind speed, while the Yonsei University (YSU) scheme has the lowest model bias. Dudhia–RRTM and MYDM7 show the best model performances out of all SW–LW and MP schemes, respectively, and the interactions among schemes also have large influences on wind simulation. Further investigation indicates that model sensitivity is also impacted by ocean proximity and elevation. For example, for coastal stations, MYNN shows the best correlation with observations among all PBL schemes, while Goddard shows the smallest bias of SW–LW schemes; these results are different from those of inland stations. In general, according to the bias metrics, WRF simulates wind speed less accurately for inland stations compared to coastal stations, and the model performance tends to degrade with increasing elevation. The WRF model shows worse performance in simulating wind direction under stable conditions over the study area, with lower correlation scores compared to wind speed. Our results indicate the role parameterizations play in wind simulation under stable weather conditions and provide a valuable reference for further research in the study area and nearby regions.",
+  "link": "https://doi.org/10.5194/gmd-15-8111-2022",
+  "authors": "Entao Yu, Rui Bai, Xia Chen, Lifang Shao",
+  "source": "Geoscientific Model Development",
+  "published": "2022-11-11",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-19-11149-2026": {
+  "key": "doi:10.5194/gmd-19-11149-2026",
+  "title": "Enhancing data-driven weather forecasting via gated relative position encoding and spatial-aware feed-forward network",
+  "summary": "Transformer-based weather forecasting models often use static positional encodings, limiting their representation of flow-dependency and geographical heterogeneity. We introduce Gated Relative Position Encoding (GRPE) to address these limitations. Gating mechanism has recently been applied in data-driven weather forecasting, but its specific contribution remains insufficiently understood. We propose Spatial-Aware Feed-Forward Network (SAFN) to explore this question. GRPE constructs dynamic positional biases through a gated linear combination of learnable prototypes, allowing spatial relationships to vary with location and atmospheric state. SAFN combines depth-wise convolutions, multiplicative gating, and a learnable global positional bias to represent spatial feature interactions and persistent geographical influences. We integrate both components into the Neighborhood Attention Transformer for Atmospheric prediction (AtmoNAT), a global forecasting model with 43.4 million parameters trained on ERA5 reanalysis at 1.5° spatial resolution and 12 h temporal intervals. Evaluations using WeatherBench 2 metrics show that AtmoNAT's deterministic forecasts outperform the ensemble-mean forecasts of several other coarse-resolution models across most key variables at lead times up to 72 h. Over global land areas, AtmoNAT also outperforms several models trained at 0.25° resolution, including FuXi and GraphCast, for 10 m winds and 700 hPa specific humidity at lead times up to 120 h. Ablation experiments show that GRPE and SAFN each reduce root mean square errors by approximately 5 %–10 % across most evaluated variables, while individually increasing parameter counts and computational costs by only approximately 1 %–4 %. These results demonstrate that adaptive positional encoding and spatially aware feature gating can improve weather forecasting accuracy with modest computational overhead, highlighting the profound potential of GRPE and SAFN in advancing next-generation weather forecasting.",
+  "link": "https://doi.org/10.5194/gmd-19-11149-2026",
+  "authors": "Leyi Wang, Duo Zhang, Jerry Zhijian Yang, Baoxiang Pan, Dazhi Xi, Xiaoyu Huang",
+  "source": "Geoscientific Model Development",
+  "published": "2026-11-23",
+  "score": 10,
+  "topics": [
+   "Deep Learning",
+   "Climate Modelling",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-16-7375-2023": {
+  "key": "doi:10.5194/gmd-16-7375-2023",
+  "title": "Perspectives of physics-based machine learning strategies for geoscientific applications governed by partial differential equations",
+  "summary": "An accurate assessment of the physical states of the Earth system is an essential component of many scientific, societal, and economical considerations. These assessments are becoming an increasingly challenging computational task since we aim to resolve models with high resolutions in space and time, to consider complex coupled partial differential equations, and to estimate uncertainties, which often requires many realizations. Machine learning methods are becoming a very popular method for the construction of surrogate models to address these computational issues. However, they also face major challenges in producing explainable, scalable, interpretable, and robust models. In this paper, we evaluate the perspectives of geoscience applications of physics-based machine learning, which combines physics-based and data-driven methods to overcome the limitations of each approach taken alone. Through three designated examples (from the fields of geothermal energy, geodynamics, and hydrology), we show that the non-intrusive reduced-basis method as a physics-based machine learning approach is able to produce highly precise surrogate models that are explainable, scalable, interpretable, and robust.",
+  "link": "https://doi.org/10.5194/gmd-16-7375-2023",
+  "authors": "Denise Degen, Daniel Caviedes Voullième, Susanne Buiter, Harrie-Jan Hendricks Franssen, Harry Vereecken, Ana González-Nicolás",
+  "source": "Geoscientific Model Development",
+  "published": "2023-12-19",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-14-1987-2021": {
+  "key": "doi:10.5194/gmd-14-1987-2021",
+  "title": "Global evaluation of the nutrient-enabled version of the land surface model ORCHIDEE-CNP v1.2 (r5986)",
+  "summary": "The availability of phosphorus (P) and nitrogen (N) constrains the ability of ecosystems to use resources such as light, water and carbon. In turn, nutrients impact the distribution of productivity, ecosystem carbon turnovers and their net exchange of CO 2 with the atmosphere in response to variation of environmental conditions in both space and time. In this study, we evaluated the performance of the global version of the land surface model ORCHIDEE-CNP (v1.2), which explicitly simulates N and P biogeochemistry in terrestrial ecosystems coupled with carbon, water and energy transfers. We used data from remote sensing, ground-based measurement networks and ecological databases. Components of the N and P cycle at different levels of aggregation (from local to global) are in good agreement with data-driven estimates. When integrated for the period 1850 to 2017 forced with variable climate, rising CO 2 and land use change, we show that ORCHIDEE-CNP underestimates the land carbon sink in the Northern Hemisphere (NH) during recent decades despite an a priori realistic gross primary productivity (GPP) response to rising CO 2 . This result suggests either that processes other than CO 2 fertilization, which are omitted in ORCHIDEE-CNP such as changes in biomass turnover, are predominant drivers of the northern land sink and/or that the model parameterizations produce emerging nutrient limitations on biomass growth that are too strict in northern areas. In line with the latter, we identified biases in the simulated large-scale patterns of leaf and soil stoichiometry as well as plant P use efficiency, pointing towards P limitations that are too severe towards the poles. Based on our analysis of ecosystem resource use efficiencies and nutrient cycling, we propose ways to address the model biases by giving priority to better representing processes of soil organic P mineralization and soil inorganic P transformation, followed by refining the biomass production efficiency under increasing atmospheric CO 2 , phenology dynamics and canopy light absorption.",
+  "link": "https://doi.org/10.5194/gmd-14-1987-2021",
+  "authors": "Yan Sun, Daniel S. Goll, Jinfeng Chang, Philippe Ciais, Betrand Guenet, Julian Helfenstein",
+  "source": "Geoscientific Model Development",
+  "published": "2021-4-14",
+  "score": 5,
+  "topics": [
+   "Deep Learning",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.5194/gmd-13-2945-2020": {
+  "key": "doi:10.5194/gmd-13-2945-2020",
+  "title": "Observations for Model Intercomparison Project (Obs4MIPs): status for CMIP6",
+  "summary": "The Observations for Model Intercomparison Project (Obs4MIPs) was initiated in 2010 to facilitate the use of observations in climate model evaluation and research, with a particular target being the Coupled Model Intercomparison Project (CMIP), a major initiative of the World Climate Research Programme (WCRP). To this end, Obs4MIPs (1) targets observed variables that can be compared to CMIP model variables; (2) utilizes dataset formatting specifications and metadata requirements closely aligned with CMIP model output; (3) provides brief technical documentation for each dataset, designed for nonexperts and tailored towards relevance for model evaluation, including information on uncertainty, dataset merits, and limitations; and (4) disseminates the data through the Earth System Grid Federation (ESGF) platforms, making the observations searchable and accessible via the same portals as the model output. Taken together, these characteristics of the organization and structure of obs4MIPs should entice a more diverse community of researchers to engage in the comparison of model output with observations and to contribute to a more comprehensive evaluation of the climate models. At present, the number of obs4MIPs datasets has grown to about 80; many are undergoing updates, with another 20 or so in preparation, and more than 100 are proposed and under consideration. A partial list of current global satellite-based datasets includes humidity and temperature profiles; a wide range of cloud and aerosol observations; ocean surface wind, temperature, height, and sea ice fraction; surface and top-of-atmosphere longwave and shortwave radiation; and ozone (O 3 ), methane (CH 4 ), and carbon dioxide (CO 2 ) products. A partial list of proposed products expected to be useful in analyzing CMIP6 results includes the following: alternative products for the above quantities, additional products for ocean surface flux and chlorophyll products, a number of vegetation products (e.g., FAPAR, LAI, burned area fraction), ice sheet mass and height, carbon monoxide (CO), and nitrogen dioxide (NO 2 ). While most existing obs4MIPs datasets consist of monthly-mean gridded data over the global domain, products with higher time resolution (e.g., daily) and/or regional products are now receiving more attention. Along with an increasing number of datasets, obs4MIPs has implemented a number of capability upgrades including (1) an updated obs4MIPs data specifications document that provides additional search facets and generally improves congruence with CMIP6 specifications for model datasets, (2) a set of six easily understood indicators that help guide users as to a dataset's maturity and suitability for application, and (3) an option to supply supplemental information about a dataset beyond what can be found in the standard metadata. With the maturation of the obs4MIPs framework, the dataset inclusion process, and the dataset formatting guidelines and resources, the scope of the observations being considered is expected to grow to include gridded in situ datasets as well as datasets with a regional focus, and the ultimate intent is to judiciously expand this scope to any observation dataset that has applicability for evaluation of the types of Earth system models used in CMIP.",
+  "link": "https://doi.org/10.5194/gmd-13-2945-2020",
+  "authors": "Duane Waliser, Peter J. Gleckler, Robert Ferraro, Karl E. Taylor, Sasha Ames, James Biard",
+  "source": "Geoscientific Model Development",
+  "published": "2020-7-7",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2022ms003426": {
+  "key": "doi:10.1029/2022ms003426",
+  "title": "Systematic Bias Correction in Ocean Mesoscale Forecasting Using Machine Learning",
+  "summary": "Abstract The ocean circulation is modulated by meandering currents and eddies. Forecasting their evolution is a key target of operational models, but their forecast skill remains limited. We propose a machine learning approach that improves the output of an ocean circulation model by learning and predicting its systematic biases. This method can be applied a priori to any region, and is tested in the Gulf of Mexico, where the Loop Current (LC) and the large anticyclonic eddies that detach from it are major forecasting targets. The LC dynamics are recurrent and lie on a low‐dimensional dynamical attractor. Building upon the information gained analyzing this low dimensional attractor, we improve the representation of sea surface anomalies in model outputs through information from satellite altimeter data using a Sequence‐to‐Sequence model, which is a special class of Recurrent Neural Network. Building upon the HYCOM‐NCODA analysis system, we deliver a correction to the forecast at the observation resolution. For at least 15 days the proposed method learns to forecast the systematic bias in the HYCOM‐NCODA, outperforming persistence, and improving the forecast. This data‐driven approach is fast and can be implemented as an added step to any dynamical hindcasting or forecasting model. It offers an interesting avenue for further developing hybrid modeling tools. In these tools, fundamental physical conservations are preserved through the integration of partial differential equations which obey them. In addition, the method highlights specific deficiencies of the hindcast system that deserve further investigation in the future.",
+  "link": "https://doi.org/10.1029/2022ms003426",
+  "authors": "Guangpeng Liu, Annalisa Bracco, Julien Brajard",
+  "source": "Journal of Advances in Modeling Earth Systems",
+  "published": "2023-11",
+  "score": 10,
+  "topics": [
+   "Downscaling",
+   "Deep Learning",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2018gl081584": {
+  "key": "doi:10.1029/2018gl081584",
+  "title": "Arctic‐Boreal Lake Dynamics Revealed Using CubeSat Imagery",
+  "summary": "Abstract Fine‐scale, subseasonal fluctuations in Arctic‐Boreal surface water reflect regional water balance and modulate trace gas emissions to the atmosphere but have eluded detection using traditional satellite remote sensing. We use high‐resolution (~3–5 m), high‐frequency CubeSat sensors to measure near‐daily changes in lake surface area through an object‐based tracking method that incorporates machine learning to overcome notable limitations of CubeSat imagery. From ~76,000 images we obtain >2.2 million individual observations of changing surface areas for 85,358 lakes in Northern Canada and Alaska between 1 May and 1 October 2017. We find broad‐scale lake area declines across diverse climatic, hydrologic, and physiographic terrains. Localized exceptions reveal lowland flooding and aquatic vegetation phenology cycles. Cumulative small shoreline changes of abundant lakes on the Canadian Shield exceed total inundation variations of better‐studied lowland environments, revealing a surprisingly dynamic landscape with respect to subseasonal variations in surface water extent and trace gas emissions.",
+  "link": "https://doi.org/10.1029/2018gl081584",
+  "authors": "Sarah W. Cooley, Laurence C. Smith, Jonathan C. Ryan, Lincoln H. Pitcher, Tamlin M. Pavelsky",
+  "source": "Geophysical Research Letters",
+  "published": "2019-2-19",
+  "score": 5,
+  "topics": [
+   "Deep Learning",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2020gl088662": {
+  "key": "doi:10.1029/2020gl088662",
+  "title": "Projected Future Changes in Tropical Cyclones Using the CMIP6 HighResMIP Multimodel Ensemble",
+  "summary": "Abstract Future changes in tropical cyclone properties are an important component of climate change impacts and risk for many tropical and midlatitude countries. In this study we assess the performance of a multimodel ensemble of climate models, at resolutions ranging from 250 to 25 km. We use a common experimental design including both atmosphere‐only and coupled simulations run over the period 1950–2050, with two tracking algorithms applied uniformly across the models. There are overall improvements in tropical cyclone frequency, spatial distribution, and intensity in models at 25 km resolution, with several of them able to represent very intense storms. Projected tropical cyclone activity by 2050 generally declines in the South Indian Ocean, while changes in other ocean basins are more uncertain and sensitive to both tracking algorithm and imposed forcings. Coupled models with smaller biases suggest a slight increase in average TC 10 m wind speeds by 2050.",
+  "link": "https://doi.org/10.1029/2020gl088662",
+  "authors": "Malcolm John Roberts, Joanne Camp, Jon Seddon, Pier Luigi Vidale, Kevin Hodges, Benoît Vannière",
+  "source": "Geophysical Research Letters",
+  "published": "2020-7-16",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2023gl104037": {
+  "key": "doi:10.1029/2023gl104037",
+  "title": "A Pacific Tropical Decadal Variability Challenge for Climate Models",
+  "summary": "Abstract Understanding and forecasting Tropical Pacific Decadal‐scale Variability (TPDV) strongly rely on climate model simulations. Using a Linear Inverse Modeling (LIM) diagnostic approach, we reveal Coupled Model Intercomparison Project Phase 6 models have significant challenges in reproducing the spatial structure and dominant mechanisms of TPDV. Specifically, while the models' ensemble mean pattern of TPDV resembles that of observations, the spread across models is very large and most models show significant differences from observations. In observations, removing the coupling between extratropics and tropics reduces TPDV by ∼60%–70%, and removing the tropical thermocline variability makes the central tropical Pacific a key center of action for TPDV and El Niño Southern Oscillation variability. These characteristics are only confirmed in a subset of models. Differences between observations and simulations are outside the range of natural internal TPDV noise and pose important questions regarding our ability to model the impacts of natural internal low‐frequency variability superimposed on long‐term climate change.",
+  "link": "https://doi.org/10.1029/2023gl104037",
+  "authors": "Yingying Zhao, Emanuele Di Lorenzo, Matthew Newman, Antonietta Capotondi, Samantha Stevenson",
+  "source": "Geophysical Research Letters",
+  "published": "2023-8-3",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2021gl095311": {
+  "key": "doi:10.1029/2021gl095311",
+  "title": "Clays Are Not Created Equal: How Clay Mineral Type Affects Soil Parameterization",
+  "summary": "Abstract Clay minerals dominate the soil colloidal fraction and its specific surface area. Differences among clay mineral types significantly influence their effects on soil hydrological and mechanical behavior. Presently, the soil clay content is used to parameterize soil hydraulic and mechanical properties (SHMP) for land surface models while disregarding the type of clay mineral. This undifferentiated use of clay leads to inconsistent parameterization, particularly between tropical and temperate soils, as shown herein. We capitalize on recent global maps of clay minerals that exhibit strong climatic and spatial segregation of active and inactive clays to consider spatially resolved clay mineral types in SHMP estimation. Clay mineral‐informed pedotransfer functions and machine learning algorithms trained with datasets including different clay types and soil structure formation processes improve SHMP representation regionally with broad implications for hydrological and geomechanical Earth surface processes.",
+  "link": "https://doi.org/10.1029/2021gl095311",
+  "authors": "P. Lehmann, B. Leshchinsky, S. Gupta, B. B. Mirus, S. Bickel, N. Lu",
+  "source": "Geophysical Research Letters",
+  "published": "2021-10-20",
+  "score": 7,
+  "topics": [
+   "Deep Learning",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2022gl100916": {
+  "key": "doi:10.1029/2022gl100916",
+  "title": "A Deep Learning‐Based Bias Correction Method for Predicting Ocean Surface Waves in the Northwest Pacific Ocean",
+  "summary": "Abstract Ocean waves, especially extreme waves, are vital for air‐sea interaction and shipping. However, current wave models still have significant biases. Based on a numerical wave model and a deep learning model, a BU‐Net by adding batch normalization layers to a U‐Net, we accurately predict the significant wave height (SWH) of the Northwest Pacific Ocean. For each day in 2017–2021, we conducted a 3‐day hindcast experiment using WAVEWATCH3 (WW3) to obtain the SWH forecasts at lead times of 24, 48, and 72 hr, forced by GFS real‐time forecast surface winds. After using BU‐Net, the mean Root Mean Squared Errors (RMSEs) of the SWH forecast from WW3 at lead times of 24, 48, and 72 hr are reduced by 40%, 38%, and 30%, respectively. During typhoon passages, the drop percentages of RMSEs all exceed 20% for three lead times. Therefore, combining numerical models and deep learning is very promising in wave forecasting.",
+  "link": "https://doi.org/10.1029/2022gl100916",
+  "authors": "Danyi Sun, Wenyu Huang, Yong Luo, Jingjia Luo, Jonathon S. Wright, Haohuan Fu",
+  "source": "Geophysical Research Letters",
+  "published": "2022-12-8",
+  "score": 9,
+  "topics": [
+   "Downscaling",
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2022ef002734": {
+  "key": "doi:10.1029/2022ef002734",
+  "title": "How May the Choice of Downscaling Techniques and Meteorological Reference Observations Affect Future Hydroclimate Projections?",
+  "summary": "Abstract We present an intercomparison of a suite of high‐resolution downscaled climate projections based on a six‐member General Circulation Model (GCM) ensemble from Coupled Models Intercomparison Project (CMIP6). The CMIP6 GCMs have been downscaled using dynamical and statistical downscaling techniques based on two meteorological reference observations over the conterminous United States. We use the regional climate model, RegCM4, for dynamical downscaling, double bias correction constructed analogs method for statistical downscaling, and Daymet and Livneh datasets as the reference observations for statistical training and bias‐correction. We evaluate the performances of downscaled data in both historical and future periods under the SSP585 scenario. While dynamical downscaling improves the simulation of some performance evaluation indices, it adds an extra bias in others, highlighting the need for statistical correction before its use in impact assessments. Downscaled datasets after bias‐correction compare exceptionally well with observations. However, the choice of downscaling techniques and the underlying reference observations influence the hydroclimate characteristics of downscaled data. For instance, the statistical downscaling generally preserves the GCMs climate change signal but overestimates the frequency of hot extremes. Similarly, simulated future changes are sensitive to the choice of reference observations, particularly for precipitation extremes that exhibit a higher projected increase in the ensembles trained and/or corrected by Daymet than Livneh. Overall, these results demonstrate that multiple factors, including downscaling techniques and reference observations, can substantially influence the outcome of downscaled climate projections and stress the need for a comprehensive understanding of such method‐based uncertainties.",
+  "link": "https://doi.org/10.1029/2022ef002734",
+  "authors": "Deeksha Rastogi, Shih‐Chieh Kao, Moetasim Ashfaq",
+  "source": "Earth's Future",
+  "published": "2022-8",
+  "score": 4,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2023ef004222": {
+  "key": "doi:10.1029/2023ef004222",
+  "title": "Hydrological Projections in the Third Pole Using Artificial Intelligence and an Observation‐Constrained Cryosphere‐Hydrology Model",
+  "summary": "Abstract The water resources of the Third Pole (TP), highly sensitive to climate change and glacier melting, significantly impact the water and food security of millions in Asia. However, projecting future spatial‐temporal runoff changes for TP's mountainous basins remains a formidable challenge. Here, we've leveraged the long short‐term memory model (LSTM) to craft a grid‐scale artificial intelligence (AI) model named LSTM‐grid. This model has enabled the production of hydrological projections for the seven major river basins of TP. The LSTM‐grid model integrates monthly precipitation, air temperature, and total glacier mass changes (total_GMC) data at a 0.25‐degree model grid. Training the LSTM‐grid model employed gridded historical monthly runoff and evapotranspiration data sets generated by an observation‐constrained cryosphere‐hydrology model at the headwaters of seven TP river basins during 2000–2017. Our results demonstrate the LSTM grid's effectiveness and usefulness, exhibiting a Nash‐Sutcliffe Efficiency coefficient exceeding 0.92 during the verification periods (2013–2017). Moreover, river basins in the monsoon region exhibited a higher rate of runoff increase compared to those in the westerlies region. Intra‐annual projections indicated notable increases in spring runoff, especially in basins where glacier meltwater significantly contributes to runoff. Additionally, the LSTM‐grid model aptly captures the runoff changes before and after the turning points of glacier melting, highlighting the growing influence of precipitation on runoff after reaching the maximum total_GMC. Therefore, the LSTM‐grid model offers a fresh perspective for understanding the spatiotemporal distribution of water resources in high‐mountain glacial regions by tapping into AI's potential to drive scientific discovery and provide reliable data.",
+  "link": "https://doi.org/10.1029/2023ef004222",
+  "authors": "Junshui Long, Lei Wang, Deliang Chen, Ning Li, Jing Zhou, Xiuping Li",
+  "source": "Earth's Future",
+  "published": "2024-4",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2022ef003303": {
+  "key": "doi:10.1029/2022ef003303",
+  "title": "Multivariate Drought Monitoring, Propagation, and Projection Using Bias‐Corrected General Circulation Models",
+  "summary": "Abstract Understanding how droughts are characterized, propagated, and projected, particularly multivariate droughts, is necessary to explain the variability and changes in drought characteristics. This study aims to understand multimodel global drought monitoring, propagation, and projection by utilizing a multivariate standardized drought index (MSDI) during the historical (1959–2014) and future (2045–2100) periods under two socioeconomic pathways SSPs (370 and 585), derived from the bias‐corrected Coupled Model Intercomparison Project Phase 6 (CMIP6). Based on the energy metrics, the multivariate bias correction method outperformed other techniques in correcting the biases in the CMIP6 drought representation. The drought indicators demonstrate distinct categories for meteorological, hydrological, and multivariate droughts. There were significant high cross correlations between Heatwave Total Length (HWTL) and MSDI in Africa and South America for all lagged times. Europe and North America generally saw the maximum MSDI drought duration (228 months) during the historical period. For future projections, Africa recorded the maximum drought duration (197 months), while Europe witnessed the minimum drought duration for SSP 370 (171 months), and North America (149 months) for SSP 585. Furthermore, during the historical period in tropical Africa, the propagation of meteorological to hydrological drought was slower during the wet months than during the dry months. Under the SSP 370 future projection, there was a shift in the long period of meteorological‐hydrological propagation from the middle and late wet months to the beginning of the wet months in tropical Africa. Therefore, tracking and projecting drought characteristics is vital for understanding the risk of drought‐related consequences.",
+  "link": "https://doi.org/10.1029/2022ef003303",
+  "authors": "Oluwafemi E. Adeyeri, Wen Zhou, Patrick Laux, Christopher E. Ndehedehe, Xuan Wang, Muhammad Usman",
+  "source": "Earth's Future",
+  "published": "2023-4",
+  "score": 4,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2018ea000426": {
+  "key": "doi:10.1029/2018ea000426",
+  "title": "High‐Resolution Climate Projections for the Northeastern United States Using Dynamical Downscaling at Convection‐Permitting Scales",
+  "summary": "Abstract To paraphrase former Speaker of the House Tip O'Neill, “All climate change is local”—that is, society reacts most immediately to changes in local weather such as regional heat waves and heavy rainstorms. Such phenomena are not well resolved by the current generation of coupled climate models. Here it is shown that dynamical downscaling of climate reanalyses using a high‐resolution regional model can reproduce both the means and extremes of temperature and precipitation as observed in the well‐measured northeastern United States. Given this result, the downscaling is applied to climate projections for the middle and end of the 21st century under Representative Concentration Pathway (RCP) 8.5 as well as for the historical time period to help assess regional climate impacts in the northeastern United States. The resulting high‐resolution projections are intended to support regional sustainability studies for the northeastern United States and are made publicly available.",
+  "link": "https://doi.org/10.1029/2018ea000426",
+  "authors": "M. Komurcu, K. A. Emanuel, M. Huber, R. P. Acosta",
+  "source": "Earth and Space Science",
+  "published": "2018-11",
+  "score": 6,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2022jd036659": {
+  "key": "doi:10.1029/2022jd036659",
+  "title": "Evaluation of CMIP6 GCMs Over the CONUS for Downscaling Studies",
+  "summary": "Abstract Despite the necessity of Global Climate Models (GCMs) sub‐selection in downscaling studies, an objective approach for their selection is currently lacking. Building on the previously established concepts in GCMs evaluation frameworks, we develop a weighted averaging technique to remove the redundancy in the evaluation criteria and rank 37 GCMs from the sixth phase of the Coupled Models Intercomparison Project over the contiguous United States. GCMs are rated based on their average performance across 66 evaluation measures in the historical period (1981–2014) after each metric is weighted between zero and one, depending on its uniqueness. The robustness of the outcome is tested by repeating the process with the empirical orthogonal function analysis in which each GCM is ranked based on its sum of distances from the reference in the principal component space. The two methodologies work in contrasting ways to remove the metrics redundancy but eventually develop similar GCMs rankings. A disparity in GCMs' behavior related to their sensitivity to the size of the evaluation suite is observed, highlighting the need for comprehensive multi‐variable GCMs evaluation at varying timescales for determining their skillfulness over a region. The sub‐selection goal is to use a representative set of skillful models over the region of interest without substantial overlap in their future climate responses and modeling errors in representing historical climate. Additional analyses of GCMs' independence and spread in their future projections provide the necessary information to objectively select GCMs while keeping all aspects of necessity in view.",
+  "link": "https://doi.org/10.1029/2022jd036659",
+  "authors": "Moetasim Ashfaq, Deeksha Rastogi, Joy Kitson, Muhammad Adnan Abid, Shih‐Chieh Kao",
+  "source": "JGR: Atmospheres",
+  "published": "2022-11-5",
+  "score": 6,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2024jd041822": {
+  "key": "doi:10.1029/2024jd041822",
+  "title": "Enhancing Short‐Term Wind Speed Prediction Capability of Numerical Weather Prediction Through Machine Learning Methods",
+  "summary": "Abstract Accurate forecasting of wind speed is essential for daily life and social production. While numerical weather prediction products are widely used, they rely on global data and mathematical models to solve atmospheric dynamics' equations, often failing to capture localized micrometeorological phenomena accurately. Factors such as surface conditions, land‐sea differences, and topography, particularly in coastal areas, further impact the accuracy of wind speed forecasts. This study presents a new method to enhance short‐term wind speed forecasting along China's coast by incorporating local and neighborhood spatiotemporal information. The approach integrates meteorological data from adjacent grid points as new inputs in the LightGBM, CatBoost, and XGBoost algorithms. Stacking ensemble technique is then employed to effectively combine with the aforementioned foundational models. Two sets of experiments are conducted: Experiments 1 exclude surrounding information, while Experiments 2 include it. Each set consists of five experiment groups: annual, spring, summer, autumn, and winter. Within each group, four models are tested: XGBoost, LightGBM, CatBoost, and stacking. Results show that incorporating surrounding site information improves forecast accuracy. In all five groups with added surrounding site information, the stacking model performs best. Compared to ECMWF forecast data, the stacking model improves wind speed forecast accuracy from 53.3%, 50.9%, 55.2%, 53.0%, and 54.0% to 77.2%, 73.1%, 76.7%, 78.2%, and 77.1%, respectively. These findings demonstrate the potential effectiveness of the proposed method for improving short‐term wind speed forecasts in China's coastal areas.",
+  "link": "https://doi.org/10.1029/2024jd041822",
+  "authors": "Zhaoliang Zeng, Honglei Wu, Zhaohua Liu, Linna Zhao, Zhaoming Liang, Zhehao Liang",
+  "source": "JGR: Atmospheres",
+  "published": "2024-12-23",
+  "score": 9,
+  "topics": [
+   "Deep Learning",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2024jd041010": {
+  "key": "doi:10.1029/2024jd041010",
+  "title": "Climatology of Orographic Precipitation Gradients Over High Mountain Asia Derived From Dynamical Downscaling",
+  "summary": "Abstract Within High Mountain Asia (HMA), the annual melting of glaciers and snowpack provides vital freshwater to populations living downstream. Precipitation over HMA can directly affect the freshwater availability in this region by altering the mass balance of glaciers and snowpack. However, available reanalyses and downscaling simulations lack the resolution required to understand important glacier‐scale variations in precipitation. This study aimed to determine the current characteristics of orographic precipitation gradients (OPG) by curve‐fitting daily precipitation as a function of elevation from a 15‐year, 4‐km grid spaced Weather Research and Forecasting (WRF) model simulation focused on the Himalayan, Karakoram, and Hindu‐Kush mountain ranges. To facilitate precipitation curve‐fitting, the WRF model grid points were separated into regions of similar orientation, referred to as facets. Akaike Information Criterion‐corrected values and an F ‐test p ‐value identified the need for a curvature term to account for a varying OPG with elevation. Regions with similar seasonal variability were found using ‐means clustering of the monthly mean OPG coefficients. The central Himalayan slope's intra‐seasonal variability of OPG depended on synoptic scale conditions, in which cyclonically‐forced heavy‐precipitation events produced strong sublinear increases in precipitation with elevation. Initial testing of precipitation estimates using monthly coefficients showed promising results in downscaling daily WRF precipitation; the daily mean absolute error at each grid point had a lower magnitude than the daily mean precipitation total, on average. Results provide a physically‐based context for machine learning algorithms being developed to predict OPG and downscale precipitation output from global climate models over HMA.",
+  "link": "https://doi.org/10.1029/2024jd041010",
+  "authors": "S. Wolvin, C. Strong, S. Rupper, W. J. Steenburgh",
+  "source": "JGR: Atmospheres",
+  "published": "2024-10-26",
+  "score": 8,
+  "topics": [
+   "Downscaling",
+   "Deep Learning",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1029/2023jd040055": {
+  "key": "doi:10.1029/2023jd040055",
+  "title": "Did Historical Storms Used in Probable Maximum Precipitation (PMP) Estimation Reach Maximum Efficiency? A Large Model Ensemble Approach",
+  "summary": "Abstract The flood that would result from the greatest depth of precipitation “meteorologically possible”, or Probable Maximum Precipitation (PMP) is used in the design of dam spillways and other high‐risk structures. Historically, PMP has been estimated by scaling depth‐area‐duration relationships obtained from severe historical storms. Over the last decade, numerical weather prediction models have been used to instead simulate precipitation resulting from the addition of atmospheric moisture (called relative humidity maximization, or RHM). Despite the major improvement this represents, model‐based PMP relies on a key assumption, which this paper re‐evaluates in Oroville dam's Feather River watershed (California). Model‐based as well as earlier procedures assume that severe historical storms achieved maximum efficiency (moisture conversion to precipitation) and only maximize moisture. We examine the most severe storms found in the CESM2‐LE global climate model ensemble, which constitutes a very large artificial record (∼1,150 years) in comparison with the historical record, to understand the upper bounds of storm efficiency and precipitation. We downscale the 10 most severe CESM2‐LE storms (by precipitation totals), and identify key storm attributes (vertical motion, convection and convergence) that control precipitation efficiency. In comparison with historical storms, we find that CESM‐LE storms can have 30% higher efficiency and 32% higher precipitation, but produce only 8% higher PMP estimates, suggesting some convergence of model ensemble and historical storms in terms of PMP. The understanding of the controls on storm efficiency that our work provides leverages past work focused on moisture and supports the development of more reliable PMP storm amplification guidance.",
+  "link": "https://doi.org/10.1029/2023jd040055",
+  "authors": "Emilie G. Tarouilly, Stefan R. Rahimi, Jason M. Cordeira, Dennis P. Lettenmaier",
+  "source": "JGR: Atmospheres",
+  "published": "2024-12-16",
+  "score": 3,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1038/s41612-024-00654-w": {
+  "key": "doi:10.1038/s41612-024-00654-w",
+  "title": "Escalating tropical cyclone precipitation extremes and landslide hazards in South China under global warming",
+  "summary": "Abstract Tropical cyclones (TCs) are expected to produce more intense precipitation under global warming. However, substantial uncertainties exist in the projection of coarse-resolution global climate models. Here, we use deep learning to aid targeted cloud-resolving simulations of extreme TCs. Contrary to the Clausius-Clapeyron (CC) scaling, which indicates a 7% moisture increase per K warming, our simulations reveal more complex responses of TC rainfall. TCs will not intensify via strengthened updrafts but through the expansion of deep convective cores with suppression of shallow cumulus and congestus. Consequently, while localized hourly rainfall may adhere to the CC scaling, precipitation accumulation over city-sized areas could surge by 18%K -1 . This super-CC intensification due to changing TC structure has profound implications for floods and landslides. Estimations using Hong Kong’s slope data confirm this concern and suggest an up to 215% increase in landslide risks with 4-K warming, highlighting amplified threats from compound disasters under climate change.",
+  "link": "https://doi.org/10.1038/s41612-024-00654-w",
+  "authors": "Xiaoming Shi, Yang Liu, Jianan Chen, Haoming Chen, Yueya Wang, Zhongming Lu",
+  "source": "npj Climate and Atmospheric Science",
+  "published": "2024-5-21",
+  "score": 5,
+  "topics": [
+   "Deep Learning",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1038/s41612-023-00486-0": {
+  "key": "doi:10.1038/s41612-023-00486-0",
+  "title": "Downscaling and bias-correction contribute considerable uncertainty to local climate projections in CMIP6",
+  "summary": "Abstract Efforts to diagnose the risks of a changing climate often rely on downscaled and bias-corrected climate information, making it important to understand the uncertainties and potential biases of this approach. Here, we perform a variance decomposition to partition uncertainty in global climate projections and quantify the relative importance of downscaling and bias-correction. We analyze simple climate metrics such as annual temperature and precipitation averages, as well as several indices of climate extremes. We find that downscaling and bias-correction often contribute substantial uncertainty to local decision-relevant climate outcomes, though our results are strongly heterogeneous across space, time, and climate metrics. Our results can provide guidance to impact modelers and decision-makers regarding the uncertainties associated with downscaling and bias-correction when performing local-scale analyses, as neglecting to account for these uncertainties may risk overconfidence relative to the full range of possible climate futures.",
+  "link": "https://doi.org/10.1038/s41612-023-00486-0",
+  "authors": "David C. Lafferty, Ryan L. Sriver",
+  "source": "npj Climate and Atmospheric Science",
+  "published": "2023-9-30",
+  "score": 6,
+  "topics": [
+   "Downscaling",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1007/s00382-017-3648-3": {
+  "key": "doi:10.1007/s00382-017-3648-3",
+  "title": "Seasonal ENSO phase locking in the Kiel Climate Model: The importance of the equatorial cold sea surface temperature bias",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-017-3648-3",
+  "authors": "C. Wengel, M. Latif, W. Park, J. Harlaß, T. Bayr",
+  "source": "Climate Dynamics",
+  "published": "2017-3-28",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1007/s00382-011-1032-2": {
+  "key": "doi:10.1007/s00382-011-1032-2",
+  "title": "Computing the distribution of return levels of extreme warm temperatures for future climate projections",
+  "summary": "",
+  "link": "https://doi.org/10.1007/s00382-011-1032-2",
+  "authors": "M. Pausader, D. Bernie, S. Parey, M. Nogaj",
+  "source": "Climate Dynamics",
+  "published": "2011-3-4",
+  "score": 3,
+  "topics": [
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1175/1520-0493(1974)102<0509:vvcsuf>2.0.co;2": {
+  "key": "doi:10.1175/1520-0493(1974)102<0509:vvcsuf>2.0.co;2",
+  "title": "Various Vertical Coordinate Systems Used for Numerical Weather Prediction",
+  "summary": "",
+  "link": "https://doi.org/10.1175/1520-0493(1974)102<0509:vvcsuf>2.0.co;2",
+  "authors": "Akira Kasahara",
+  "source": "Monthly Weather Review",
+  "published": "1974-7",
+  "score": 3,
+  "topics": [
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1175/waf-d-26-0007.1": {
+  "key": "doi:10.1175/waf-d-26-0007.1",
+  "title": "Real-Time Probabilistic Nowcasting of Lightning Density via a Sequential Monte Carlo Framework",
+  "summary": "Abstract This study presents a particle filter–based framework for short-term lightning nowcasting using only lightning detection network observations. The method employs DBSCAN clustering to identify lightning-active structures and propagates them probabilistically, yielding useful skill at 1–3-h lead times, with declining but nonzero skill at 4–6 h. The results show that recall is more robust than precision across increasing lead times and that performance is sensitive to the ground-truth density threshold selection. Despite these limitations, the suggested approach achieves skill scores comparable to those of more data-intensive machine learning and NWP-based methods, while requiring minimal input data. Importantly, the algorithm can be implemented as a real-time Python application, demonstrating both its scientific value and practical applicability in data-constrained environments. Significance Statement Lightning represents a severe threat to human life and critical infrastructure, yet high-fidelity nowcasting often depends on data-intensive inputs like satellite or radar imagery, which are frequently unavailable in isolated regions. This study presents a robust, probabilistic framework for real-time lightning prediction using exclusively ground-based lightning strike data. By integrating clustering techniques with a particle filter, our method achieves its strongest predictive skill at 1–3-h lead times, with diminishing but still informative skill at longer horizons. Successfully operationalized for power grid management, this infrastructure-independent solution provides a cost-effective tool for disaster mitigation and risk-aware decision-making in data-constrained environments worldwide.",
+  "link": "https://doi.org/10.1175/waf-d-26-0007.1",
+  "authors": "Vlad Landa, Yuval Reuveni, Yoav Yair, Chaim Lerman, Colin Price",
+  "source": "Weather and Forecasting",
+  "published": "2026-11",
+  "score": 7,
+  "topics": [
+   "Deep Learning",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1002/qj.2063": {
+  "key": "doi:10.1002/qj.2063",
+  "title": "Evaluation of the ECMWF ocean reanalysis system ORAS4",
+  "summary": "Abstract A new operational ocean reanalysis system (ORAS4) has been implemented at ECMWF. It spans the period 1958 to the present. This article describes its main components and evaluates its quality. The adequacy of ORAS4 for the initialization of seasonal forecasts is discussed, along with the robustness of some prominent climate signals. ORAS4 has been evaluated using different metrics, including comparison with observed ocean currents, RAPID‐derived transports, sea‐level gauges, and GRACE‐derived bottom pressure. Compared to a control ocean model simulation, ORAS4 improves the fit to observations, the interannual variability, and seasonal forecast skill. Some problems have been identified, such as the underestimation of meridional overturning at 26°N, the magnitude of which is shown to be sensitive to the treatment of the coastal observations. ORAS4 shows a clear and robust shallowing trend of the Pacific Equatorial thermocline. It also shows a clear and robust nonlinear trend in the 0–700 m ocean heat content, consistent with other observational estimates. Some aspects of these climate signals are sensitive to the choice of sea‐surface temperature product and the specification of the observation‐error variances. The global sea‐level trend is consistent with the altimeter estimate, but the partition into volume and mass variations is more debatable, as inferred by discrepancies in the trend between ORAS4‐ and GRACE‐derived bottom pressure.",
+  "link": "https://doi.org/10.1002/qj.2063",
+  "authors": "Magdalena Alonso Balmaseda, Kristian Mogensen, Anthony T. Weaver",
+  "source": "Quarterly Journal of the Royal Meteorological Society",
+  "published": "2012-12-31",
+  "score": 4,
+  "topics": [
+   "Climate Modelling",
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1002/qj.70353": {
+  "key": "doi:10.1002/qj.70353",
+  "title": "The impact of A eolus observations on extreme weather events in a mesoscale numerical weather prediction system",
+  "summary": "Abstract The impact of assimilating horizontal line‐of‐sight wind observations from the Doppler wind lidar onboard the Aeolus satellite into a regional numerical weather prediction system for Japan and the surrounding region was evaluated using observing system experiments (OSEs). The OSEs were conducted using the Japan Meteorological Agency's mesoscale analysis and forecast system, with a particular focus on heavy rainfall events associated with quasi‐stationary convective bands and typhoons. The fit of the background fields to other wind and relative humidity observations was improved, particularly over the oceans. During the July 2020 heavy rainfall event, improved wind forecast accuracy in the surrounding environment 12 hr prior to the event contributed to a better representation of the humidity field, leading to an extended lead time for heavy rainfall prediction. In contrast, the impact on typhoons in 2020 was not robust, although improvements in track and intensity forecasts were found in some cases. The findings suggest that the positive impact on severe weather forecasts arises primarily from improvements in the surrounding environmental fields through cycled analyses, rather than from the direct assimilation impact along the satellite tracks.",
+  "link": "https://doi.org/10.1002/qj.70353",
+  "authors": "Izumi Okabe, Kozo Okamoto",
+  "source": "Quarterly Journal of the Royal Meteorological Society",
+  "published": "2026-11-23",
+  "score": 3,
+  "topics": [
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1002/qj.49711749802": {
+  "key": "doi:10.1002/qj.49711749802",
+  "title": "Atmospheric soundings from satellites—false expectation or the key to improved weather prediction?",
+  "summary": "Abstract Temperature and water vapour soundings from satellites have been available for more than 20 years. Because of the global nature of these data, satellite soundings were expected to improve significantly global numerical weather prediction (NWP). Indeed, experiments with the satellite soundings provided during the Global Weather Experiment (GWE) in 1979 revealed the positive impact of these data on extended‐range forecasts, particularly in the southern hemisphere. Unfortunately, since the GWE, the value of satellite soundings has apparently diminished. I believe this to be due largely to improvements in the models which have surpassed the inherently poor vertical resolution of these data relative to that of the contemporary NWP models. The satellite data can even degrade the analysis/forecast operation through the aliasing of small‐scale features which may be properly represented by the vertical scale resolved by the model. This lecture addresses, from a historical perspective, the dilemma of the decreasing value of satellite soundings in the weather‐forecast application (i.e., the reasons for the unfulfilled expectations of these data). Attention is then turned to the improvements in the satellite technology and the application techniques needed to reverse this trend.",
+  "link": "https://doi.org/10.1002/qj.49711749802",
+  "authors": "William L. Smith",
+  "source": "Quarterly Journal of the Royal Meteorological Society",
+  "published": "1991-1",
+  "score": 3,
+  "topics": [
+   "Weather and S2S Forecasting"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1038/s42256-020-00247-1": {
+  "key": "doi:10.1038/s42256-020-00247-1",
+  "title": "Self-supervised retinal thickness prediction enables deep learning from unlabelled data to boost classification of diabetic retinopathy",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-020-00247-1",
+  "authors": "Olle G. Holmberg, Niklas D. Köhler, Thiago Martins, Jakob Siedlecki, Tina Herold, Leonie Keidel",
+  "source": "Nature Machine Intelligence",
+  "published": "2020-11-9",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1038/s42256-023-00708-3": {
+  "key": "doi:10.1038/s42256-023-00708-3",
+  "title": "Annotating metabolite mass spectra with domain-inspired chemical formula transformers",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-023-00708-3",
+  "authors": "Samuel Goldman, Jeremy Wohlwend, Martin Stražar, Guy Haroush, Ramnik J. Xavier, Connor W. Coley",
+  "source": "Nature Machine Intelligence",
+  "published": "2023-8-17",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1038/s42256-022-00503-6": {
+  "key": "doi:10.1038/s42256-022-00503-6",
+  "title": "Learning biophysical determinants of cell fate with deep neural networks",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-022-00503-6",
+  "authors": "Christopher J. Soelistyo, Giulia Vallardi, Guillaume Charras, Alan R. Lowe",
+  "source": "Nature Machine Intelligence",
+  "published": "2022-6-30",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1038/s42256-024-00794-x": {
+  "key": "doi:10.1038/s42256-024-00794-x",
+  "title": "A computational framework for neural network-based variational Monte Carlo with Forward Laplacian",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-024-00794-x",
+  "authors": "Ruichen Li, Haotian Ye, Du Jiang, Xuelan Wen, Chuwei Wang, Zhe Li",
+  "source": "Nature Machine Intelligence",
+  "published": "2024-2-13",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1038/s42256-019-0137-x": {
+  "key": "doi:10.1038/s42256-019-0137-x",
+  "title": "Assessing the importance of magnetic resonance contrasts using collaborative generative adversarial networks",
+  "summary": "",
+  "link": "https://doi.org/10.1038/s42256-019-0137-x",
+  "authors": "Dongwook Lee, Won-Jin Moon, Jong Chul Ye",
+  "source": "Nature Machine Intelligence",
+  "published": "2020-1-17",
+  "score": 3,
+  "topics": [
+   "Deep Learning"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
+ },
+ "doi:10.1017/eds.2025.10016": {
+  "key": "doi:10.1017/eds.2025.10016",
+  "title": "A physics-informed machine learning parameterization for cloud microphysics in ICON",
+  "summary": "Abstract We developed a cloud microphysics parameterization for the icosahedral nonhydrostatic modeling framework (ICON) model based on physics-informed machine learning (ML). By training our ML model on high-resolution simulation data, we enhance the representation of cloud microphysics in Earth system models (ESMs) compared to traditional parameterization schemes, in particular by considering the influence of high-resolution dynamics that are not resolved in coarse ESMs. We run a global, kilometer-scale ICON simulation with a one-moment cloud microphysics scheme, the complex graupel scheme, to generate 12 days of training data. Our ML approach combines a microphysics trigger classifier and a regression model. The microphysics trigger classifier identifies the grid cells where changes due to the cloud microphysical parameterization are expected. In those, the workflow continues by calling the regression model and additionally includes physical constraints for mass positivity and water mass conservation to ensure physical consistency. The microphysics trigger classifier achieves an F1 score of 0.93 on classifying unseen grid cells. The regression model reaches an $ {R}^2 $ score of 0.72 averaged over all seven microphysical tendencies on simulated days used for validation only. This results in a combined offline performance of 0.78. Using explainability techniques, we explored the correlations between input and output features, finding a strong alignment with the graupel scheme and, hence, physical understanding of cloud microphysical processes. This parameterization provides the foundation to advance the representation of cloud microphysical processes in climate models with ML, leading to more accurate climate projections and improved comprehension of the Earth’s climate system.",
+  "link": "https://doi.org/10.1017/eds.2025.10016",
+  "authors": "Ellen Sarauer, Mierk Schwabe, Philipp Weiss, Axel Lauer, Philip Stier, Veronika Eyring",
+  "source": "Environmental Data Science",
+  "published": "2025",
+  "score": 10,
+  "topics": [
+   "Downscaling",
+   "Deep Learning",
+   "Climate Modelling"
+  ],
+  "first_seen": "2026-11-23T14:47:49+00:00"
  }
 }
