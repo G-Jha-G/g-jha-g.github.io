@@ -107,3 +107,42 @@ scholar_feeds:
 # Scoring: each topic word found in a title adds 3, in an abstract adds 1 (counted once per topic).
 # An item that pairs Deep Learning with any other topic gets +3, because that pairing is the core
 # of this feed. Scholar alert items get +5. Items need at least min_score to be kept.
+
+# ---------- personal ranking ----------
+# Each of these words found in a title or abstract adds 2 to the score (at most 4 in total).
+boost:
+  - india*
+  - himalaya*
+  - monsoon
+  - cmip6
+  - precipitation
+  - extreme*
+  - flow matching
+  - diffusion model*
+  - emulator*
+  - uncertainty
+# Any of these lowers the score by 3, to push out near-misses (for example ocean-only bias correction).
+downweight:
+  - ocean wave*
+  - sea surface wave*
+  - ocean surface wave*
+  - significant wave height
+  - wind turbine*
+  - air quality
+  - traffic
+
+# ---------- people to watch ----------
+# Groups you may want to work with. Their new arXiv papers are always collected, and any paper
+# listing them as an author is marked. Edit freely: name must appear as it does on author lists.
+# arxiv uses the arXiv author format au:Surname_F
+watch_people:
+  - {name: "Niklas Boers", where: "TUM / PIK", arxiv: "au:Boers_N"}
+  - {name: "Tom Beucler", where: "UNIL", arxiv: "au:Beucler_T"}
+  - {name: "Pierre Gentine", where: "Columbia", arxiv: "au:Gentine_P"}
+  - {name: "Laure Zanna", where: "NYU", arxiv: "au:Zanna_L"}
+  - {name: "Veronika Eyring", where: "DLR / Bremen", arxiv: "au:Eyring_V"}
+  - {name: "Stephan Rasp", where: "Google Research", arxiv: "au:Rasp_S"}
+  - {name: "Sebastian Lerch", where: "KIT / Marburg", arxiv: "au:Lerch_S"}
+  - {name: "Jakob Runge", where: "TU Dresden / DLR", arxiv: "au:Runge_J"}
+  - {name: "Henry Addison", where: "Bristol", arxiv: "au:Addison_H"}
+  - {name: "Markus Reichstein", where: "MPI Jena", arxiv: "au:Reichstein_M"}

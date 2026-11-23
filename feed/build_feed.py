@@ -48,7 +48,7 @@ def clean(text):
 
 def fetch_arxiv(entry):
     q = urllib.parse.urlencode({"search_query": entry["query"], "sortBy": "submittedDate",
-                                "sortOrder": "descending", "max_results": 200})
+                                "sortOrder": "descending", "max_results": entry.get("max", 200)})
     data = http_get("https://export.arxiv.org/api/query?" + q)
     items = []
     for e in feedparser.parse(data).entries:
@@ -140,7 +140,7 @@ def compile_topics(topics):
     return out
 
 
-def score(item, topics):
+def score(item, topics, extra=None):
     hits, s = [], 0
     for name, pat in topics.items():
         if pat.search(item["title"]):
@@ -153,7 +153,23 @@ def score(item, topics):
         s += 3
     if item.get("scholar"):
         s += 5
+    if extra:
+        text = item["title"] + " " + item["summary"]
+        boosts = [w for w, pat in extra["boost"] if pat.search(text)]
+        s += min(2 * len(boosts), 4)
+        if any(pat.search(text) for _, pat in extra["down"]):
+            s -= 3
+        item["boosts"] = boosts
     return s, hits
+
+
+def word_pats(words):
+    return [(w, compile_topics({"x": [w]})["x"]) for w in (words or [])]
+
+
+def watched_in(authors, people):
+    low = authors.lower()
+    return [p["name"] for p in people if p["name"].lower() in low]
 
 
 def norm_title(t):
@@ -189,33 +205,17 @@ def write_rss(cfg, items):
     OUT_XML.write_text("\n".join(parts), encoding="utf-8")
 
 
-def write_html(cfg, items):
-    rows = []
-    for it in items:
-        tags = "".join(f'<span class="t">{html.escape(t)}</span>' for t in it["topics"])
-        rows.append(
-            f'<li><a href="{html.escape(it["link"])}">{html.escape(it["title"])}</a>'
-            f'<div class="m">{html.escape(it["source"])}, {it["first_seen"][:10]}{tags}</div>'
-            + (f'<div class="a">{html.escape(it["authors"])}</div>' if it["authors"] else "")
-            + "</li>")
-    page = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Research feed</title><meta name="robots" content="noindex">
-<link rel="alternate" type="application/rss+xml" href="feed.xml" title="Research feed">
-<style>
-body{{margin:0;font:16px/1.5 Georgia,serif;color:#101b2d;background:#fff}}
-main{{max-width:860px;margin:0 auto;padding:32px 20px 60px}}
-h1{{font:700 26px/1.2 Helvetica,Arial,sans-serif;margin:0 0 6px}}
-p.s{{font:14px/1.5 Helvetica,Arial,sans-serif;color:#566375;margin:0 0 24px}}
-ul{{list-style:none;margin:0;padding:0}} li{{padding:14px 0;border-top:1px solid #dde4ec}}
-li a{{font:600 17px/1.35 Helvetica,Arial,sans-serif;color:#101b2d;text-decoration:none}} li a:hover{{text-decoration:underline}}
-.m,.a{{font:13px/1.5 Helvetica,Arial,sans-serif;color:#566375;margin-top:4px}}
-.t{{display:inline-block;margin-left:8px;padding:1px 6px;border:1px solid #dde4ec;border-radius:3px;font-size:12px}}
-</style></head><body><main>
-<h1>Research feed</h1>
-<p class="s">{len(items)} papers on downscaling, deep learning, climate modelling, and weather and S2S forecasting.
-Updated {NOW:%d %b %Y}. Subscribe in any reader: <a href="feed.xml">feed.xml</a>.</p>
-<ul>{''.join(rows)}</ul></main></body></html>"""
+def write_html(cfg, items, people):
+    keep = ("key", "title", "summary", "link", "authors", "source", "published",
+            "first_seen", "score", "topics", "watch", "boosts")
+    data = [{k: it.get(k) for k in keep} for it in items]
+    for d in data:
+        d["summary"] = re.sub(r"^abstract[\s:.]*", "", d["summary"] or "", flags=re.I)[:1600]
+    payload = json.dumps({"updated": NOW.isoformat(timespec="minutes"),
+                          "topics": list(cfg["topics"]),
+                          "people": [{"name": p["name"], "where": p.get("where", "")} for p in people],
+                          "items": data}, ensure_ascii=False).replace("</", "<\\/")
+    page = (HERE / "template.html").read_text(encoding="utf-8").replace("/*DATA*/null", payload)
     OUT_HTML.write_text(page, encoding="utf-8")
 
 
@@ -223,6 +223,7 @@ Updated {NOW:%d %b %Y}. Subscribe in any reader: <a href="feed.xml">feed.xml</a>
 def main():
     cfg = yaml.safe_load(CONFIG.read_text(encoding="utf-8"))
     topics = compile_topics(cfg["topics"])
+    extra = {"boost": word_pats(cfg.get("boost")), "down": word_pats(cfg.get("downweight"))}
     state = json.loads(STATE.read_text()) if STATE.exists() else {}
     fresh, errors = [], []
 
@@ -237,6 +238,18 @@ def main():
             fresh += fetch_crossref(j, cfg.get("contact_email", ""), cfg.get("keep_days", 30))
         except Exception as e:
             errors.append(f"{j['name']}: {e}")
+    people = cfg.get("watch_people") or []
+    for p in people:
+        if not p.get("arxiv"):
+            continue
+        try:
+            got = fetch_arxiv({"query": p["arxiv"], "max": 15})
+            for it in got:
+                it["watch_hit"] = True
+            fresh += got
+            time.sleep(3)
+        except Exception as e:
+            errors.append(f"{p['name']}: {e}")
     for url in cfg.get("scholar_feeds") or []:
         try:
             fresh += fetch_scholar(url)
@@ -248,22 +261,38 @@ def main():
     for it in fresh:
         if not it["title"]:
             continue
-        s, hits = score(it, topics)
+        s, hits = score(it, topics, extra)
+        watch = watched_in(it["authors"], people)
+        it["watch"] = watch
         if it.get("scholar"):
             hits = hits or ["Scholar alert"]  # alerts are already tailored to you, so always keep them
+        elif watch and (it.get("watch_hit") or s >= 1):
+            hits = hits or ["Watched author"]  # papers by people you track are kept even with weak keyword hits
+            s += 4
         elif s < cfg.get("min_score", 3) or not hits:
             continue
+        it.pop("watch_hit", None)
         nt = norm_title(it["title"])
         key = it["key"] if it["key"] in state else seen_titles.get(nt, it["key"])
         if key in state:  # already known: keep first-seen date, upgrade score if higher
             if s > state[key]["score"]:
                 state[key].update(score=s, topics=hits)
+            state[key]["watch"] = watch
             continue
         it.update(score=s, topics=hits, first_seen=NOW.isoformat(timespec="seconds"))
         it.pop("scholar", None)
         state[it["key"]] = it
         seen_titles[nt] = it["key"]
         added += 1
+
+    # re-rank everything already stored, so edits to boost, downweight or watch_people apply at once
+    for v in state.values():
+        if v["source"].startswith("Google Scholar"):
+            continue
+        s2, hits2 = score(v, topics, extra)
+        v["watch"] = watched_in(v["authors"], people)
+        v["score"] = s2 + (4 if v["watch"] else 0)
+        v["topics"] = hits2 or v["topics"]
 
     cutoff = NOW - dt.timedelta(days=cfg.get("keep_days", 30))
     state = {k: v for k, v in state.items() if dt.datetime.fromisoformat(v["first_seen"]) >= cutoff}
@@ -272,7 +301,7 @@ def main():
 
     STATE.write_text(json.dumps(state, indent=1, ensure_ascii=False), encoding="utf-8")
     write_rss(cfg, items)
-    write_html(cfg, items)
+    write_html(cfg, items, people)
     print(f"fetched {len(fresh)}, added {added}, feed has {len(items)} items")
     for e in errors:
         print("warning:", e, file=sys.stderr)

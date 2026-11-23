@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading desk</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="alternate" type="application/rss+xml" href="feed.xml" title="Research feed">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101b2d;--mute:#566375;--line:#dde4ec;--soft:#f4f7fa;--accent:#9b2c12;--star:#b7791f;--sans:"Schibsted Grotesk",Helvetica,Arial,sans-serif;--serif:Literata,Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:15px/1.5 var(--sans)}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 24px 80px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px}
+header.top{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);padding-bottom:18px}
+h1{font:700 28px/1.1 var(--sans);margin:0;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:6px 0 0;font-size:14px}
+.back{font-size:14px;color:var(--mute);text-decoration:none}
+.back:hover{color:var(--ink)}
+aside{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;padding-right:4px}
+aside h2{font:600 13px/1 var(--sans);color:var(--mute);margin:26px 0 10px}
+aside h2:first-child{margin-top:0}
+.brief{background:var(--soft);border-radius:6px;padding:14px 16px}
+.brief b{display:block;font:700 30px/1 var(--sans);letter-spacing:-.02em}
+.brief span{color:var(--mute);font-size:13px}
+.nav button{display:flex;justify-content:space-between;width:100%;padding:6px 10px;border-radius:4px;text-align:left}
+.nav button:hover{background:var(--soft)}
+.nav button[aria-pressed=true]{background:var(--ink);color:#fff}
+.nav small{opacity:.7}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:13px}
+.chip[aria-pressed=true]{border-color:var(--ink);background:var(--ink);color:#fff}
+.people button{display:flex;justify-content:space-between;align-items:baseline;width:100%;padding:5px 0;text-align:left;border-bottom:1px solid var(--line);gap:8px}
+.people button:hover .pn{text-decoration:underline}
+.people button[aria-pressed=true] .pn{color:var(--accent);font-weight:600}
+.pw{color:var(--mute);font-size:12px}
+.pc{font-size:12px;color:var(--mute);min-width:1.5em;text-align:right}
+.pc.on{color:var(--accent);font-weight:700}
+.tools button,.tools a{display:block;font-size:13px;color:var(--mute);padding:3px 0;text-decoration:none}
+.tools button:hover,.tools a:hover{color:var(--ink);text-decoration:underline}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:6px}
+.bar input[type=search]{flex:1 1 260px;font:inherit;padding:9px 12px;border:1px solid var(--line);border-radius:6px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{padding:7px 11px;font-size:13px}
+.seg button[aria-pressed=true]{background:var(--ink);color:#fff}
+select{font:inherit;font-size:13px;padding:7px 8px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.count{color:var(--mute);font-size:13px;margin:10px 0 0}
+.day{font:600 13px/1 var(--sans);color:var(--mute);margin:30px 0 4px;padding-bottom:8px;border-bottom:1px solid var(--ink)}
+ol{list-style:none;margin:0;padding:0}
+li.p{display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+li.p.cur{box-shadow:inset 3px 0 0 var(--accent);background:linear-gradient(90deg,var(--soft),transparent 60%)}
+li.p.done{opacity:.45}
+.rel{display:flex;flex-direction:column-reverse;gap:2px;align-self:start;width:18px;margin-top:7px}
+.rel i{display:block;height:4px;border-radius:1px;background:var(--line)}
+.rel i.on{background:var(--ink)}
+.t{font:600 17px/1.35 var(--sans);text-decoration:none}
+.t:hover{text-decoration:underline}
+.m{font-size:13px;color:var(--mute);margin-top:5px;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.tag{border:1px solid var(--line);border-radius:3px;padding:0 6px;font-size:12px;color:var(--ink)}
+.w{background:#fbeee8;color:var(--accent);border-radius:3px;padding:0 6px;font-size:12px;font-weight:600}
+.au{font-size:13px;color:var(--mute);margin-top:4px}
+.au mark{background:none;color:var(--accent);font-weight:600}
+.ab{font:15px/1.65 var(--serif);margin:10px 0 0;max-width:72ch;display:none}
+li.open .ab{display:block}
+.act{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:8px;font-size:13px}
+.act button,.act a{color:var(--mute);text-decoration:none}
+.act button:hover,.act a:hover{color:var(--ink);text-decoration:underline}
+.act .st[aria-pressed=true]{color:var(--star);font-weight:600}
+.empty{padding:50px 0;color:var(--mute);font:16px/1.6 var(--serif)}
+.keys{margin-top:36px;color:var(--mute);font-size:12px}
+kbd{font:12px var(--sans);border:1px solid var(--line);border-bottom-width:2px;border-radius:3px;padding:0 5px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:8px 14px;border-radius:6px;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.on{opacity:1}
+@media (max-width:860px){.wrap{grid-template-columns:1fr;gap:20px}aside{position:static;max-height:none}.keys{display:none}}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Reading desk</h1>
+      <p class="sub" id="sub"></p>
+    </div>
+    <a class="back" href="../">Back to site</a>
+  </header>
+
+  <aside>
+    <h2>Since your last visit</h2>
+    <div class="brief"><b id="newN">0</b><span id="newT">new papers</span></div>
+
+    <h2>View</h2>
+    <div class="nav" id="views"></div>
+
+    <h2>Topics</h2>
+    <div class="chips" id="topics"></div>
+
+    <h2>People to watch</h2>
+    <div class="people" id="people"></div>
+
+    <h2>Starred papers</h2>
+    <div class="tools">
+      <button id="bib">Download BibTeX for Zotero</button>
+      <button id="md">Copy as reading notes</button>
+      <button id="backup">Back up stars and reads</button>
+      <button id="restore">Restore from backup</button>
+      <a href="feed.xml">RSS feed</a>
+    </div>
+  </aside>
+
+  <main>
+    <div class="bar">
+      <input type="search" id="q" placeholder="Search titles, abstracts, authors" aria-label="Search papers">
+      <div class="seg" id="win" role="group" aria-label="Time window"></div>
+      <div class="seg" id="sort" role="group" aria-label="Sort order"></div>
+      <select id="src" aria-label="Source"></select>
+    </div>
+    <p class="count" id="count"></p>
+    <div id="list"></div>
+    <p class="keys"><kbd>j</kbd> <kbd>k</kbd> move, <kbd>a</kbd> abstract, <kbd>s</kbd> star, <kbd>x</kbd> mark read, <kbd>o</kbd> open, <kbd>/</kbd> search. Stars and reads are saved in this browser only; use backup to move them.</p>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script id="data" type="application/json">/*DATA*/null</script>
+<script>
+(function(){
+const D = JSON.parse(document.getElementById('data').textContent) || {updated:new Date().toISOString(),topics:[],people:[],items:[]};
+const LS = 'readingDesk.v1';
+function load(){ try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch(e){ return {}; } }
+function save(){ try { localStorage.setItem(LS, JSON.stringify(S)); } catch(e){} }
+const S = Object.assign({star:{}, done:{}, last:null}, load());
+const prevVisit = S.last ? new Date(S.last) : null;
+S.last = new Date().toISOString(); save();
+
+const items = D.items.map(it => Object.assign(it, {
+  seen: new Date(it.first_seen),
+  hay: (it.title + ' ' + it.summary + ' ' + it.authors + ' ' + it.source).toLowerCase(),
+  isArxiv: it.key.startsWith('arxiv:')
+}));
+const isNew = it => prevVisit ? it.seen > prevVisit : (Date.now() - it.seen) < 864e5;
+const maxScore = Math.max(10, ...items.map(i => i.score));
+
+const F = {view:'inbox', topic:null, person:null, win:30, sort:'rel', src:'', q:''};
+let cur = -1, shown = []; const openSet = new Set();
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s||'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toast.h); toast.h=setTimeout(()=>el.classList.remove('on'),1600); }
+
+const upd = new Date(D.updated);
+$('sub').textContent = items.length + ' papers from the last 30 days on downscaling, deep learning, climate modelling, and weather and S2S forecasting. Updated ' + upd.toLocaleDateString(undefined,{day:'numeric',month:'short'}) + '.';
+const nNew = items.filter(isNew).length;
+$('newN').textContent = nNew;
+$('newT').textContent = (nNew===1?'new paper':'new papers') + (prevVisit ? ' since ' + prevVisit.toLocaleDateString(undefined,{day:'numeric',month:'short'}) : ' today');
+
+const VIEWS = [
+  ['inbox','To read', it => !S.done[it.key]],
+  ['new','New', isNew],
+  ['top','Top picks', it => it.score >= 9],
+  ['watch','From watched people', it => it.watch && it.watch.length],
+  ['star','Starred', it => S.star[it.key]],
+  ['all','Everything', () => true]
+];
+function seg(id, opts, key){
+  $(id).innerHTML = opts.map(([v,l]) => `<button data-v="${v}" aria-pressed="${F[key]==v}">${l}</button>`).join('');
+  $(id).onclick = e => { const b=e.target.closest('button'); if(!b) return; F[key] = isNaN(+b.dataset.v) ? b.dataset.v : +b.dataset.v; render(); };
+}
+seg('win', [[3,'3 days'],[7,'Week'],[30,'Month']], 'win');
+seg('sort', [['rel','Relevance'],['new','Newest']], 'sort');
+const srcs = [...new Set(items.map(i => i.source.startsWith('Google Scholar') ? 'Google Scholar alert' : i.source))].sort();
+$('src').innerHTML = '<option value="">All sources</option>' + srcs.map(s => `<option>${esc(s)}</option>`).join('');
+$('src').onchange = e => { F.src = e.target.value; render(); };
+$('q').oninput = e => { F.q = e.target.value.toLowerCase().trim(); render(); };
+
+function base(it){
+  if ((Date.now() - it.seen) > F.win * 864e5) return false;
+  if (F.topic && !it.topics.includes(F.topic)) return false;
+  if (F.person && !(it.watch||[]).includes(F.person)) return false;
+  if (F.src && !(it.source === F.src || (F.src === 'Google Scholar alert' && it.source.startsWith('Google Scholar')))) return false;
+  if (F.q && !F.q.split(/\s+/).every(w => it.hay.includes(w))) return false;
+  return true;
+}
+
+function sidebar(){
+  const pool = items.filter(base);
+  $('views').innerHTML = VIEWS.map(([v,l,fn]) =>
+    `<button data-v="${v}" aria-pressed="${F.view==v}"><span>${l}</span><small>${pool.filter(fn).length}</small></button>`).join('');
+  const tc = t => items.filter(i => i.topics.includes(t)).length;
+  $('topics').innerHTML = D.topics.map(t => `<button class="chip" data-t="${esc(t)}" aria-pressed="${F.topic==t}">${esc(t)} <small>${tc(t)}</small></button>`).join('');
+  $('people').innerHTML = D.people.length ? D.people.map(p => {
+    const n = items.filter(i => (i.watch||[]).includes(p.name)).length;
+    return `<button data-p="${esc(p.name)}" aria-pressed="${F.person==p.name}"><span><span class="pn">${esc(p.name)}</span><br><span class="pw">${esc(p.where)}</span></span><span class="pc ${n?'on':''}">${n}</span></button>`;
+  }).join('') : '<p class="pw">Add names under watch_people in config.yml.</p>';
+}
+$('views').onclick = e => { const b=e.target.closest('button'); if(b){ F.view=b.dataset.v; render(); } };
+$('topics').onclick = e => { const b=e.target.closest('button'); if(b){ F.topic = F.topic==b.dataset.t ? null : b.dataset.t; render(); } };
+$('people').onclick = e => { const b=e.target.closest('button'); if(b){ F.person = F.person==b.dataset.p ? null : b.dataset.p; if(F.person) F.view='all'; render(); } };
+
+function dayLabel(d){
+  const a = new Date(d); a.setHours(0,0,0,0); const t = new Date(); t.setHours(0,0,0,0);
+  const diff = Math.round((t - a) / 864e5);
+  return diff===0 ? 'Today' : diff===1 ? 'Yesterday' : a.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'});
+}
+function authorsHtml(it){
+  let s = esc(it.authors);
+  (it.watch||[]).forEach(n => { s = s.replace(new RegExp(esc(n).replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'i'), m => `<mark>${m}</mark>`); });
+  return s;
+}
+function card(it, i){
+  const bars = Math.max(1, Math.min(5, Math.round(it.score / maxScore * 5)));
+  const id = it.key.replace(/^(arxiv|doi):/,'');
+  const links = [];
+  if (it.isArxiv){ links.push(`<a href="https://arxiv.org/pdf/${esc(id)}">PDF</a>`, `<a href="https://www.alphaxiv.org/abs/${esc(id)}">Discuss on alphaXiv</a>`); }
+  links.push(`<a href="https://www.semanticscholar.org/search?q=${encodeURIComponent(it.title)}">Semantic Scholar</a>`);
+  return `<li class="p${S.done[it.key]?' done':''}${openSet.has(it.key)?' open':''}" data-i="${i}">
+    <div class="rel" title="Relevance score ${it.score}">${[1,2,3,4,5].map(n=>`<i class="${n<=bars?'on':''}"></i>`).join('')}</div>
+    <div>
+      <a class="t" href="${esc(it.link)}" target="_blank" rel="noopener">${esc(it.title)}</a>
+      <div class="m"><span>${esc(it.source)}</span>${isNew(it)?'<span class="w">New</span>':''}${(it.watch||[]).length?'<span class="w">Watched author</span>':''}${it.topics.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}${(it.boosts||[]).length?`<span>also: ${esc(it.boosts.map(b=>b.replace('*','')).join(', '))}</span>`:''}</div>
+      ${it.authors?`<div class="au">${authorsHtml(it)}</div>`:''}
+      ${it.summary?`<p class="ab">${esc(it.summary)}</p>`:''}
+      <div class="act">
+        ${it.summary?'<button data-a="ab">Abstract</button>':''}
+        <button class="st" data-a="star" aria-pressed="${!!S.star[it.key]}">${S.star[it.key]?'Starred':'Star'}</button>
+        <button data-a="done">${S.done[it.key]?'Mark unread':'Mark read'}</button>
+        <button data-a="cite">Copy BibTeX</button>
+        ${links.join('')}
+      </div>
+    </div></li>`;
+}
+
+function render(){
+  sidebar();
+  ['win','sort'].forEach(id => [...$(id).children].forEach(b => b.setAttribute('aria-pressed', String(F[id]) === b.dataset.v)));
+  const fn = VIEWS.find(v => v[0]==F.view)[2];
+  shown = items.filter(it => base(it) && fn(it));
+  shown.sort(F.sort==='rel' ? (a,b) => b.score - a.score || b.seen - a.seen : (a,b) => b.seen - a.seen || b.score - a.score);
+  $('count').textContent = shown.length + (shown.length===1?' paper':' papers');
+  if (!shown.length){
+    const msg = F.view==='inbox' ? 'Nothing left to read in this selection. Try a longer time window, or open Everything.' :
+                F.view==='star' ? 'No starred papers yet. Star a paper to keep it here and export it to Zotero.' :
+                'No papers match these filters. Clear the search or pick another topic.';
+    $('list').innerHTML = `<p class="empty">${msg}</p>`; cur=-1; return;
+  }
+  let html = '', lastDay = '';
+  shown.forEach((it,i) => {
+    if (F.sort==='new'){ const d = dayLabel(it.seen); if (d!==lastDay){ if(lastDay) html+='</ol>'; html += `<h3 class="day">${d}</h3><ol>`; lastDay=d; } }
+    else if (i===0) html += '<ol>';
+    html += card(it,i);
+  });
+  $('list').innerHTML = html + '</ol>';
+  if (cur >= shown.length) cur = shown.length - 1;
+  mark();
+}
+
+function bib(it){
+  const first = (it.authors.split(',')[0]||'anon').trim().split(' ').pop().replace(/[^A-Za-z]/g,'');
+  const year = (it.published||it.first_seen).slice(0,4);
+  const word = (it.title.match(/[A-Za-z]{4,}/)||['paper'])[0].toLowerCase();
+  const id = it.key.replace(/^(arxiv|doi):/,'');
+  const au = it.authors.split(',').map(s=>s.trim()).filter(Boolean).join(' and ');
+  return it.isArxiv
+    ? `@misc{${first}${year}${word},\n  title = {${it.title}},\n  author = {${au}},\n  year = {${year}},\n  eprint = {${id}},\n  archivePrefix = {arXiv},\n  url = {${it.link}}\n}`
+    : `@article{${first}${year}${word},\n  title = {${it.title}},\n  author = {${au}},\n  journal = {${it.source}},\n  year = {${year}},\n  doi = {${id}}\n}`;
+}
+function copy(t, msg){ (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(()=>toast(msg), ()=>prompt('Copy:', t)); }
+function download(name, text){ const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([text],{type:'text/plain'})); a.download=name; a.click(); URL.revokeObjectURL(a.href); }
+
+function act(it, a, li){
+  if (a==='ab'){ openSet.has(it.key) ? openSet.delete(it.key) : openSet.add(it.key); li.classList.toggle('open'); return; }
+  if (a==='star'){ S.star[it.key] ? delete S.star[it.key] : (S.star[it.key] = Object.assign({}, it, {hay:undefined, seen:undefined})); save(); toast(S.star[it.key]?'Starred':'Star removed'); }
+  if (a==='done'){ S.done[it.key] ? delete S.done[it.key] : (S.done[it.key]=1); save(); }
+  if (a==='cite'){ copy(bib(it), 'BibTeX copied'); return; }
+  const keep = cur; render(); cur = Math.min(keep, shown.length-1); mark();
+}
+$('list').onclick = e => {
+  const b = e.target.closest('button[data-a]'); if (!b) return;
+  const li = b.closest('li.p'); cur = +li.dataset.i; act(shown[cur], b.dataset.a, li);
+};
+function mark(){
+  document.querySelectorAll('li.p.cur').forEach(l => l.classList.remove('cur'));
+  const li = document.querySelector(`li.p[data-i="${cur}"]`);
+  if (li){ li.classList.add('cur'); const r=li.getBoundingClientRect(); if (r.top<0 || r.bottom>innerHeight) li.scrollIntoView({block:'center', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }
+}
+document.addEventListener('keydown', e => {
+  if (e.target.matches('input,select,textarea') || e.metaKey || e.ctrlKey || e.altKey){ if (e.key==='Escape') e.target.blur(); return; }
+  if (e.key==='/'){ e.preventDefault(); $('q').focus(); return; }
+  if (e.key==='j'){ cur = Math.min(cur+1, shown.length-1); mark(); }
+  else if (e.key==='k'){ cur = Math.max(cur-1, 0); mark(); }
+  else if (cur>=0 && shown[cur]){
+    const li = document.querySelector(`li.p[data-i="${cur}"]`);
+    if (e.key==='a') act(shown[cur],'ab',li);
+    else if (e.key==='s') act(shown[cur],'star',li);
+    else if (e.key==='x') act(shown[cur],'done',li);
+    else if (e.key==='o') window.open(shown[cur].link,'_blank','noopener');
+  }
+});
+
+const starred = () => Object.values(S.star);
+$('bib').onclick = () => { const s=starred(); if(!s.length) return toast('Star some papers first'); download('starred-papers.bib', s.map(bib).join('\n\n')); };
+$('md').onclick = () => { const s=starred(); if(!s.length) return toast('Star some papers first');
+  copy(s.map(it => `- ${it.title} (${(it.authors.split(',')[0]||'').trim()} et al., ${it.source}, ${(it.published||it.first_seen).slice(0,4)}) ${it.link}\n  Why it matters: `).join('\n'), 'Reading notes copied'); };
+$('backup').onclick = () => download('reading-desk-backup.json', JSON.stringify(S));
+$('restore').onclick = () => { const f=document.createElement('input'); f.type='file'; f.accept='.json';
+  f.onchange = () => f.files[0].text().then(t => { try { const o=JSON.parse(t); Object.assign(S.star, o.star||{}); Object.assign(S.done, o.done||{}); save(); render(); toast('Restored'); } catch(e){ toast('That file is not a reading desk backup'); } });
+  f.click(); };
+
+render();
+})();
+</script>
+</body>
+</html>
